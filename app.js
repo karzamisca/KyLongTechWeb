@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.use(express.static("views/firstPage"));
+app.use(express.static("views"));
 
 // Routes
 app.use("/", pageRoute);
@@ -23,7 +23,7 @@ app.listen(PORT, () => {
 cron.schedule("*/5 * * * *", async () => {
   try {
     const serverUrl =
-      `https://kylongtech.azurewebsites.net/main` || `http://localhost:${PORT}`;
+      `https://kylongtech.azurewebsites.net` || `http://localhost:${PORT}`;
     await axios.get(serverUrl);
   } catch (error) {
     console.error("Failed to ping server:", error.message);
