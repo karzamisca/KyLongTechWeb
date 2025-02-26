@@ -32,7 +32,7 @@ app.listen(PORT, () => {
 cron.schedule("*/5 * * * *", async () => {
   try {
     const serverUrl =
-      `https://kylongtech.azurewebsites.net` || `http://localhost:${PORT}`;
+      `https://kylongtech.glitch.me` || `http://localhost:${PORT}`;
     await axios.get(serverUrl);
   } catch (error) {
     console.error("Failed to ping server:", error.message);
