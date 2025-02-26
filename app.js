@@ -9,8 +9,11 @@ const axios = require("axios");
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
-app.use(express.static("views"));
+app.get("/images/:imageName", (req, res) => {
+  const imageName = req.params.imageName;
+  const imagePath = path.join(__dirname, "views", "images", imageName);
+  res.sendFile(imagePath);
+});
 
 // Routes
 app.use("/", pageRoute);

@@ -1,3 +1,4 @@
+<!-- views/homePage/index.html -->
 <!DOCTYPE html>
 <html lang="vi">
   <head>
@@ -134,6 +135,142 @@
         object-fit: cover;
       }
 
+      .page-intro {
+        text-align: center;
+        color: #30875f;
+        font-size: 28px;
+        font-weight: bold;
+        margin: 40px 0 30px;
+      }
+
+      .tab-container {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .tabs {
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      .tab-button {
+        background-color: #30875f;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 25px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .tab-button:hover {
+        background-color: #e84e0f;
+      }
+
+      .tab-button.active {
+        background-color: #e84e0f;
+      }
+
+      .tab-content {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        margin-bottom: 40px;
+        border: 1px solid #f0f0f0;
+        border-radius: 10px;
+        padding: 20px;
+        overflow: hidden;
+      }
+
+      .tab-pane {
+        display: none;
+      }
+
+      .tab-pane.active {
+        display: flex;
+      }
+
+      .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        width: 45%;
+      }
+
+      .gallery-item {
+        border-radius: 8px;
+        overflow: hidden;
+        height: 200px;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item img:hover {
+        transform: scale(1.05);
+      }
+
+      .content-text {
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .content-text p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+
+      .navigation-buttons {
+        display: flex;
+        gap: 15px;
+        align-self: flex-end;
+        margin-top: 20px;
+      }
+
+      .prev-button,
+      .next-button {
+        background-color: #30875f;
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+      }
+
+      .prev-button:hover,
+      .next-button:hover {
+        background-color: #e84e0f;
+        transform: translateY(-2px);
+      }
+
+      .prev-button:active,
+      .next-button:active {
+        transform: translateY(0);
+      }
+
+      .next-button i,
+      .prev-button i {
+        font-size: 20px;
+      }
+
       /* Responsive design */
       @media (max-width: 768px) {
         .header {
@@ -161,13 +298,27 @@
         .hero {
           height: 300px;
         }
+
+        .tab-content {
+          flex-direction: column;
+        }
+
+        .image-gallery,
+        .content-text {
+          width: 100%;
+        }
+
+        .tabs {
+          flex-wrap: wrap;
+        }
       }
     </style>
   </head>
   <body>
+    <!----- HEADER SECTION ----->
     <header class="header">
       <div class="logo-container">
-        <img src="../images/logo.png" alt="Ky Long Logo" class="logo" />
+        <img src="/images/logo.png" alt="Ky Long Logo" class="logo" />
         <div class="company-info">
           <div class="company-name">
             CÔNG TY TNHH ĐẦU TƯ THƯƠNG MẠI DỊCH VỤ KỲ LONG
@@ -214,12 +365,222 @@
 
     <div class="hero">
       <img
-        src="../images/IndustrialStorageFacility.png"
+        src="/images/IndustrialStorageFacility.png"
         alt="Industrial Facility"
       />
     </div>
 
+    <!----- INTRO SECTION ----->
+    <h1 class="page-intro">GIỚI THIỆU DOANH NGHIỆP KỲ LONG</h1>
+
+    <div class="tab-container">
+      <div class="tabs">
+        <button class="tab-button active" data-tab="about-tab">
+          Về chúng tôi
+        </button>
+        <button class="tab-button" data-tab="team">Đội Kỹ Sư</button>
+        <button class="tab-button" data-tab="technology">Công nghệ</button>
+        <button class="tab-button" data-tab="facilities">Cơ sở vật chất</button>
+      </div>
+
+      <!-- About Us Tab -->
+      <div id="about-tab" class="tab-pane tab-content active">
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img
+              src="/images/industrial-pipes.png"
+              alt="Hệ thống đường ống công nghiệp"
+            />
+          </div>
+          <div class="gallery-item">
+            <img src="/images/gas-facility.png" alt="Nhà máy khí đốt" />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="/images/valve-control.png"
+              alt="Nhân viên kiểm soát van"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="/images/industrial-equipment.png"
+              alt="Thiết bị công nghiệp"
+            />
+          </div>
+        </div>
+
+        <div class="content-text">
+          <p>
+            Chào mừng bạn đến với Công ty KỲ LONG, một công ty năng lượng uy tín
+            có nhiều kinh nghiệm trong công việc cung cấp khí đốt tự nhiên cho
+            các khách hàng công nghiệp.
+          </p>
+
+          <p>
+            Cam kết mạnh mẽ của chúng tôi trong việc làm hài lòng khách hàng và
+            cung cấp đổi mới đã giúp chúng tôi trở thành một đối tác đáng tin
+            cậy cho các doanh nghiệp đang tìm kiếm các giải pháp năng lượng đáng
+            tin cậy.
+          </p>
+
+          <p>
+            Hãy tham gia cùng chúng tôi trong nỗ lực thúc đẩy một tương lai sạch
+            hơn, bền vững hơn và thịnh vượng về kinh tế cho các ngành công
+            nghiệp khác nhau.
+          </p>
+
+          <div class="navigation-buttons">
+            <button class="prev-button"><i>←</i></button>
+            <button class="next-button"><i>→</i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Engineering Team Tab -->
+      <div id="team" class="tab-pane tab-content">
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="../images/engineer-team1.jpg" alt="Kỹ sư đang làm việc" />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="../images/engineer-team2.jpg"
+              alt="Đội ngũ kỹ sư tại công trường"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="../images/engineer-team3.jpg"
+              alt="Nhóm kỹ sư họp kế hoạch"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="../images/engineer-team4.jpg"
+              alt="Kỹ sư điều khiển thiết bị"
+            />
+          </div>
+        </div>
+
+        <div class="content-text">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            quis justo vel massa ultrices tincidunt ac eu libero. Donec laoreet
+            risus ac vestibulum egestas.
+          </p>
+
+          <p>
+            Etiam condimentum, orci at faucibus egestas, dolor nulla ultricies
+            dui, eu facilisis magna mi sit amet arcu. Donec at purus ac ligula
+            mollis vestibulum at in diam.
+          </p>
+
+          <p>
+            Mauris vestibulum rutrum enim, nec dictum dui malesuada at. Fusce
+            pharetra ultricies nisi, vitae viverra dolor vestibulum ac.
+          </p>
+
+          <div class="navigation-buttons">
+            <button class="prev-button"><i>←</i></button>
+            <button class="next-button"><i>→</i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technology Tab -->
+      <div id="technology" class="tab-pane tab-content">
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img
+              src="../images/technology1.jpg"
+              alt="Công nghệ xử lý khí đốt"
+            />
+          </div>
+          <div class="gallery-item">
+            <img src="../images/technology2.jpg" alt="Hệ thống tự động hóa" />
+          </div>
+          <div class="gallery-item">
+            <img src="../images/technology3.jpg" alt="Phòng điều khiển" />
+          </div>
+          <div class="gallery-item">
+            <img src="../images/technology4.jpg" alt="Thiết bị giám sát" />
+          </div>
+        </div>
+
+        <div class="content-text">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+            aliquam feugiat tortor, vel interdum erat faucibus id. Integer
+            semper consequat justo vel aliquam.
+          </p>
+
+          <p>
+            Nam rhoncus, nibh sit amet dictum bibendum, enim enim eleifend
+            magna, vel tempor nunc velit in magna. Nullam viverra tristique
+            tellus, non gravida tellus.
+          </p>
+
+          <p>
+            Phasellus vitae mauris non orci varius tristique. Vestibulum ante
+            ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+            curae.
+          </p>
+
+          <div class="navigation-buttons">
+            <button class="prev-button"><i>←</i></button>
+            <button class="next-button"><i>→</i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Facilities Tab -->
+      <div id="facilities" class="tab-pane tab-content">
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="../images/facility1.jpg" alt="Văn phòng công ty" />
+          </div>
+          <div class="gallery-item">
+            <img src="../images/facility2.jpg" alt="Nhà máy sản xuất" />
+          </div>
+          <div class="gallery-item">
+            <img src="../images/facility3.jpg" alt="Kho bãi" />
+          </div>
+          <div class="gallery-item">
+            <img src="../images/facility4.jpg" alt="Trung tâm phân phối" />
+          </div>
+        </div>
+
+        <div class="content-text">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            congue vulputate nunc, vel tincidunt ligula efficitur ut. Aliquam
+            erat volutpat.
+          </p>
+
+          <p>
+            Curabitur id volutpat ligula, vel iaculis elit. Ut sollicitudin
+            ipsum eu felis volutpat, vel laoreet mauris venenatis. Nulla
+            facilisi.
+          </p>
+
+          <p>
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+            posuere cubilia curae; Vestibulum ullamcorper ipsum sit amet tellus
+            tincidunt, ac vulputate lectus semper.
+          </p>
+
+          <div class="navigation-buttons">
+            <button class="prev-button"><i>←</i></button>
+            <button class="next-button"><i>→</i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!---- NEXT SECTION HERE ----->
+
     <script>
+      /////HEADER JS
       // Simple JavaScript for navigation highlighting
       const navItems = document.querySelectorAll(".nav-menu li a");
 
@@ -239,6 +600,73 @@
 
       // Set home as active by default
       document.getElementById("home").classList.add("active");
+
+      /////INTRO JS
+      // Tab functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabButtons = document.querySelectorAll(".tab-button");
+        const tabPanes = document.querySelectorAll(".tab-pane");
+
+        // Set initial active tab
+        document
+          .querySelector('.tab-button[data-tab="about-tab"]')
+          .classList.add("active");
+        document.getElementById("about-tab").classList.add("active");
+
+        tabButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remove active class from all buttons and panes
+            tabButtons.forEach((btn) => {
+              btn.classList.remove("active");
+            });
+
+            tabPanes.forEach((pane) => {
+              pane.classList.remove("active");
+            });
+
+            // Add active class to clicked button
+            this.classList.add("active");
+
+            // Show corresponding tab content
+            const tabId = this.getAttribute("data-tab");
+            document.getElementById(tabId).classList.add("active");
+          });
+        });
+
+        // Function to navigate to the next or previous tab
+        function navigateTab(direction) {
+          const activeButton = document.querySelector(".tab-button.active");
+          const allButtons = Array.from(tabButtons);
+          const currentIndex = allButtons.indexOf(activeButton);
+
+          let nextIndex;
+          if (direction === "next") {
+            nextIndex = (currentIndex + 1) % allButtons.length;
+          } else {
+            nextIndex =
+              (currentIndex - 1 + allButtons.length) % allButtons.length;
+          }
+
+          // Simulate click on the next/previous button
+          allButtons[nextIndex].click();
+        }
+
+        // Add event listeners to next buttons
+        const nextButtons = document.querySelectorAll(".next-button");
+        nextButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            navigateTab("next");
+          });
+        });
+
+        // Add event listeners to prev buttons
+        const prevButtons = document.querySelectorAll(".prev-button");
+        prevButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            navigateTab("prev");
+          });
+        });
+      });
     </script>
   </body>
 </html>
