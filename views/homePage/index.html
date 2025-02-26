@@ -265,6 +265,120 @@
       }
       /* END OF INTRO SECTION CSS */
 
+      /* PRODUCTS & SERVICES SECTION CSS */
+      .products-services-section {
+        padding: 60px 0;
+        background-color: #f9f9f9;
+      }
+
+      .ps-container {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .ps-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .ps-title {
+        color: #e84e0f;
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .ps-subtitle {
+        color: #30875f;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .ps-content {
+        display: flex;
+        gap: 30px;
+      }
+
+      .ps-left-column {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .ps-category-item {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border-radius: 30px;
+        padding: 15px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .category-icon {
+        background-color: #30875f;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+        flex-shrink: 0;
+      }
+
+      .category-text {
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .ps-right-column {
+        width: 60%;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .service-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .service-image {
+        height: 180px;
+        overflow: hidden;
+      }
+
+      .service-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .service-card:hover .service-image img {
+        transform: scale(1.05);
+      }
+
+      .service-name {
+        text-align: center;
+        padding: 15px;
+        font-weight: bold;
+        color: #30875f;
+        font-size: 18px;
+      }
+      /* END OF PRODUCTS & SERVICES SECTION CSS */
+
       /* ADVANTAGE SECTION CSS */
       .advantages-section {
         background-color: #30875f;
@@ -377,6 +491,19 @@
         .advantage-card {
           width: 90%;
           margin-bottom: 20px;
+        }
+
+        .ps-content {
+          flex-direction: column;
+        }
+
+        .ps-left-column,
+        .ps-right-column {
+          width: 100%;
+        }
+
+        .service-grid {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -508,23 +635,23 @@
       <div id="team" class="tab-pane tab-content">
         <div class="image-gallery">
           <div class="gallery-item">
-            <img src="../images/engineer-team1.jpg" alt="Kỹ sư đang làm việc" />
+            <img src="../images/engineer-team1.png" alt="Kỹ sư đang làm việc" />
           </div>
           <div class="gallery-item">
             <img
-              src="../images/engineer-team2.jpg"
+              src="../images/engineer-team2.png"
               alt="Đội ngũ kỹ sư tại công trường"
             />
           </div>
           <div class="gallery-item">
             <img
-              src="../images/engineer-team3.jpg"
+              src="../images/engineer-team3.png"
               alt="Nhóm kỹ sư họp kế hoạch"
             />
           </div>
           <div class="gallery-item">
             <img
-              src="../images/engineer-team4.jpg"
+              src="../images/engineer-team4.png"
               alt="Kỹ sư điều khiển thiết bị"
             />
           </div>
@@ -560,18 +687,18 @@
         <div class="image-gallery">
           <div class="gallery-item">
             <img
-              src="../images/technology1.jpg"
+              src="../images/technology1.png"
               alt="Công nghệ xử lý khí đốt"
             />
           </div>
           <div class="gallery-item">
-            <img src="../images/technology2.jpg" alt="Hệ thống tự động hóa" />
+            <img src="../images/technology2.png" alt="Hệ thống tự động hóa" />
           </div>
           <div class="gallery-item">
-            <img src="../images/technology3.jpg" alt="Phòng điều khiển" />
+            <img src="../images/technology3.png" alt="Phòng điều khiển" />
           </div>
           <div class="gallery-item">
-            <img src="../images/technology4.jpg" alt="Thiết bị giám sát" />
+            <img src="../images/technology4.png" alt="Thiết bị giám sát" />
           </div>
         </div>
 
@@ -605,16 +732,16 @@
       <div id="facilities" class="tab-pane tab-content">
         <div class="image-gallery">
           <div class="gallery-item">
-            <img src="../images/facility1.jpg" alt="Văn phòng công ty" />
+            <img src="../images/facility1.png" alt="Văn phòng công ty" />
           </div>
           <div class="gallery-item">
-            <img src="../images/facility2.jpg" alt="Nhà máy sản xuất" />
+            <img src="../images/facility2.png" alt="Nhà máy sản xuất" />
           </div>
           <div class="gallery-item">
-            <img src="../images/facility3.jpg" alt="Kho bãi" />
+            <img src="../images/facility3.png" alt="Kho bãi" />
           </div>
           <div class="gallery-item">
-            <img src="../images/facility4.jpg" alt="Trung tâm phân phối" />
+            <img src="../images/facility4.png" alt="Trung tâm phân phối" />
           </div>
         </div>
 
@@ -726,6 +853,73 @@
       </div>
     </section>
     <!---- END OF ADVANTAGE SECTION HTML ----->
+
+    <!----- PRODUCTS & SERVICES SECTION HTML ----->
+    <section class="products-services-section">
+      <div class="ps-container">
+        <div class="ps-header">
+          <h2 class="ps-title">SẢN PHẨM - DỊCH VỤ</h2>
+          <div class="ps-subtitle">Hoạt động chủ lực</div>
+        </div>
+
+        <div class="ps-content">
+          <div class="ps-left-column">
+            <div class="ps-category-item">
+              <div class="category-icon"></div>
+              <div class="category-text">NHIÊN LIỆU</div>
+            </div>
+
+            <div class="ps-category-item">
+              <div class="category-icon"></div>
+              <div class="category-text">CHẾ TẠO</div>
+            </div>
+
+            <div class="ps-category-item">
+              <div class="category-icon"></div>
+              <div class="category-text">VẬN TẢI</div>
+            </div>
+
+            <div class="ps-category-item">
+              <div class="category-icon"></div>
+              <div class="category-text">THIẾT BỊ</div>
+            </div>
+          </div>
+
+          <div class="ps-right-column">
+            <div class="service-grid">
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="/images/fuel-storage.png" alt="Nhiên liệu" />
+                </div>
+                <div class="service-name">NHIÊN LIỆU</div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="/images/manufacturing.png" alt="Chế tạo" />
+                </div>
+                <div class="service-name">CHẾ TẠO</div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="/images/transportation.png" alt="Vận tải" />
+                </div>
+                <div class="service-name">VẬN TẢI</div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="/images/equipment.png" alt="Thiết bị" />
+                </div>
+                <div class="service-name">THIẾT BỊ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!----- END OF PRODUCTS & SERVICES SECTION HTML ----->
 
     <script>
       /////HEADER SECTION JS

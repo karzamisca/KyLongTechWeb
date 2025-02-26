@@ -11,7 +11,13 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/images/:imageName", (req, res) => {
   const imageName = req.params.imageName;
-  const imagePath = path.join(__dirname, "views", "images", imageName);
+  const imagePath = path.join(
+    __dirname,
+    "views",
+    "homePage",
+    "images",
+    imageName
+  );
   res.sendFile(imagePath);
 });
 
