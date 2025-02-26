@@ -1,10 +1,14 @@
 <!-- views/homePage/index.html -->
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CÔNG TY TNHH ĐẦU TƯ THƯƠNG MẠI DỊCH VỤ KỲ LONG</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
       * {
         margin: 0;
@@ -17,20 +21,7 @@
         color: #333;
       }
 
-      .top-bar {
-        background-color: #b2b2b2;
-        color: white;
-        padding: 10px 0;
-        text-align: center;
-      }
-
-      .top-bar select {
-        background: transparent;
-        border: none;
-        color: white;
-        cursor: pointer;
-      }
-
+      /* HEADER SECTION CSS */
       .header {
         display: flex;
         justify-content: space-between;
@@ -134,7 +125,9 @@
         height: 100%;
         object-fit: cover;
       }
+      /* END OF HEADER SECTION CSS */
 
+      /* INTRO SECTION CSS */
       .page-intro {
         text-align: center;
         color: #30875f;
@@ -270,6 +263,70 @@
       .prev-button i {
         font-size: 20px;
       }
+      /* END OF INTRO SECTION CSS */
+
+      /* ADVANTAGE SECTION CSS */
+      .advantages-section {
+        background-color: #30875f;
+        padding: 40px 0;
+        color: white;
+        text-align: center;
+      }
+
+      .advantages-section-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+      }
+
+      .advantages-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1140px;
+        margin: 0 auto;
+        gap: 20px;
+      }
+
+      .advantage-card {
+        background-color: white;
+        border-radius: 10px;
+        width: 30%;
+        min-width: 250px;
+        padding: 30px 20px;
+        color: #333;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .advantage-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .icon-container {
+        background-color: #f0f0f0;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+      }
+
+      .advantage-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      .advantage-description {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      /* END OF ADVANTAGE SECTION CSS */
 
       /* Responsive design */
       @media (max-width: 768px) {
@@ -310,6 +367,16 @@
 
         .tabs {
           flex-wrap: wrap;
+        }
+
+        .advantages-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .advantage-card {
+          width: 90%;
+          margin-bottom: 20px;
         }
       }
     </style>
@@ -580,7 +647,85 @@
 
     <!----- END OF INTRO SECTION HTML ----->
 
-    <!---- NEXT SECTION HTML HERE ----->
+    <!---- ADVANTAGE SECTION HTML ----->
+    <section class="advantages-section">
+      <h2 class="section-title">LỢI THẾ CẠNH TRANH</h2>
+
+      <div class="advantages-container">
+        <div class="advantage-card">
+          <div class="icon-container">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3 class="advantage-title">Sáng tạo</h3>
+          <p class="advantage-description">
+            Đội ngũ kỹ sư giàu kinh nghiệm của chúng tôi luôn tìm kiếm giải pháp
+            sáng tạo để tối ưu hóa hiệu suất và độ tin cậy cho hệ thống khí đốt
+            công nghiệp của bạn.
+          </p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="icon-container">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="advantage-title">Giảm thiểu rủi ro</h3>
+          <p class="advantage-description">
+            Với các quy trình tuân thủ nghiêm ngặt và tiêu chuẩn an toàn cao
+            nhất, chúng tôi đảm bảo giảm thiểu rủi ro trong mọi giai đoạn từ
+            thiết kế đến vận hành.
+          </p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="icon-container">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+          <h3 class="advantage-title">Nhanh chóng</h3>
+          <p class="advantage-description">
+            Đội ngũ phản ứng nhanh của chúng tôi đảm bảo thực hiện dự án đúng
+            thời hạn và cung cấp hỗ trợ kỹ thuật 24/7 để giải quyết mọi vấn đề
+            phát sinh.
+          </p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="icon-container">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3 class="advantage-title">Dễ dàng</h3>
+          <p class="advantage-description">
+            Chúng tôi đơn giản hóa quy trình làm việc với giải pháp tích hợp
+            toàn diện, từ tư vấn ban đầu đến bảo trì liên tục, mang lại trải
+            nghiệm suôn sẻ cho khách hàng.
+          </p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="icon-container">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <h3 class="advantage-title">Linh động</h3>
+          <p class="advantage-description">
+            Các giải pháp tùy chỉnh của chúng tôi được thiết kế để thích ứng với
+            nhu cầu đặc biệt của doanh nghiệp bạn, đảm bảo hiệu quả tối ưu trong
+            mọi điều kiện vận hành.
+          </p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="icon-container">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="advantage-title">Xu hướng</h3>
+          <p class="advantage-description">
+            Chúng tôi liên tục cập nhật công nghệ và phương pháp mới nhất trong
+            ngành công nghiệp khí đốt, đảm bảo khách hàng luôn đi đầu về hiệu
+            quả và bền vững.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!---- END OF ADVANTAGE SECTION HTML ----->
 
     <script>
       /////HEADER SECTION JS
@@ -670,6 +815,35 @@
           });
         });
       });
+      /////END OF HEADER SECTION JS
+
+      /////ADVANTAGE SECTION JS
+      // Animation for advantage cards on scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".advantage-card");
+
+        function checkScroll() {
+          cards.forEach((card) => {
+            const cardTop = card.getBoundingClientRect().top;
+            if (cardTop < window.innerHeight - 100) {
+              card.style.opacity = "1";
+              card.style.transform = "translateY(0)";
+            }
+          });
+        }
+
+        // Initialize card styles
+        cards.forEach((card) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(20px)";
+          card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+        });
+
+        // Check positions on load and scroll
+        window.addEventListener("scroll", checkScroll);
+        checkScroll();
+      });
+      /////END OF ADVANTAGE SECTION JS
     </script>
   </body>
 </html>
