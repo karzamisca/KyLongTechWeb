@@ -442,7 +442,187 @@
       }
       /* END OF ADVANTAGE SECTION CSS */
 
+      /* NEWS BULLETIN SECTION CSS */
+      .news-bulletin-section {
+        padding: 60px 0;
+        background-color: #fff;
+      }
+
+      .news-container {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .news-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .news-title {
+        color: #e84e0f;
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .news-subtitle {
+        color: #30875f;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+        margin-bottom: 40px;
+      }
+
+      .news-item {
+        background-color: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .news-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .news-thumbnail {
+        position: relative;
+        height: 180px;
+        overflow: hidden;
+      }
+
+      .news-thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .news-item:hover .news-thumbnail img {
+        transform: scale(1.05);
+      }
+
+      .news-date {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: rgba(48, 135, 95, 0.9);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .news-item-title {
+        padding: 15px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+      }
+
+      .news-read-more {
+        padding: 10px 15px;
+        color: #30875f;
+        font-weight: bold;
+        text-align: right;
+        border-top: 1px solid #f0f0f0;
+        transition: background-color 0.3s ease;
+      }
+
+      .news-item:hover .news-read-more {
+        background-color: #f9f9f9;
+        color: #e84e0f;
+      }
+
+      .news-view-all {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .view-all-button {
+        display: inline-block;
+        background-color: #30875f;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .view-all-button:hover {
+        background-color: #e84e0f;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      /* PDF Modal Styles */
+      .pdf-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        overflow: auto;
+      }
+
+      .pdf-modal-content {
+        position: relative;
+        background-color: #fff;
+        margin: 5% auto;
+        padding: 0;
+        width: 90%;
+        max-width: 900px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: #333;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1001;
+        transition: color 0.3s ease;
+      }
+
+      .close-modal:hover {
+        color: #e84e0f;
+      }
+
+      .pdf-container {
+        width: 100%;
+        height: 80vh;
+        padding: 20px;
+      }
+      /* END OF NEWS BULLETIN SECTION CSS */
+
       /* Responsive design */
+      @media (max-width: 1024px) {
+        .news-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
       @media (max-width: 768px) {
         .header {
           flex-direction: column;
@@ -504,6 +684,37 @@
 
         .service-grid {
           grid-template-columns: 1fr;
+        }
+
+        .news-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .pdf-modal-content {
+          width: 95%;
+          margin: 10% auto;
+        }
+
+        .pdf-container {
+          height: 70vh;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .news-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .news-item-title {
+          min-height: auto;
+        }
+
+        .pdf-modal-content {
+          margin: 15% auto;
+        }
+
+        .pdf-container {
+          height: 60vh;
         }
       }
     </style>
@@ -921,6 +1132,109 @@
     </section>
     <!----- END OF PRODUCTS & SERVICES SECTION HTML ----->
 
+    <!-- NEWS BULLETIN SECTION HTML -->
+    <section class="news-bulletin-section">
+      <div class="news-container">
+        <div class="news-header">
+          <h2 class="news-title">TIN TỨC & THÔNG BÁO</h2>
+          <div class="news-subtitle">Cập nhật mới nhất từ Kỳ Long</div>
+        </div>
+
+        <div class="news-grid">
+          <!-- News Item 1 -->
+          <div
+            class="news-item"
+            data-pdf="https://docs.google.com/document/d/1UwyRgL2z0A8NDpbaqyUt-18F1J4tHIBhOehfHf1uqDA/preview"
+          >
+            <div class="news-thumbnail">
+              <img
+                src="/images/news-thumbnail1.png"
+                alt="Tin tức về hợp tác mới"
+              />
+              <div class="news-date">25/02/2025</div>
+            </div>
+            <h3 class="news-item-title">
+              Kỳ Long ký kết hợp tác chiến lược với đối tác Nhật Bản
+            </h3>
+            <div class="news-read-more">Xem chi tiết</div>
+          </div>
+
+          <!-- News Item 2 -->
+          <div
+            class="news-item"
+            data-pdf="https://drive.google.com/file/d/2def456/preview"
+          >
+            <div class="news-thumbnail">
+              <img
+                src="/images/news-thumbnail2.png"
+                alt="Tin tức về công nghệ mới"
+              />
+              <div class="news-date">15/02/2025</div>
+            </div>
+            <h3 class="news-item-title">
+              Kỳ Long ra mắt giải pháp tiết kiệm nhiên liệu mới cho ngành công
+              nghiệp
+            </h3>
+            <div class="news-read-more">Xem chi tiết</div>
+          </div>
+
+          <!-- News Item 3 -->
+          <div
+            class="news-item"
+            data-pdf="https://drive.google.com/file/d/3ghi789/preview"
+          >
+            <div class="news-thumbnail">
+              <img src="/images/news-thumbnail3.png" alt="Tin tức về sự kiện" />
+              <div class="news-date">05/02/2025</div>
+            </div>
+            <h3 class="news-item-title">
+              Kỳ Long tham gia Hội chợ Triển lãm Công nghiệp 2025
+            </h3>
+            <div class="news-read-more">Xem chi tiết</div>
+          </div>
+
+          <!-- News Item 4 -->
+          <div
+            class="news-item"
+            data-pdf="https://drive.google.com/file/d/4jkl012/preview"
+          >
+            <div class="news-thumbnail">
+              <img
+                src="/images/news-thumbnail4.png"
+                alt="Tin tức về chứng nhận"
+              />
+              <div class="news-date">28/01/2025</div>
+            </div>
+            <h3 class="news-item-title">
+              Kỳ Long nhận chứng nhận ISO 14001 về hệ thống quản lý môi trường
+            </h3>
+            <div class="news-read-more">Xem chi tiết</div>
+          </div>
+        </div>
+
+        <div class="news-view-all">
+          <a href="/newsPage" class="view-all-button">Xem tất cả tin tức</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PDF Modal -->
+    <div id="pdf-modal" class="pdf-modal">
+      <div class="pdf-modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="pdf-container">
+          <iframe
+            id="pdf-frame"
+            src=""
+            width="100%"
+            height="100%"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <!-- END OF NEWS BULLETIN SECTION HTML -->
+
     <script>
       /////HEADER SECTION JS
       // Simple JavaScript for navigation highlighting
@@ -1038,6 +1352,53 @@
         checkScroll();
       });
       /////END OF ADVANTAGE SECTION JS
+
+      // NEWS BULLETIN SECTION JS
+      document.addEventListener("DOMContentLoaded", function () {
+        const newsItems = document.querySelectorAll(".news-item");
+        const modal = document.getElementById("pdf-modal");
+        const pdfFrame = document.getElementById("pdf-frame");
+        const closeBtn = document.querySelector(".close-modal");
+
+        // Open modal with PDF when news item is clicked
+        newsItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            const pdfUrl = this.getAttribute("data-pdf");
+            if (pdfUrl) {
+              pdfFrame.src = pdfUrl;
+              modal.style.display = "block";
+              document.body.style.overflow = "hidden"; // Prevent scrolling behind modal
+            }
+          });
+        });
+
+        // Close modal when X is clicked
+        closeBtn.addEventListener("click", function () {
+          closeModal();
+        });
+
+        // Close modal when clicking outside of it
+        window.addEventListener("click", function (event) {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+
+        // Close modal function
+        function closeModal() {
+          modal.style.display = "none";
+          pdfFrame.src = ""; // Clear the iframe src
+          document.body.style.overflow = ""; // Restore scrolling
+        }
+
+        // Close modal with Escape key
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && modal.style.display === "block") {
+            closeModal();
+          }
+        });
+      });
+      // END OF NEWS BULLETIN SECTION JS
     </script>
   </body>
 </html>
