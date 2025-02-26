@@ -616,6 +616,42 @@
       }
       /* END OF NEWS BULLETIN SECTION CSS */
 
+      /* PARTNERS SECTION CSS */
+      .partners-section {
+        padding: 50px 0;
+        background-color: #f9f9f9;
+      }
+
+      .partners-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .partners-logo-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+
+      .partner-logo {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .partner-logo img {
+        max-width: 150px;
+        height: auto;
+        transition: transform 0.3s ease;
+      }
+
+      .partner-logo img:hover {
+        transform: scale(1.1);
+      }
+      /* END OF PARTNERS SECTION CSS */
+
       /* Responsive design */
       @media (max-width: 1024px) {
         .news-grid {
@@ -698,6 +734,18 @@
         .pdf-container {
           height: 70vh;
         }
+
+        .partners-logo-container {
+          gap: 30px;
+        }
+
+        .partner-logo {
+          padding: 10px;
+        }
+
+        .partner-logo img {
+          max-width: 120px;
+        }
       }
 
       @media (max-width: 480px) {
@@ -715,6 +763,10 @@
 
         .pdf-container {
           height: 60vh;
+        }
+
+        .partner-logo img {
+          max-width: 100px;
         }
       }
     </style>
@@ -1234,6 +1286,32 @@
       </div>
     </div>
     <!-- END OF NEWS BULLETIN SECTION HTML -->
+
+    <!----- PARTNERS SECTION HTML ----->
+    <section class="partners-section">
+      <div class="partners-container">
+        <h2 class="section-title">KHÁCH HÀNG VÀ ĐỐI TÁC</h2>
+
+        <div class="partners-logo-container">
+          <div class="partner-logo">
+            <img src="/images/tranquang-logo.png" alt="Trần Quang" />
+          </div>
+          <div class="partner-logo">
+            <img src="/images/dongtam-logo.png" alt="Đồng Tâm" />
+          </div>
+          <div class="partner-logo">
+            <img src="/images/richs-logo.png" alt="Rich's" />
+          </div>
+          <div class="partner-logo">
+            <img src="/images/samsung-logo.png" alt="Samsung" />
+          </div>
+          <div class="partner-logo">
+            <img src="/images/binhan-logo.png" alt="Bình An" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END OF PARTNERS SECTION HTML -->
 
     <script>
       /////HEADER SECTION JS
