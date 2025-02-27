@@ -9,773 +9,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-      }
-
-      body {
-        color: #333;
-      }
-
-      /* HEADER SECTION CSS */
-      .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 10%;
-      }
-
-      .logo-container {
-        display: flex;
-        align-items: center;
-      }
-
-      .logo {
-        width: 100px;
-        height: auto;
-      }
-
-      .company-info {
-        margin-left: 20px;
-      }
-
-      .company-name {
-        color: #006241;
-        font-size: 20px;
-        font-weight: bold;
-      }
-
-      .company-slogan {
-        color: #e84e0f;
-        font-style: italic;
-      }
-
-      .company-year {
-        color: #006241;
-        margin-top: 5px;
-      }
-
-      .contact-info {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .address,
-      .phone {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .icon {
-        background-color: #f0f0f0;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #e84e0f;
-      }
-
-      .address-text,
-      .phone-text {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .nav-container {
-        background-color: #30875f;
-        color: white;
-      }
-
-      .nav-menu {
-        display: flex;
-        list-style: none;
-        justify-content: space-around;
-        padding: 20px 10%;
-      }
-
-      .nav-menu li a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 18px;
-        transition: all 0.3s ease;
-      }
-
-      .nav-menu li a:hover {
-        color: #e84e0f;
-      }
-
-      .hero {
-        width: 100%;
-        height: 450px;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .hero img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      /* END OF HEADER SECTION CSS */
-
-      /* INTRO SECTION CSS */
-      .page-intro {
-        text-align: center;
-        color: #30875f;
-        font-size: 28px;
-        font-weight: bold;
-        margin: 40px 0 30px;
-      }
-
-      .tab-container {
-        max-width: 1140px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .tabs {
-        display: flex;
-        justify-content: flex-start;
-        gap: 15px;
-        margin-bottom: 30px;
-      }
-
-      .tab-button {
-        background-color: #30875f;
-        color: white;
-        border: none;
-        border-radius: 25px;
-        padding: 10px 25px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .tab-button:hover {
-        background-color: #e84e0f;
-      }
-
-      .tab-button.active {
-        background-color: #e84e0f;
-      }
-
-      .tab-content {
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-        margin-bottom: 40px;
-        border: 1px solid #f0f0f0;
-        border-radius: 10px;
-        padding: 20px;
-        overflow: hidden;
-      }
-
-      .tab-pane {
-        display: none;
-      }
-
-      .tab-pane.active {
-        display: flex;
-      }
-
-      .image-gallery {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        width: 45%;
-      }
-
-      .gallery-item {
-        border-radius: 8px;
-        overflow: hidden;
-        height: 200px;
-      }
-
-      .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .gallery-item img:hover {
-        transform: scale(1.05);
-      }
-
-      .content-text {
-        width: 55%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .content-text p {
-        margin-bottom: 15px;
-        line-height: 1.6;
-      }
-
-      .navigation-buttons {
-        display: flex;
-        gap: 15px;
-        align-self: flex-end;
-        margin-top: 20px;
-      }
-
-      .prev-button,
-      .next-button {
-        background-color: #30875f;
-        color: white;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        cursor: pointer;
-        border: none;
-        transition: all 0.3s ease;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-      }
-
-      .prev-button:hover,
-      .next-button:hover {
-        background-color: #e84e0f;
-        transform: translateY(-2px);
-      }
-
-      .prev-button:active,
-      .next-button:active {
-        transform: translateY(0);
-      }
-
-      .next-button i,
-      .prev-button i {
-        font-size: 20px;
-      }
-      /* END OF INTRO SECTION CSS */
-
-      /* PRODUCTS & SERVICES SECTION CSS */
-      .products-services-section {
-        padding: 60px 0;
-        background-color: #f9f9f9;
-      }
-
-      .ps-container {
-        max-width: 1140px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .ps-header {
-        text-align: center;
-        margin-bottom: 40px;
-      }
-
-      .ps-title {
-        color: #e84e0f;
-        font-size: 32px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-
-      .ps-subtitle {
-        color: #30875f;
-        font-size: 24px;
-        font-weight: bold;
-      }
-
-      .ps-content {
-        display: flex;
-        gap: 30px;
-      }
-
-      .ps-left-column {
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .ps-category-item {
-        display: flex;
-        align-items: center;
-        background-color: white;
-        border-radius: 30px;
-        padding: 15px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-      }
-
-      .category-icon {
-        background-color: #30875f;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-right: 15px;
-        flex-shrink: 0;
-      }
-
-      .category-text {
-        font-weight: bold;
-        font-size: 18px;
-        text-align: center;
-      }
-
-      .ps-right-column {
-        width: 60%;
-      }
-
-      .service-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
-
-      .service-card {
-        background-color: white;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-      }
-
-      .service-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .service-image {
-        height: 180px;
-        overflow: hidden;
-      }
-
-      .service-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .service-card:hover .service-image img {
-        transform: scale(1.05);
-      }
-
-      .service-name {
-        text-align: center;
-        padding: 15px;
-        font-weight: bold;
-        color: #30875f;
-        font-size: 18px;
-      }
-      /* END OF PRODUCTS & SERVICES SECTION CSS */
-
-      /* ADVANTAGE SECTION CSS */
-      .advantages-section {
-        background-color: #30875f;
-        padding: 40px 0;
-        color: white;
-        text-align: center;
-      }
-
-      .advantages-section-title {
-        font-size: 32px;
-        font-weight: bold;
-        margin-bottom: 40px;
-        text-transform: uppercase;
-      }
-
-      .advantages-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        max-width: 1140px;
-        margin: 0 auto;
-        gap: 20px;
-      }
-
-      .advantage-card {
-        background-color: white;
-        border-radius: 10px;
-        width: 30%;
-        min-width: 250px;
-        padding: 30px 20px;
-        color: #333;
-        text-align: center;
-        transition: transform 0.3s ease;
-      }
-
-      .advantage-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .icon-container {
-        background-color: #f0f0f0;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 15px;
-      }
-
-      .advantage-title {
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-      }
-
-      .advantage-description {
-        font-size: 14px;
-        line-height: 1.5;
-      }
-      /* END OF ADVANTAGE SECTION CSS */
-
-      /* NEWS BULLETIN SECTION CSS */
-      .news-bulletin-section {
-        padding: 60px 0;
-        background-color: #fff;
-      }
-
-      .news-container {
-        max-width: 1140px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .news-header {
-        text-align: center;
-        margin-bottom: 40px;
-      }
-
-      .news-title {
-        color: #e84e0f;
-        font-size: 32px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-
-      .news-subtitle {
-        color: #30875f;
-        font-size: 24px;
-        font-weight: bold;
-      }
-
-      .news-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 25px;
-        margin-bottom: 40px;
-      }
-
-      .news-item {
-        background-color: #ffffff;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-      }
-
-      .news-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-      }
-
-      .news-thumbnail {
-        position: relative;
-        height: 180px;
-        overflow: hidden;
-      }
-
-      .news-thumbnail img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .news-item:hover .news-thumbnail img {
-        transform: scale(1.05);
-      }
-
-      .news-date {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        background-color: rgba(48, 135, 95, 0.9);
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 12px;
-        font-weight: bold;
-      }
-
-      .news-item-title {
-        padding: 15px;
-        font-size: 16px;
-        font-weight: bold;
-        color: #333;
-        min-height: 80px;
-        display: flex;
-        align-items: center;
-      }
-
-      .news-read-more {
-        padding: 10px 15px;
-        color: #30875f;
-        font-weight: bold;
-        text-align: right;
-        border-top: 1px solid #f0f0f0;
-        transition: background-color 0.3s ease;
-      }
-
-      .news-item:hover .news-read-more {
-        background-color: #f9f9f9;
-        color: #e84e0f;
-      }
-
-      .news-view-all {
-        text-align: center;
-        margin-top: 20px;
-      }
-
-      .view-all-button {
-        display: inline-block;
-        background-color: #30875f;
-        color: white;
-        padding: 12px 30px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .view-all-button:hover {
-        background-color: #e84e0f;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-      }
-
-      /* PDF Modal Styles */
-      .pdf-modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        overflow: auto;
-      }
-
-      .pdf-modal-content {
-        position: relative;
-        background-color: #fff;
-        margin: 5% auto;
-        padding: 0;
-        width: 90%;
-        max-width: 900px;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      }
-
-      .close-modal {
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        color: #333;
-        font-size: 30px;
-        font-weight: bold;
-        cursor: pointer;
-        z-index: 1001;
-        transition: color 0.3s ease;
-      }
-
-      .close-modal:hover {
-        color: #e84e0f;
-      }
-
-      .pdf-container {
-        width: 100%;
-        height: 80vh;
-        padding: 20px;
-      }
-      /* END OF NEWS BULLETIN SECTION CSS */
-
-      /* PARTNERS SECTION CSS */
-      .partners-section {
-        padding: 50px 0;
-        background-color: #f9f9f9;
-      }
-
-      .partners-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .partners-logo-container {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-top: 40px;
-      }
-
-      .partner-logo {
-        padding: 20px;
-        text-align: center;
-      }
-
-      .partner-logo img {
-        max-width: 150px;
-        height: auto;
-        transition: transform 0.3s ease;
-      }
-
-      .partner-logo img:hover {
-        transform: scale(1.1);
-      }
-      /* END OF PARTNERS SECTION CSS */
-
-      /* Responsive design */
-      @media (max-width: 1024px) {
-        .news-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-
-      @media (max-width: 768px) {
-        .header {
-          flex-direction: column;
-          padding: 20px 5%;
-        }
-
-        .company-info {
-          margin-left: 0;
-          margin-top: 15px;
-          text-align: center;
-        }
-
-        .contact-info {
-          margin-top: 20px;
-        }
-
-        .nav-menu {
-          flex-direction: column;
-          align-items: center;
-          gap: 15px;
-          padding: 20px 5%;
-        }
-
-        .hero {
-          height: 300px;
-        }
-
-        .tab-content {
-          flex-direction: column;
-        }
-
-        .image-gallery,
-        .content-text {
-          width: 100%;
-        }
-
-        .tabs {
-          flex-wrap: wrap;
-        }
-
-        .advantages-container {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .advantage-card {
-          width: 90%;
-          margin-bottom: 20px;
-        }
-
-        .ps-content {
-          flex-direction: column;
-        }
-
-        .ps-left-column,
-        .ps-right-column {
-          width: 100%;
-        }
-
-        .service-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .news-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .pdf-modal-content {
-          width: 95%;
-          margin: 10% auto;
-        }
-
-        .pdf-container {
-          height: 70vh;
-        }
-
-        .partners-logo-container {
-          gap: 30px;
-        }
-
-        .partner-logo {
-          padding: 10px;
-        }
-
-        .partner-logo img {
-          max-width: 120px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .news-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .news-item-title {
-          min-height: auto;
-        }
-
-        .pdf-modal-content {
-          margin: 15% auto;
-        }
-
-        .pdf-container {
-          height: 60vh;
-        }
-
-        .partner-logo img {
-          max-width: 100px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!----- HEADER SECTION HTML ----->
     <header class="header">
       <div class="logo-container">
-        <img src="/images/logo.png" alt="Ky Long Logo" class="logo" />
+        <img src="./images/logo.png" alt="Ky Long Logo" class="logo" />
         <div class="company-info">
           <div class="company-name">
             <a href="/" title="Công ty TNHH Đầu Tư Thương Mại Dịch Vụ Kỳ Long"
@@ -863,7 +103,7 @@
 
     <div class="hero">
       <img
-        src="/images/IndustrialStorageFacility.png"
+        src="./images/IndustrialStorageFacility.png"
         alt="Industrial Facility"
       />
     </div>
@@ -903,22 +143,22 @@
         <div class="image-gallery">
           <div class="gallery-item">
             <img
-              src="/images/industrial-pipes.png"
+              src="./images/industrial-pipes.png"
               alt="Hệ thống đường ống công nghiệp"
             />
           </div>
           <div class="gallery-item">
-            <img src="/images/gas-facility.png" alt="Nhà máy khí đốt" />
+            <img src="./images/gas-facility.png" alt="Nhà máy khí đốt" />
           </div>
           <div class="gallery-item">
             <img
-              src="/images/valve-control.png"
+              src="./images/valve-control.png"
               alt="Nhân viên kiểm soát van"
             />
           </div>
           <div class="gallery-item">
             <img
-              src="/images/industrial-equipment.png"
+              src="./images/industrial-equipment.png"
               alt="Thiết bị công nghiệp"
             />
           </div>
@@ -965,23 +205,23 @@
       <div id="team" class="tab-pane tab-content">
         <div class="image-gallery">
           <div class="gallery-item">
-            <img src="../images/engineer-team1.png" alt="Kỹ sư đang làm việc" />
+            <img src="./images/engineer-team1.png" alt="Kỹ sư đang làm việc" />
           </div>
           <div class="gallery-item">
             <img
-              src="../images/engineer-team2.png"
+              src="./images/engineer-team2.png"
               alt="Đội ngũ kỹ sư tại công trường"
             />
           </div>
           <div class="gallery-item">
             <img
-              src="../images/engineer-team3.png"
+              src="./images/engineer-team3.png"
               alt="Nhóm kỹ sư họp kế hoạch"
             />
           </div>
           <div class="gallery-item">
             <img
-              src="../images/engineer-team4.png"
+              src="./images/engineer-team4.png"
               alt="Kỹ sư điều khiển thiết bị"
             />
           </div>
@@ -1016,19 +256,16 @@
       <div id="technology" class="tab-pane tab-content">
         <div class="image-gallery">
           <div class="gallery-item">
-            <img
-              src="../images/technology1.png"
-              alt="Công nghệ xử lý khí đốt"
-            />
+            <img src="./images/technology1.png" alt="Công nghệ xử lý khí đốt" />
           </div>
           <div class="gallery-item">
-            <img src="../images/technology2.png" alt="Hệ thống tự động hóa" />
+            <img src="./images/technology2.png" alt="Hệ thống tự động hóa" />
           </div>
           <div class="gallery-item">
-            <img src="../images/technology3.png" alt="Phòng điều khiển" />
+            <img src="./images/technology3.png" alt="Phòng điều khiển" />
           </div>
           <div class="gallery-item">
-            <img src="../images/technology4.png" alt="Thiết bị giám sát" />
+            <img src="./images/technology4.png" alt="Thiết bị giám sát" />
           </div>
         </div>
 
@@ -1062,16 +299,16 @@
       <div id="facilities" class="tab-pane tab-content">
         <div class="image-gallery">
           <div class="gallery-item">
-            <img src="../images/facility1.png" alt="Văn phòng công ty" />
+            <img src="./images/facility1.png" alt="Văn phòng công ty" />
           </div>
           <div class="gallery-item">
-            <img src="../images/facility2.png" alt="Nhà máy sản xuất" />
+            <img src="./images/facility2.png" alt="Nhà máy sản xuất" />
           </div>
           <div class="gallery-item">
-            <img src="../images/facility3.png" alt="Kho bãi" />
+            <img src="./images/facility3.png" alt="Kho bãi" />
           </div>
           <div class="gallery-item">
-            <img src="../images/facility4.png" alt="Trung tâm phân phối" />
+            <img src="./images/facility4.png" alt="Trung tâm phân phối" />
           </div>
         </div>
 
@@ -1113,7 +350,13 @@
           <div class="icon-container">
             <i class="fas fa-lightbulb"></i>
           </div>
-          <h3 class="advantage-title">Sáng tạo</h3>
+          <h3 class="advantage-title">
+            <a
+              href="/servicePage#sang-tao"
+              title="Giải pháp sáng tạo từ Kỳ Long"
+              >Sáng tạo</a
+            >
+          </h3>
           <p class="advantage-description">
             Đội ngũ kỹ sư giàu kinh nghiệm của chúng tôi luôn tìm kiếm giải pháp
             sáng tạo để tối ưu hóa hiệu suất và độ tin cậy cho hệ thống khí đốt
@@ -1125,7 +368,13 @@
           <div class="icon-container">
             <i class="fas fa-shield-alt"></i>
           </div>
-          <h3 class="advantage-title">Giảm thiểu rủi ro</h3>
+          <h3 class="advantage-title">
+            <a
+              href="/servicePage#an-toan"
+              title="An toàn và giảm thiểu rủi ro với Kỳ Long"
+              >Giảm thiểu rủi ro</a
+            >
+          </h3>
           <p class="advantage-description">
             Với các quy trình tuân thủ nghiêm ngặt và tiêu chuẩn an toàn cao
             nhất, chúng tôi đảm bảo giảm thiểu rủi ro trong mọi giai đoạn từ
@@ -1137,7 +386,11 @@
           <div class="icon-container">
             <i class="fas fa-tachometer-alt"></i>
           </div>
-          <h3 class="advantage-title">Nhanh chóng</h3>
+          <h3 class="advantage-title">
+            <a href="/servicePage#toc-do" title="Dịch vụ nhanh chóng từ Kỳ Long"
+              >Nhanh chóng</a
+            >
+          </h3>
           <p class="advantage-description">
             Đội ngũ phản ứng nhanh của chúng tôi đảm bảo thực hiện dự án đúng
             thời hạn và cung cấp hỗ trợ kỹ thuật 24/7 để giải quyết mọi vấn đề
@@ -1149,7 +402,13 @@
           <div class="icon-container">
             <i class="fas fa-check-circle"></i>
           </div>
-          <h3 class="advantage-title">Dễ dàng</h3>
+          <h3 class="advantage-title">
+            <a
+              href="/servicePage#de-dang"
+              title="Quy trình làm việc đơn giản với Kỳ Long"
+              >Dễ dàng</a
+            >
+          </h3>
           <p class="advantage-description">
             Chúng tôi đơn giản hóa quy trình làm việc với giải pháp tích hợp
             toàn diện, từ tư vấn ban đầu đến bảo trì liên tục, mang lại trải
@@ -1161,7 +420,13 @@
           <div class="icon-container">
             <i class="fas fa-sync-alt"></i>
           </div>
-          <h3 class="advantage-title">Linh động</h3>
+          <h3 class="advantage-title">
+            <a
+              href="/servicePage#linh-dong"
+              title="Giải pháp linh động từ Kỳ Long"
+              >Linh động</a
+            >
+          </h3>
           <p class="advantage-description">
             Các giải pháp tùy chỉnh của chúng tôi được thiết kế để thích ứng với
             nhu cầu đặc biệt của doanh nghiệp bạn, đảm bảo hiệu quả tối ưu trong
@@ -1173,7 +438,13 @@
           <div class="icon-container">
             <i class="fas fa-chart-line"></i>
           </div>
-          <h3 class="advantage-title">Xu hướng</h3>
+          <h3 class="advantage-title">
+            <a
+              href="/servicePage#xu-huong"
+              title="Công nghệ tiên tiến từ Kỳ Long"
+              >Xu hướng</a
+            >
+          </h3>
           <p class="advantage-description">
             Chúng tôi liên tục cập nhật công nghệ và phương pháp mới nhất trong
             ngành công nghiệp khí đốt, đảm bảo khách hàng luôn đi đầu về hiệu
@@ -1196,22 +467,46 @@
           <div class="ps-left-column">
             <div class="ps-category-item">
               <div class="category-icon"></div>
-              <div class="category-text">NHIÊN LIỆU</div>
+              <div class="category-text">
+                <a
+                  href="/productsPage#nhien-lieu"
+                  title="Các sản phẩm nhiên liệu của Kỳ Long"
+                  >NHIÊN LIỆU</a
+                >
+              </div>
             </div>
 
             <div class="ps-category-item">
               <div class="category-icon"></div>
-              <div class="category-text">CHẾ TẠO</div>
+              <div class="category-text">
+                <a
+                  href="/productsPage#che-tao"
+                  title="Dịch vụ chế tạo của Kỳ Long"
+                  >CHẾ TẠO</a
+                >
+              </div>
             </div>
 
             <div class="ps-category-item">
               <div class="category-icon"></div>
-              <div class="category-text">VẬN TẢI</div>
+              <div class="category-text">
+                <a
+                  href="/servicePage#van-tai"
+                  title="Dịch vụ vận tải của Kỳ Long"
+                  >VẬN TẢI</a
+                >
+              </div>
             </div>
 
             <div class="ps-category-item">
               <div class="category-icon"></div>
-              <div class="category-text">THIẾT BỊ</div>
+              <div class="category-text">
+                <a
+                  href="/productsPage#thiet-bi"
+                  title="Thiết bị công nghiệp của Kỳ Long"
+                  >THIẾT BỊ</a
+                >
+              </div>
             </div>
           </div>
 
@@ -1219,30 +514,52 @@
             <div class="service-grid">
               <div class="service-card">
                 <div class="service-image">
-                  <img src="/images/fuel-storage.png" alt="Nhiên liệu" />
+                  <img src="./images/fuel-storage.png" alt="Nhiên liệu" />
                 </div>
-                <div class="service-name">NHIÊN LIỆU</div>
+                <div class="service-name">
+                  <a
+                    href="/productsPage#nhien-lieu"
+                    title="Nhiên liệu công nghiệp Kỳ Long"
+                    >NHIÊN LIỆU</a
+                  >
+                </div>
               </div>
 
               <div class="service-card">
                 <div class="service-image">
-                  <img src="/images/manufacturing.png" alt="Chế tạo" />
+                  <img src="./images/manufacturing.png" alt="Chế tạo" />
                 </div>
-                <div class="service-name">CHẾ TẠO</div>
+                <div class="service-name">
+                  <a
+                    href="/productsPage#che-tao"
+                    title="Dịch vụ chế tạo Kỳ Long"
+                    >CHẾ TẠO</a
+                  >
+                </div>
               </div>
 
               <div class="service-card">
                 <div class="service-image">
-                  <img src="/images/transportation.png" alt="Vận tải" />
+                  <img src="./images/transportation.png" alt="Vận tải" />
                 </div>
-                <div class="service-name">VẬN TẢI</div>
+                <div class="service-name">
+                  <a href="/servicePage#van-tai" title="Dịch vụ vận tải Kỳ Long"
+                    >VẬN TẢI</a
+                  >
+                </div>
               </div>
 
               <div class="service-card">
                 <div class="service-image">
-                  <img src="/images/equipment.png" alt="Thiết bị" />
+                  <img src="./images/equipment.png" alt="Thiết bị" />
                 </div>
-                <div class="service-name">THIẾT BỊ</div>
+                <div class="service-name">
+                  <a
+                    href="/productsPage#thiet-bi"
+                    title="Thiết bị công nghiệp Kỳ Long"
+                    >THIẾT BỊ</a
+                  >
+                </div>
               </div>
             </div>
           </div>
@@ -1267,7 +584,7 @@
           >
             <div class="news-thumbnail">
               <img
-                src="/images/news-thumbnail1.png"
+                src="./images/news-thumbnail1.png"
                 alt="Tin tức về hợp tác mới"
               />
               <div class="news-date">25/02/2025</div>
@@ -1285,7 +602,7 @@
           >
             <div class="news-thumbnail">
               <img
-                src="/images/news-thumbnail2.png"
+                src="./images/news-thumbnail2.png"
                 alt="Tin tức về công nghệ mới"
               />
               <div class="news-date">15/02/2025</div>
@@ -1303,7 +620,10 @@
             data-pdf="https://docs.google.com/document/d/1UwyRgL2z0A8NDpbaqyUt-18F1J4tHIBhOehfHf1uqDA/preview"
           >
             <div class="news-thumbnail">
-              <img src="/images/news-thumbnail3.png" alt="Tin tức về sự kiện" />
+              <img
+                src="./images/news-thumbnail3.png"
+                alt="Tin tức về sự kiện"
+              />
               <div class="news-date">05/02/2025</div>
             </div>
             <h3 class="news-item-title">
@@ -1319,7 +639,7 @@
           >
             <div class="news-thumbnail">
               <img
-                src="/images/news-thumbnail4.png"
+                src="./images/news-thumbnail4.png"
                 alt="Tin tức về chứng nhận"
               />
               <div class="news-date">28/01/2025</div>
@@ -1361,19 +681,19 @@
 
         <div class="partners-logo-container">
           <div class="partner-logo">
-            <img src="/images/tranquang-logo.png" alt="Trần Quang" />
+            <img src="./images/tranquang-logo.png" alt="Trần Quang" />
           </div>
           <div class="partner-logo">
-            <img src="/images/dongtam-logo.png" alt="Đồng Tâm" />
+            <img src="./images/dongtam-logo.png" alt="Đồng Tâm" />
           </div>
           <div class="partner-logo">
-            <img src="/images/richs-logo.png" alt="Rich's" />
+            <img src="./images/richs-logo.png" alt="Rich's" />
           </div>
           <div class="partner-logo">
-            <img src="/images/samsung-logo.png" alt="Samsung" />
+            <img src="./images/samsung-logo.png" alt="Samsung" />
           </div>
           <div class="partner-logo">
-            <img src="/images/binhan-logo.png" alt="Bình An" />
+            <img src="./images/binhan-logo.png" alt="Bình An" />
           </div>
         </div>
       </div>
@@ -1508,171 +828,6 @@
       </div>
     </footer>
     <!-- END OF FOOTER SECTION HTML -->
-
-    <script>
-      /////HEADER SECTION JS
-      // Simple JavaScript for navigation highlighting
-      const navItems = document.querySelectorAll(".nav-menu li a");
-
-      navItems.forEach((item) => {
-        item.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          // Remove active class from all items
-          navItems.forEach((link) => {
-            link.classList.remove("active");
-          });
-
-          // Add active class to clicked item
-          this.classList.add("active");
-        });
-      });
-
-      // Set home as active by default
-      document.getElementById("home").classList.add("active");
-
-      /////INTRO JS
-      // Tab functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        const tabButtons = document.querySelectorAll(".tab-button");
-        const tabPanes = document.querySelectorAll(".tab-pane");
-
-        // Set initial active tab
-        document
-          .querySelector('.tab-button[data-tab="about-tab"]')
-          .classList.add("active");
-        document.getElementById("about-tab").classList.add("active");
-
-        tabButtons.forEach((button) => {
-          button.addEventListener("click", function () {
-            // Remove active class from all buttons and panes
-            tabButtons.forEach((btn) => {
-              btn.classList.remove("active");
-            });
-
-            tabPanes.forEach((pane) => {
-              pane.classList.remove("active");
-            });
-
-            // Add active class to clicked button
-            this.classList.add("active");
-
-            // Show corresponding tab content
-            const tabId = this.getAttribute("data-tab");
-            document.getElementById(tabId).classList.add("active");
-          });
-        });
-
-        // Function to navigate to the next or previous tab
-        function navigateTab(direction) {
-          const activeButton = document.querySelector(".tab-button.active");
-          const allButtons = Array.from(tabButtons);
-          const currentIndex = allButtons.indexOf(activeButton);
-
-          let nextIndex;
-          if (direction === "next") {
-            nextIndex = (currentIndex + 1) % allButtons.length;
-          } else {
-            nextIndex =
-              (currentIndex - 1 + allButtons.length) % allButtons.length;
-          }
-
-          // Simulate click on the next/previous button
-          allButtons[nextIndex].click();
-        }
-
-        // Add event listeners to next buttons
-        const nextButtons = document.querySelectorAll(".next-button");
-        nextButtons.forEach((button) => {
-          button.addEventListener("click", function () {
-            navigateTab("next");
-          });
-        });
-
-        // Add event listeners to prev buttons
-        const prevButtons = document.querySelectorAll(".prev-button");
-        prevButtons.forEach((button) => {
-          button.addEventListener("click", function () {
-            navigateTab("prev");
-          });
-        });
-      });
-      /////END OF HEADER SECTION JS
-
-      /////ADVANTAGE SECTION JS
-      // Animation for advantage cards on scroll
-      document.addEventListener("DOMContentLoaded", function () {
-        const cards = document.querySelectorAll(".advantage-card");
-
-        function checkScroll() {
-          cards.forEach((card) => {
-            const cardTop = card.getBoundingClientRect().top;
-            if (cardTop < window.innerHeight - 100) {
-              card.style.opacity = "1";
-              card.style.transform = "translateY(0)";
-            }
-          });
-        }
-
-        // Initialize card styles
-        cards.forEach((card) => {
-          card.style.opacity = "0";
-          card.style.transform = "translateY(20px)";
-          card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-        });
-
-        // Check positions on load and scroll
-        window.addEventListener("scroll", checkScroll);
-        checkScroll();
-      });
-      /////END OF ADVANTAGE SECTION JS
-
-      // NEWS BULLETIN SECTION JS
-      document.addEventListener("DOMContentLoaded", function () {
-        const newsItems = document.querySelectorAll(".news-item");
-        const modal = document.getElementById("pdf-modal");
-        const pdfFrame = document.getElementById("pdf-frame");
-        const closeBtn = document.querySelector(".close-modal");
-
-        // Open modal with PDF when news item is clicked
-        newsItems.forEach((item) => {
-          item.addEventListener("click", function () {
-            const pdfUrl = this.getAttribute("data-pdf");
-            if (pdfUrl) {
-              pdfFrame.src = pdfUrl;
-              modal.style.display = "block";
-              document.body.style.overflow = "hidden"; // Prevent scrolling behind modal
-            }
-          });
-        });
-
-        // Close modal when X is clicked
-        closeBtn.addEventListener("click", function () {
-          closeModal();
-        });
-
-        // Close modal when clicking outside of it
-        window.addEventListener("click", function (event) {
-          if (event.target === modal) {
-            closeModal();
-          }
-        });
-
-        // Close modal function
-        function closeModal() {
-          modal.style.display = "none";
-          pdfFrame.src = ""; // Clear the iframe src
-          document.body.style.overflow = ""; // Restore scrolling
-        }
-
-        // Close modal with Escape key
-        document.addEventListener("keydown", function (event) {
-          if (event.key === "Escape" && modal.style.display === "block") {
-            closeModal();
-          }
-        });
-      });
-      // END OF NEWS BULLETIN SECTION JS
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -9,18 +9,8 @@ const axios = require("axios");
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
-app.get("/images/:imageName", (req, res) => {
-  const imageName = req.params.imageName;
-  const imagePath = path.join(
-    __dirname,
-    "views",
-    "homePage",
-    "images",
-    imageName
-  );
-  res.sendFile(imagePath);
-});
-
+app.use(express.static("views/homePage/images"));
+app.use(express.static("views/homePage"));
 // Routes
 app.use("/", pageRoute);
 // Start the server
