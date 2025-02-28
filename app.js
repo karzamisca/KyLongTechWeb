@@ -5,12 +5,20 @@ const pageRoute = require("./routes/pageRoute");
 const bodyParser = require("body-parser");
 const cron = require("node-cron");
 const axios = require("axios");
+const authRoute = require("./routes/authRoute");
+const cookieParser = require('cookie-parser');
+const connectDB = require("./config/db");
+const authMiddleware = require("./middlewares/authMiddleware"); // JWT middleware
+require("dotenv").config();
 
 const app = express();
+connectDB();
 const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use(express.static("views/homePage"));
 // Routes
+app.use("/", authRoute);
 app.use("/", pageRoute);
 // Start the server
 app.listen(PORT, () => {
