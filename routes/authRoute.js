@@ -16,11 +16,6 @@ router.post("/login", authController.login);
 // Logout route
 router.get("/logout", authController.logout);
 
-// Main page route
-router.get("/main", authMiddleware, (req, res) => {
-  res.sendFile("main.html", { root: "./views" }); // Serve the main page
-});
-
 router.post("/changePassword", authMiddleware, authController.changePassword);
 router.get("/changePassword", authMiddleware, (req, res) => {
   res.sendFile("changePassword.html", { root: "./views" });

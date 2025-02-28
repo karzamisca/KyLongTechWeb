@@ -1,22 +1,162 @@
-<!-- views/main.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
-    />
-    <title>Main Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ky Long - File Upload Tool</title>
     <style>
-      /* Default (Light Mode) Styles */
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f9;
+      * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
 
+      body {
+        background-color: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #0056b3;
+        text-align: center;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #eee;
+      }
+
+      .upload-section {
+        margin-bottom: 40px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+      }
+
+      h2 {
+        color: #0056b3;
+        margin-bottom: 15px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      select,
+      input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+      }
+
+      button {
+        background-color: #0056b3;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #003d82;
+      }
+
+      .preview {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .preview img {
+        max-width: 300px;
+        max-height: 200px;
+        border: 1px solid #ddd;
+        padding: 5px;
+        background-color: #fff;
+      }
+
+      .status {
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 4px;
+        display: none;
+      }
+
+      .success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+
+      .error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+
+      .current-files {
+        margin-top: 30px;
+      }
+
+      .file-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .file-item {
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .file-item img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 5px;
+      }
+
+      .filename {
+        font-size: 0.9rem;
+        color: #666;
+        word-break: break-all;
+      }
+
+      .loading {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        border-top-color: #0056b3;
+        animation: spin 1s ease-in-out infinite;
+        margin-left: 10px;
+        vertical-align: middle;
+      }
       /* Header Styles */
       .header {
         background-color: #fff;
@@ -41,128 +181,9 @@
         background-color: #e6f0ff;
       }
 
-      .container {
-        max-width: 800px;
-        margin: 50px auto;
-        padding: 20px;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        text-align: center;
-      }
-      h1 {
-        font-size: 28px;
-        color: #333;
-        margin-bottom: 10px;
-      }
-      .container a {
-        display: block;
-        font-size: 18px;
-        color: #007bff;
-        text-decoration: none;
-        margin: 15px 0;
-        padding: 15px;
-        background-color: #f9f9ff;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        transition: all 0.3s ease;
-      }
-      .container a:hover {
-        color: #0056b3;
-        background-color: #e6f0ff;
-        border-color: #0056b3;
-      }
-      .container a:nth-child(odd) {
-        background-color: #f0f8ff;
-      }
-      .container a:nth-child(even) {
-        background-color: #fffaf0;
-      }
-      /* Responsive Design for Tablets */
-      @media (max-width: 768px) {
-        .container {
-          max-width: 90%;
-          margin: 30px auto;
-          padding: 15px;
-        }
-        h1 {
-          font-size: 24px;
-        }
-        h2 {
-          font-size: 20px;
-        }
-        .container a {
-          font-size: 16px;
-          padding: 12px;
-        }
-      }
-      /* Responsive Design for Mobile Devices */
-      @media (max-width: 480px) {
-        .header {
-          flex-direction: column;
-          gap: 10px;
-          align-items: center;
-        }
-        .container {
-          max-width: 100%;
-          margin: 20px auto;
-          padding: 10px;
-        }
-        h1 {
-          font-size: 20px;
-        }
-        h2 {
-          font-size: 20px;
-        }
-        .container a {
-          font-size: 14px;
-          padding: 10px;
-        }
-      }
-      /* Dark Mode Styles */
-      @media (prefers-color-scheme: dark) {
-        body {
-          background-color: #121212;
-        }
-        .header {
-          background-color: #333;
-        }
-        .header a {
-          color: #fff;
-        }
-        .header a:hover {
-          background-color: #444;
-        }
-        .container {
-          background-color: #333;
-          color: #fff;
-          box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-        }
-        h1 {
-          color: #fff;
-        }
-        .container a {
-          color: #fff;
-          background-color: #444;
-          border: 1px solid #666;
-        }
-        .container a:hover {
-          color: #fff;
-          background-color: #555;
-          border-color: #fff;
-        }
-        .container a:nth-child(odd) {
-          background-color: #555;
-        }
-        .container a:nth-child(even) {
-          background-color: #666;
-        }
-        button {
-          color: #e0e0e0;
-        }
-        button:hover {
-          background: #fff;
-          color: #fff;
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
         }
       }
     </style>
@@ -173,8 +194,345 @@
       <a href="/logout">Đăng xuất / Logout</a>
     </div>
     <div class="container">
-      <h1>Chào mừng vào Trình quản lý Trang web Kỳ Long!</h1>
-      <h2>Welcome to the Ky Long Webpage Manager!</h2>
+      <h1>Ky Long - File Upload Tool</h1>
+
+      <div class="upload-section">
+        <h2>Upload News Thumbnails</h2>
+        <form id="thumbnailForm">
+          <div class="form-group">
+            <label for="thumbnailPosition">Thumbnail Position:</label>
+            <select id="thumbnailPosition" name="position">
+              <option value="news-thumbnail1.png">News Item 1</option>
+              <option value="news-thumbnail2.png">News Item 2</option>
+              <option value="news-thumbnail3.png">News Item 3</option>
+              <option value="news-thumbnail4.png">News Item 4</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="thumbnailFile">Select Image (PNG or JPG):</label>
+            <input
+              type="file"
+              id="thumbnailFile"
+              name="file"
+              accept=".png,.jpg,.jpeg"
+            />
+          </div>
+
+          <button type="button" id="uploadThumbnail">Upload Thumbnail</button>
+
+          <div class="preview" id="thumbnailPreview">
+            <!-- Image preview will appear here -->
+          </div>
+
+          <div class="status" id="thumbnailStatus"></div>
+        </form>
+      </div>
+
+      <div class="upload-section">
+        <h2>Upload News PDFs</h2>
+        <form id="pdfForm">
+          <div class="form-group">
+            <label for="pdfPosition">PDF Position:</label>
+            <select id="pdfPosition" name="position">
+              <option value="news-pdf1.pdf">News PDF 1</option>
+              <option value="news-pdf2.pdf">News PDF 2</option>
+              <option value="news-pdf3.pdf">News PDF 3</option>
+              <option value="news-pdf4.pdf">News PDF 4</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="pdfFile">Select PDF File:</label>
+            <input type="file" id="pdfFile" name="file" accept=".pdf" />
+          </div>
+
+          <button type="button" id="uploadPdf">Upload PDF</button>
+
+          <div class="status" id="pdfStatus"></div>
+        </form>
+      </div>
+
+      <div class="current-files">
+        <h2>
+          Current Thumbnails
+          <button type="button" id="refreshThumbnails" class="refresh-btn">
+            Refresh
+          </button>
+        </h2>
+        <div class="file-list" id="thumbnailList">
+          <!-- Current thumbnails will be loaded here -->
+          <div class="loading"></div>
+        </div>
+
+        <h2>
+          Current PDFs
+          <button type="button" id="refreshPdfs" class="refresh-btn">
+            Refresh
+          </button>
+        </h2>
+        <div class="file-list" id="pdfList">
+          <!-- Current PDFs will be loaded here -->
+          <div class="loading"></div>
+        </div>
+      </div>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Load initial data
+        loadThumbnails();
+        loadPdfs();
+
+        // Thumbnail preview functionality
+        const thumbnailFile = document.getElementById("thumbnailFile");
+        const thumbnailPreview = document.getElementById("thumbnailPreview");
+
+        thumbnailFile.addEventListener("change", function () {
+          const file = this.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              thumbnailPreview.innerHTML = `<img src="${e.target.result}" alt="Thumbnail Preview">`;
+            };
+            reader.readAsDataURL(file);
+          } else {
+            thumbnailPreview.innerHTML = "";
+          }
+        });
+
+        // Upload thumbnail button functionality
+        const uploadThumbnailBtn = document.getElementById("uploadThumbnail");
+        const thumbnailStatus = document.getElementById("thumbnailStatus");
+
+        uploadThumbnailBtn.addEventListener("click", function () {
+          const file = thumbnailFile.files[0];
+          const position = document.getElementById("thumbnailPosition").value;
+
+          if (!file) {
+            showStatus(
+              thumbnailStatus,
+              "Please select a file to upload.",
+              "error"
+            );
+            return;
+          }
+
+          // Create FormData object
+          const formData = new FormData();
+          formData.append("file", file);
+          formData.append("position", position);
+
+          // Show loading state
+          uploadThumbnailBtn.disabled = true;
+          uploadThumbnailBtn.innerHTML =
+            'Uploading... <div class="loading"></div>';
+
+          // Send to server using fetch API
+          fetch("/thumbnail", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                showStatus(
+                  thumbnailStatus,
+                  "Thumbnail uploaded successfully!",
+                  "success"
+                );
+                // Reload thumbnails to show the new one
+                loadThumbnails();
+                // Reset form
+                document.getElementById("thumbnailForm").reset();
+                thumbnailPreview.innerHTML = "";
+              } else {
+                showStatus(
+                  thumbnailStatus,
+                  data.message || "Upload failed",
+                  "error"
+                );
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              showStatus(
+                thumbnailStatus,
+                "An error occurred while uploading the file.",
+                "error"
+              );
+            })
+            .finally(() => {
+              // Reset button state
+              uploadThumbnailBtn.disabled = false;
+              uploadThumbnailBtn.innerHTML = "Upload Thumbnail";
+            });
+        });
+
+        // Upload PDF button functionality
+        const uploadPdfBtn = document.getElementById("uploadPdf");
+        const pdfStatus = document.getElementById("pdfStatus");
+
+        uploadPdfBtn.addEventListener("click", function () {
+          const file = document.getElementById("pdfFile").files[0];
+          const position = document.getElementById("pdfPosition").value;
+
+          if (!file) {
+            showStatus(
+              pdfStatus,
+              "Please select a PDF file to upload.",
+              "error"
+            );
+            return;
+          }
+
+          // Create FormData object
+          const formData = new FormData();
+          formData.append("file", file);
+          formData.append("position", position);
+
+          // Show loading state
+          uploadPdfBtn.disabled = true;
+          uploadPdfBtn.innerHTML = 'Uploading... <div class="loading"></div>';
+
+          // Send to server using fetch API
+          fetch("/pdf", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                showStatus(pdfStatus, "PDF uploaded successfully!", "success");
+                // Reload PDFs to show the new one
+                loadPdfs();
+                // Reset form
+                document.getElementById("pdfForm").reset();
+              } else {
+                showStatus(pdfStatus, data.message || "Upload failed", "error");
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              showStatus(
+                pdfStatus,
+                "An error occurred while uploading the file.",
+                "error"
+              );
+            })
+            .finally(() => {
+              // Reset button state
+              uploadPdfBtn.disabled = false;
+              uploadPdfBtn.innerHTML = "Upload PDF";
+            });
+        });
+
+        // Refresh buttons
+        document
+          .getElementById("refreshThumbnails")
+          .addEventListener("click", loadThumbnails);
+        document
+          .getElementById("refreshPdfs")
+          .addEventListener("click", loadPdfs);
+
+        // Function to load thumbnails from server
+        function loadThumbnails() {
+          const thumbnailList = document.getElementById("thumbnailList");
+          thumbnailList.innerHTML = '<div class="loading"></div>';
+
+          fetch("/thumbnails")
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                // Sort files by filename to maintain order
+                const sortedFiles = data.files.sort((a, b) => {
+                  return a.filename.localeCompare(b.filename);
+                });
+
+                thumbnailList.innerHTML = "";
+                sortedFiles.forEach((file) => {
+                  const fileItem = document.createElement("div");
+                  fileItem.className = "file-item";
+                  fileItem.innerHTML = `
+                                    <img src="${
+                                      file.path
+                                    }?t=${new Date().getTime()}" alt="${
+                    file.filename
+                  }">
+                                    <div class="filename">${file.filename}</div>
+                                    <div class="timestamp">Last updated: ${new Date(
+                                      file.lastModified
+                                    ).toLocaleString()}</div>
+                                `;
+                  thumbnailList.appendChild(fileItem);
+                });
+
+                // If no files found
+                if (sortedFiles.length === 0) {
+                  thumbnailList.innerHTML = "<p>No thumbnails found.</p>";
+                }
+              } else {
+                thumbnailList.innerHTML = "<p>Error loading thumbnails.</p>";
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              thumbnailList.innerHTML = "<p>Error loading thumbnails.</p>";
+            });
+        }
+
+        // Function to load PDFs from server
+        function loadPdfs() {
+          const pdfList = document.getElementById("pdfList");
+          pdfList.innerHTML = '<div class="loading"></div>';
+
+          fetch("/pdfs")
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                // Sort files by filename to maintain order
+                const sortedFiles = data.files.sort((a, b) => {
+                  return a.filename.localeCompare(b.filename);
+                });
+
+                pdfList.innerHTML = "";
+                sortedFiles.forEach((file) => {
+                  const fileItem = document.createElement("div");
+                  fileItem.className = "file-item";
+                  fileItem.innerHTML = `
+                                    <div class="filename">${file.filename}</div>
+                                    <div class="timestamp">Last updated: ${new Date(
+                                      file.lastModified
+                                    ).toLocaleString()}</div>
+                                `;
+                  pdfList.appendChild(fileItem);
+                });
+
+                // If no files found
+                if (sortedFiles.length === 0) {
+                  pdfList.innerHTML = "<p>No PDFs found.</p>";
+                }
+              } else {
+                pdfList.innerHTML = "<p>Error loading PDFs.</p>";
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              pdfList.innerHTML = "<p>Error loading PDFs.</p>";
+            });
+        }
+
+        // Helper function to show status messages
+        function showStatus(element, message, type) {
+          element.textContent = message;
+          element.className = "status " + type;
+          element.style.display = "block";
+
+          setTimeout(() => {
+            element.style.display = "none";
+          }, 5000);
+        }
+      });
+    </script>
   </body>
 </html>
