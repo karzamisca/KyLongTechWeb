@@ -33,14 +33,3 @@ app.use("/", authMiddleware, fileRoute);
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-
-// Cron job to ping the server every 5 minutes to keep it warm
-cron.schedule("*/5 * * * *", async () => {
-  try {
-    const serverUrl =
-      `https://kylongtech.glitch.me` || `http://localhost:${PORT}`;
-    await axios.get(serverUrl);
-  } catch (error) {
-    console.error("Failed to ping server:", error.message);
-  }
-});
