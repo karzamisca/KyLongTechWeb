@@ -9,7 +9,6 @@ const axios = require("axios");
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("views/homePage/images"));
 app.use(express.static("views/homePage"));
 // Routes
 app.use("/", pageRoute);
