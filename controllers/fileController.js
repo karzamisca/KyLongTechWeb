@@ -4,6 +4,7 @@ const path = require("path");
 
 const thumbnailsDir = path.join(__dirname, "../views/homePage/thumbnails");
 const pdfsDir = path.join(__dirname, "../views/homePage/pdf");
+const newsDataPath = path.join(__dirname, "../views/homePage/news-data.json");
 
 const fileUploadController = {
   // Handle thumbnail uploads
@@ -103,6 +104,54 @@ const fileUploadController = {
       return res
         .status(500)
         .json({ success: false, message: "Error retrieving PDFs" });
+    }
+  },
+
+  // Update news data
+  updateNewsData: async (req, res) => {
+    try {
+      const { position, title, date } = req.body;
+
+      // Read the existing news data
+      const newsData = JSON.parse(fs.readFileSync(newsDataPath, "utf8"));
+
+      // Validate position
+      const index = parseInt(position) - 1;
+      if (index < 0 || index >= newsData.length) {
+        return res.status(400).json({
+          success: false,
+          message: "Invalid news position",
+        });
+      }
+
+      // Update title if provided
+      if (title) {
+        newsData[index].title = title;
+      }
+
+      // Update date if provided and validate format
+      if (date) {
+        if (!/^\d{2}\/\d{2}\/\d{4}$/.test(date)) {
+          return res.status(400).json({
+            success: false,
+            message: "Date must be in dd/mm/yyyy format",
+          });
+        }
+        newsData[index].date = date;
+      }
+
+      // Save the updated data back to the file
+      fs.writeFileSync(newsDataPath, JSON.stringify(newsData, null, 2));
+
+      return res.status(200).json({
+        success: true,
+        message: "News data updated successfully",
+      });
+    } catch (error) {
+      console.error("Error updating news data:", error);
+      return res
+        .status(500)
+        .json({ success: false, message: "Error updating news data" });
     }
   },
 };

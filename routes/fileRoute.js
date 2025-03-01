@@ -161,5 +161,6 @@ router.get("/main", authMiddleware, (req, res) => {
 
 router.get("/thumbnails", fileController.getCurrentThumbnails);
 router.get("/pdfs", fileController.getCurrentPdfs);
+router.post("/updateNewsData", authMiddleware, fileController.updateNewsData);
 
 module.exports = router;
