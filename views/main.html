@@ -1,3 +1,4 @@
+<!-- views/main.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -250,6 +251,45 @@
           <button type="button" id="uploadPdf">Upload PDF</button>
 
           <div class="status" id="pdfStatus"></div>
+        </form>
+      </div>
+
+      <div class="upload-section">
+        <h2>Edit News Data</h2>
+        <form id="newsDataForm">
+          <div class="form-group">
+            <label for="newsPosition">News Position:</label>
+            <select id="newsPosition" name="position">
+              <option value="1">News Item 1</option>
+              <option value="2">News Item 2</option>
+              <option value="3">News Item 3</option>
+              <option value="4">News Item 4</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="newsTitle">Title:</label>
+            <input
+              type="text"
+              id="newsTitle"
+              name="title"
+              placeholder="Leave blank to keep current title"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="newsDate">Date:</label>
+            <input
+              type="text"
+              id="newsDate"
+              name="date"
+              placeholder="dd/mm/yyyy (Leave blank to keep current date)"
+            />
+          </div>
+
+          <button type="button" id="updateNewsData">Update News Data</button>
+
+          <div class="status" id="newsDataStatus"></div>
         </form>
       </div>
 
@@ -532,6 +572,92 @@
             element.style.display = "none";
           }, 5000);
         }
+      });
+
+      function showStatus(element, message, type) {
+        element.textContent = message;
+        element.className = "status " + type;
+        element.style.display = "block";
+
+        setTimeout(() => {
+          element.style.display = "none";
+        }, 5000);
+      }
+
+      // Date masking for dd/mm/yyyy format
+      document
+        .getElementById("newsDate")
+        .addEventListener("input", function (e) {
+          let value = e.target.value.replace(/\D/g, ""); // Remove non-digits
+          if (value.length > 2) {
+            value = value.slice(0, 2) + "/" + value.slice(2);
+          }
+          if (value.length > 5) {
+            value = value.slice(0, 5) + "/" + value.slice(5, 9);
+          }
+          e.target.value = value;
+        });
+
+      // Update news data button functionality
+      const updateNewsDataBtn = document.getElementById("updateNewsData");
+      const newsDataStatus = document.getElementById("newsDataStatus");
+
+      updateNewsDataBtn.addEventListener("click", function () {
+        const position = document.getElementById("newsPosition").value;
+        const title = document.getElementById("newsTitle").value.trim();
+        const date = document.getElementById("newsDate").value.trim();
+
+        // Validate date format if provided
+        if (date && !/^\d{2}\/\d{2}\/\d{4}$/.test(date)) {
+          showStatus(
+            newsDataStatus,
+            "Date must be in dd/mm/yyyy format.",
+            "error"
+          );
+          return;
+        }
+
+        // Show loading state
+        updateNewsDataBtn.disabled = true;
+        updateNewsDataBtn.innerHTML = 'Updating... <div class="loading"></div>';
+
+        // Send to server using fetch API
+        fetch("/updateNewsData", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ position, title, date }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              showStatus(
+                newsDataStatus,
+                "News data updated successfully!",
+                "success"
+              );
+            } else {
+              showStatus(
+                newsDataStatus,
+                data.message || "Update failed",
+                "error"
+              );
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            showStatus(
+              newsDataStatus,
+              "An error occurred while updating the news data.",
+              "error"
+            );
+          })
+          .finally(() => {
+            // Reset button state
+            updateNewsDataBtn.disabled = false;
+            updateNewsDataBtn.innerHTML = "Update News Data";
+          });
       });
     </script>
   </body>

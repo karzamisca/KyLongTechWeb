@@ -159,4 +159,117 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Function to fetch news data
+function fetchNewsData() {
+  // Show loading indicator
+  const loadingElement = document.getElementById("news-loading");
+  if (loadingElement) {
+    loadingElement.style.display = "flex";
+  }
+
+  fetch("./news-data.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      // Hide loading indicator
+      if (loadingElement) {
+        loadingElement.style.display = "none";
+      }
+
+      createNewsItems(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching news data:", error);
+
+      // Hide loading indicator and show error message
+      if (loadingElement) {
+        loadingElement.innerHTML =
+          "<p>Không thể tải tin tức. Vui lòng thử lại sau.</p>";
+      }
+    });
+}
+
+// Function to create news items from data
+function createNewsItems(newsData) {
+  const newsGrid = document.getElementById("news-grid");
+
+  if (!newsGrid) {
+    console.error("News grid container not found.");
+    return;
+  }
+
+  // Remove loading indicator if it exists
+  const loadingElement = document.getElementById("news-loading");
+  if (loadingElement) {
+    loadingElement.remove();
+  }
+
+  // Create each news item
+  newsData.forEach((newsInfo) => {
+    const newsItem = document.createElement("div");
+    newsItem.className = "news-item";
+    newsItem.setAttribute("data-pdf", newsInfo.pdfUrl || "");
+
+    newsItem.innerHTML = `
+      <div class="news-thumbnail">
+        <img src="${
+          newsInfo.thumbnailUrl || "./thumbnails/default-thumbnail.png"
+        }" alt="${newsInfo.title || "Tin tức"}">
+        <div class="news-date">${newsInfo.date || "Không rõ ngày"}</div>
+      </div>
+      <h3 class="news-item-title">${newsInfo.title || "Không có tiêu đề"}</h3>
+      <div class="news-read-more">Xem chi tiết</div>
+    `;
+
+    // Add click event for PDF viewing
+    newsItem.addEventListener("click", function () {
+      const pdfUrl = this.getAttribute("data-pdf");
+      if (pdfUrl) {
+        const pdfFrame = document.getElementById("pdf-frame");
+        const pdfModal = document.getElementById("pdf-modal");
+
+        if (pdfFrame && pdfModal) {
+          pdfFrame.src = pdfUrl;
+          pdfModal.style.display = "block";
+        }
+      }
+    });
+
+    newsGrid.appendChild(newsItem);
+  });
+
+  // Set up modal close functionality
+  const closeModal = document.querySelector(".close-modal");
+  const pdfModal = document.getElementById("pdf-modal");
+
+  if (closeModal && pdfModal) {
+    closeModal.addEventListener("click", function () {
+      pdfModal.style.display = "none";
+      // Reset iframe source to stop PDF from loading in background
+      const pdfFrame = document.getElementById("pdf-frame");
+      if (pdfFrame) {
+        pdfFrame.src = "";
+      }
+    });
+
+    // Close modal when clicking outside of modal content
+    window.addEventListener("click", function (event) {
+      if (event.target === pdfModal) {
+        pdfModal.style.display = "none";
+        const pdfFrame = document.getElementById("pdf-frame");
+        if (pdfFrame) {
+          pdfFrame.src = "";
+        }
+      }
+    });
+  }
+}
+
+// Call the fetch function when the DOM is loaded
+document.addEventListener("DOMContentLoaded", fetchNewsData);
 // END OF NEWS BULLETIN SECTION JS
