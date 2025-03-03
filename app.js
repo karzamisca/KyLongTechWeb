@@ -11,7 +11,6 @@ const cookieParser = require("cookie-parser");
 const connectDB = require("./config/db");
 const authMiddleware = require("./middlewares/authMiddleware"); // JWT middleware
 require("dotenv").config();
-
 const app = express();
 connectDB();
 const PORT = process.env.PORT || 3000;
@@ -26,10 +25,14 @@ app.use(
   express.static(path.join(__dirname, "views/homePage/thumbnails"))
 );
 app.use("/pdfs", express.static(path.join(__dirname, "views/homePage/pdf")));
-// Routes
+
+// Public routes
 app.use("/", authRoute);
-app.use("/", pageRoute);
+app.use("/", pageRoute); // All routes in pageRoute are now public
+
+// Protected routes
 app.use("/", authMiddleware, fileRoute);
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
