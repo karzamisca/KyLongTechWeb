@@ -1,7 +1,14 @@
-// Function to safely load PDFs
-function loadPDF(pdfUrl, canvasContainer) {
+// Function to extract and display PDF content with better format preservation
+function extractPDFContent(pdfUrl, contentContainer) {
   // Clear previous content
-  canvasContainer.innerHTML = "";
+  contentContainer.innerHTML = "";
+
+  // Create loading indicator
+  const loadingDiv = document.createElement("div");
+  loadingDiv.className = "loading-indicator";
+  loadingDiv.innerHTML =
+    '<div class="spinner"></div><span>Đang tải nội dung PDF...</span>';
+  contentContainer.appendChild(loadingDiv);
 
   // Check if PDF.js is available
   if (typeof pdfjsLib !== "undefined") {
@@ -9,88 +16,152 @@ function loadPDF(pdfUrl, canvasContainer) {
     pdfjsLib.GlobalWorkerOptions.workerSrc =
       "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js";
 
-    // Render PDF on canvas
+    // Load the PDF document
     pdfjsLib
       .getDocument(pdfUrl)
       .promise.then(function (pdf) {
-        // Create a container for page navigation
+        // Create container for PDF content
+        const pdfContentContainer = document.createElement("div");
+        pdfContentContainer.className = "pdf-content-container";
+
+        // Create page navigation
         const navContainer = document.createElement("div");
         navContainer.className = "pdf-navigation";
-        navContainer.style.cssText = `
-          display: flex;
-          justify-content: center;
-          margin-bottom: 10px;
-        `;
 
-        // Create page navigation buttons
         const prevButton = document.createElement("button");
         prevButton.textContent = "← Trang trước";
-        prevButton.style.marginRight = "10px";
+        prevButton.className = "pdf-nav-button";
 
         const nextButton = document.createElement("button");
         nextButton.textContent = "Trang sau →";
+        nextButton.className = "pdf-nav-button";
 
         const pageIndicator = document.createElement("span");
-        pageIndicator.style.margin = "0 15px";
+        pageIndicator.className = "pdf-page-indicator";
 
         navContainer.appendChild(prevButton);
         navContainer.appendChild(pageIndicator);
         navContainer.appendChild(nextButton);
 
+        // Create download button
+        const downloadButton = document.createElement("button");
+        downloadButton.textContent = "Tải xuống PDF";
+        downloadButton.className = "pdf-download-button";
+        downloadButton.addEventListener("click", function () {
+          window.open(pdfUrl, "_blank");
+        });
+        navContainer.appendChild(downloadButton);
+
         // Track current page
         let currentPage = 1;
+        const pageContainers = [];
 
-        // Render a specific page
-        function renderPage(pageNum) {
-          // Remove existing canvases
-          const existingCanvases = canvasContainer.querySelectorAll("canvas");
-          existingCanvases.forEach((canvas) => canvas.remove());
+        // Function to render a page with combined approach
+        async function renderPage(pageNum) {
+          try {
+            const page = await pdf.getPage(pageNum);
 
-          pdf.getPage(pageNum).then(function (page) {
-            // Get the viewport of the page
-            const containerWidth = canvasContainer.clientWidth;
-            const viewport = page.getViewport({ scale: 1 });
+            // Create page container if it doesn't exist
+            if (!pageContainers[pageNum - 1]) {
+              const pageContainer = document.createElement("div");
+              pageContainer.className = "pdf-page";
+              pageContainer.dataset.pageNum = pageNum;
+              pageContainers[pageNum - 1] = pageContainer;
 
-            // Scale to full width
-            const scale = containerWidth / viewport.width;
-            const scaledViewport = page.getViewport({ scale: scale });
+              // Get viewport and scale
+              const viewport = page.getViewport({ scale: 1 });
+              const containerWidth = contentContainer.clientWidth - 40; // Account for padding
+              const scale = Math.min(containerWidth / viewport.width, 1.5); // Cap at 1.5x
+              const scaledViewport = page.getViewport({ scale });
 
-            // Create canvas
-            const canvas = document.createElement("canvas");
-            const context = canvas.getContext("2d");
-            canvas.width = scaledViewport.width;
-            canvas.height = scaledViewport.height;
-            canvas.style.maxWidth = "100%";
-            canvas.style.display = "block";
-            canvas.style.margin = "0 auto";
+              // Create canvas for graphics/images/backgrounds
+              const canvas = document.createElement("canvas");
+              const context = canvas.getContext("2d");
+              canvas.width = scaledViewport.width;
+              canvas.height = scaledViewport.height;
+              canvas.style.position = "absolute";
+              canvas.style.zIndex = "1";
 
-            // Render PDF page
-            const renderContext = {
-              canvasContext: context,
-              viewport: scaledViewport,
-            };
-            page.render(renderContext);
+              // Create text layer container
+              const textLayerDiv = document.createElement("div");
+              textLayerDiv.className = "pdf-text-layer";
+              textLayerDiv.style.position = "absolute";
+              textLayerDiv.style.left = "0";
+              textLayerDiv.style.top = "0";
+              textLayerDiv.style.right = "0";
+              textLayerDiv.style.bottom = "0";
+              textLayerDiv.style.zIndex = "2";
 
-            // Add canvas to container
-            canvasContainer.appendChild(canvas);
+              // Wrapper to handle positioning
+              const pageWrapper = document.createElement("div");
+              pageWrapper.className = "pdf-page-wrapper";
+              pageWrapper.style.position = "relative";
+              pageWrapper.style.width = `${scaledViewport.width}px`;
+              pageWrapper.style.height = `${scaledViewport.height}px`;
 
-            // Update page indicator
-            pageIndicator.textContent = `Trang ${pageNum}/${pdf.numPages}`;
+              pageWrapper.appendChild(canvas);
+              pageWrapper.appendChild(textLayerDiv);
+              pageContainer.appendChild(pageWrapper);
 
-            // Enable/disable navigation buttons
-            prevButton.disabled = pageNum <= 1;
-            nextButton.disabled = pageNum >= pdf.numPages;
-          });
+              // Render PDF page on canvas
+              const renderContext = {
+                canvasContext: context,
+                viewport: scaledViewport,
+              };
+
+              // Extract text content
+              const textContent = await page.getTextContent();
+
+              // Render page visually on canvas
+              await page.render(renderContext).promise;
+
+              // Process text layers
+              pdfjsLib.renderTextLayer({
+                textContent: textContent,
+                container: textLayerDiv,
+                viewport: scaledViewport,
+                textDivs: [],
+              });
+            }
+
+            return pageContainers[pageNum - 1];
+          } catch (error) {
+            console.error("Error rendering page:", error);
+            const errorDiv = document.createElement("div");
+            errorDiv.className = "pdf-error";
+            errorDiv.textContent = "Không thể hiển thị trang này";
+            return errorDiv;
+          }
         }
 
-        // Initial render
-        renderPage(currentPage);
+        // Function to display a specific page
+        async function displayPage(pageNum) {
+          // Hide all pages
+          pageContainers.forEach((container) => {
+            if (container) container.style.display = "none";
+          });
+
+          // Get or render the current page
+          const pageElement = await renderPage(pageNum);
+          pageElement.style.display = "block";
+
+          // Make sure the page container is empty before adding
+          pdfContentContainer.innerHTML = "";
+          pdfContentContainer.appendChild(pageElement);
+
+          // Update page indicator
+          pageIndicator.textContent = `Trang ${pageNum}/${pdf.numPages}`;
+
+          // Enable/disable navigation buttons
+          prevButton.disabled = pageNum <= 1;
+          nextButton.disabled = pageNum >= pdf.numPages;
+        }
 
         // Previous page button
         prevButton.addEventListener("click", () => {
           if (currentPage > 1) {
             currentPage--;
-            renderPage(currentPage);
+            displayPage(currentPage);
           }
         });
 
@@ -98,19 +169,24 @@ function loadPDF(pdfUrl, canvasContainer) {
         nextButton.addEventListener("click", () => {
           if (currentPage < pdf.numPages) {
             currentPage++;
-            renderPage(currentPage);
+            displayPage(currentPage);
           }
         });
 
-        // Add navigation to container before canvases
-        canvasContainer.insertBefore(navContainer, canvasContainer.firstChild);
+        // Remove loading indicator and set up content area
+        contentContainer.innerHTML = "";
+        contentContainer.appendChild(navContainer);
+        contentContainer.appendChild(pdfContentContainer);
+
+        // Display first page
+        displayPage(currentPage);
       })
       .catch(function (error) {
         console.error("Error loading PDF:", error);
-        displayFallbackMessage(canvasContainer);
+        displayFallbackMessage(contentContainer);
       });
   } else {
-    displayFallbackMessage(canvasContainer);
+    displayFallbackMessage(contentContainer);
   }
 }
 
@@ -118,17 +194,23 @@ function loadPDF(pdfUrl, canvasContainer) {
 function displayFallbackMessage(container) {
   container.innerHTML = "";
   const messageDiv = document.createElement("div");
-  messageDiv.style.cssText = `
-      text-align: center;
-      padding: 30px;
-      color: #e84e0f;
-      border: 1px solid #e0e0e0;
-    `;
+  messageDiv.className = "pdf-error-message";
   messageDiv.innerHTML = `
-      <h3>Không thể hiển thị PDF</h3>
+      <h3>Không thể hiển thị nội dung PDF</h3>
       <p>Vui lòng tải xuống tệp PDF hoặc thử lại sau.</p>
+      <button class="retry-button">Thử lại</button>
     `;
+
+  // Add retry button functionality
   container.appendChild(messageDiv);
+  const retryButton = messageDiv.querySelector(".retry-button");
+  retryButton.addEventListener("click", function () {
+    // Get current active item and trigger click
+    const activeItem = document.querySelector(".news-item.active");
+    if (activeItem) {
+      activeItem.click();
+    }
+  });
 }
 
 // Function to handle news selection events
@@ -158,9 +240,9 @@ function setupNewsSelection() {
       detailTitle.textContent = title;
       detailDate.textContent = `Ngày đăng: ${date}`;
 
-      // Load PDF on canvas
+      // Extract and display PDF content
       if (pdfUrl) {
-        loadPDF(pdfUrl, detailContent);
+        extractPDFContent(pdfUrl, detailContent);
       }
 
       // Show detail view, hide empty state
@@ -210,7 +292,7 @@ function fetchNewsData() {
       // Display error message to user
       const newsList = document.getElementById("news-list");
       newsList.innerHTML = `
-          <div class="error-message" style="text-align: center; padding: 30px; color: #e84e0f;">
+          <div class="error-message">
             <h3>Không thể tải dữ liệu tin tức</h3>
             <p>Vui lòng thử lại sau. Chi tiết lỗi: ${error.message}</p>
           </div>
@@ -218,27 +300,38 @@ function fetchNewsData() {
     });
 }
 
-// Script for loading PDF.js library
+// Script for loading PDF.js library with text layer support
 function loadPDFLibrary() {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement("script");
-    script.src =
-      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js";
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
+  return Promise.all([
+    new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js";
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    }),
+    new Promise((resolve, reject) => {
+      // This library helps with text layer rendering
+      const script = document.createElement("script");
+      script.src =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js";
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    }),
+  ]);
 }
 
 // Initialize the page
 document.addEventListener("DOMContentLoaded", function () {
-  // Load PDF.js library before fetching news
+  // Load PDF.js libraries before fetching news
   loadPDFLibrary()
     .then(() => {
       fetchNewsData();
     })
     .catch((error) => {
-      console.error("Could not load PDF.js library", error);
+      console.error("Could not load PDF.js libraries", error);
       fetchNewsData(); // Still attempt to fetch data
     });
 });
