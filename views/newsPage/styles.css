@@ -227,6 +227,42 @@ a:active {
   line-height: 1.5;
 }
 
+/* PDF Navigation Styles */
+.pdf-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+.pdf-navigation button {
+  background-color: #006241;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin: 0 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pdf-navigation button:hover {
+  background-color: #00875f;
+}
+
+.pdf-navigation button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pdf-navigation span {
+  font-weight: bold;
+  color: #333;
+}
+
 /* FOOTER SECTION CSS */
 .footer {
   background-color: #1a1a1a;
