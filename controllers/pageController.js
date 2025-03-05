@@ -8,3 +8,7 @@ exports.renderHomePage = (req, res) => {
 exports.renderContactPage = (req, res) => {
   res.sendFile(path.join(__dirname, "../views/contactPage/index.html"));
 };
+
+exports.renderNewsPage = (req, res) => {
+  res.sendFile(path.join(__dirname, "../views/newsPage/index.html"));
+};

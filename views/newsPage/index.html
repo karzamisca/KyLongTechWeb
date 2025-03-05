@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Liên Hệ - CÔNG TY TNHH ĐẦU TƯ THƯƠNG MẠI DỊCH VỤ KỲ LONG</title>
+    <title>Tin Tức - Công ty TNHH Đầu Tư Thương Mại Dịch Vụ Kỳ Long</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="../contactPage/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!----- HEADER SECTION HTML ----->
@@ -31,7 +31,6 @@
           <div class="company-year">SINCE 2010</div>
         </div>
       </div>
-
       <div class="contact-info">
         <div class="address">
           <div class="icon">
@@ -53,7 +52,6 @@
         </div>
       </div>
     </header>
-
     <nav class="nav-container">
       <ul class="nav-menu">
         <a
@@ -62,145 +60,75 @@
           title="Trang Chủ Kỳ Long - Dịch vụ khí đốt công nghiệp"
           >TRANG CHỦ</a
         >
-
         <a
           href="/aboutPage"
           id="about"
           title="Giới thiệu về Công ty Kỳ Long - Chuyên gia khí đốt"
           >GIỚI THIỆU</a
         >
-
         <a
           href="/productsPage"
           id="products"
           title="Sản phẩm khí đốt và thiết bị công nghiệp Kỳ Long"
           >SẢN PHẨM</a
         >
-
         <a
           href="/servicePage"
           id="services"
           title="Dịch vụ cung cấp khí đốt công nghiệp Kỳ Long"
           >DỊCH VỤ</a
         >
-
-        <a href="/newsPage" id="news" title="Tin tức và cập nhật từ Kỳ Long"
+        <a
+          href="/newsPage"
+          id="news"
+          title="Tin tức và cập nhật từ Kỳ Long"
+          class="active"
           >TIN TỨC</a
         >
-
         <a
           href="/lien-he"
           id="contact"
           title="Liên hệ với Kỳ Long - Đối tác khí đốt tin cậy"
-          class="active"
           >LIÊN HỆ</a
         >
       </ul>
     </nav>
     <!----- END OF HEADER SECTION HTML ----->
 
-    <!----- CONTACT PAGE CONTENT ----->
-    <section class="contact-section">
-      <h1 class="page-intro">LIÊN HỆ VỚI KỲ LONG</h1>
-
-      <div class="contact-container">
-        <div class="contact-form">
-          <h2>Gửi tin nhắn cho chúng tôi</h2>
-
-          <!-- Optional: Progress bar to show form completion -->
-          <div class="form-progress">
-            <div class="form-progress-bar"></div>
-          </div>
-
-          <form action="#" method="POST" id="contactForm">
-            <div class="form-group">
-              <label for="name" class="required">Họ và tên</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Nhập họ và tên của bạn"
-                required
-              />
-              <div class="error-message">Vui lòng nhập họ và tên của bạn</div>
-            </div>
-
-            <div class="form-group">
-              <label for="email" class="required">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Nhập địa chỉ email của bạn"
-                required
-              />
-              <div class="error-message">
-                Vui lòng nhập một địa chỉ email hợp lệ
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="phone" class="required">Số điện thoại</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Nhập số điện thoại của bạn"
-                required
-              />
-              <div class="error-message">
-                Vui lòng nhập số điện thoại của bạn
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="message" class="required">Nội dung</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Nhập nội dung tin nhắn của bạn"
-                rows="5"
-                required
-              ></textarea>
-              <div class="error-message">Vui lòng nhập nội dung tin nhắn</div>
-            </div>
-
-            <button type="submit" class="submit-button">Gửi tin nhắn</button>
-          </form>
-        </div>
-
-        <div class="contact-details">
-          <h2>Thông tin liên hệ</h2>
-          <div class="contact-info">
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <p>
-                81-83 Nguyễn Hữu Cầu, Phường Tân Định, Quận 1, TP. Hồ Chí Minh
-              </p>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-phone-alt"></i>
-              <p>Chưa áp dụng</p>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <p>Chưa áp dụng</p>
+    <!-- NEWS CONTENT SECTION - REDESIGNED AND SWAPPED -->
+    <main class="news-content">
+      <h1 class="news-title">TIN TỨC & CẬP NHẬT</h1>
+      <div class="news-container">
+        <!-- News Main Content - Detail view (now on left) -->
+        <div class="news-main" id="news-main">
+          <div class="no-selection" id="no-selection">
+            <div class="no-selection-icon">📰</div>
+            <div class="empty-message">Vui lòng chọn một tin tức</div>
+            <div class="empty-description">
+              Chọn một bài viết từ danh sách bên phải để xem chi tiết.
             </div>
           </div>
-
-          <div class="map-container">
+          <div class="news-detail" id="news-detail" style="display: none">
+            <div class="news-detail-header">
+              <h2 class="news-detail-title" id="detail-title"></h2>
+              <div class="news-detail-date" id="detail-date"></div>
+            </div>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.319614179758!2d106.6912143152602!3d10.78684089231477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3a5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2s81-83%20Nguy%E1%BB%85n%20H%E1%BB%AFu%20C%E1%BA%A7u%2C%20Ph%C6%B0%E1%BB%9Dng%20T%C3%A2n%20%C4%90%E1%BB%8Bnh%2C%20Qu%E1%BA%ADn%201%2C%20TP.%20H%E1%BB%93%20Ch%C3%AD%20Minh!5e0!3m2!1sen!2s!4v1631234567890!5m2!1sen!2s"
-              width="100%"
-              height="300"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
+              id="news-detail-content"
+              class="news-detail-content"
+              src=""
             ></iframe>
           </div>
         </div>
+
+        <!-- News Sidebar - List of news items (now on right) -->
+        <div class="news-sidebar">
+          <div class="news-list" id="news-list">
+            <!-- News items will be dynamically inserted here -->
+          </div>
+        </div>
       </div>
-    </section>
+    </main>
 
     <!----- FOOTER SECTION HTML ----->
     <footer class="footer">
@@ -228,7 +156,6 @@
             </li>
           </ul>
         </div>
-
         <div class="footer-column">
           <h4>Sản phẩm</h4>
           <ul>
@@ -260,7 +187,6 @@
             </li>
           </ul>
         </div>
-
         <div class="footer-column">
           <h4>Dịch vụ</h4>
           <ul>
@@ -292,7 +218,6 @@
             </li>
           </ul>
         </div>
-
         <div class="footer-column">
           <h4>Liên hệ</h4>
           <p>81-83 Nguyễn Hữu Cầu, Phường Tân Định, Quận 1, TP. Hồ Chí Minh</p>
@@ -308,7 +233,6 @@
           </p>
         </div>
       </div>
-
       <div class="footer-bottom">
         <div class="copyright">
           © 2025 Công ty TNHH Đầu Tư Thương Mại Dịch Vụ Kỳ Long. All rights
@@ -329,6 +253,6 @@
     </footer>
     <!----- END OF FOOTER SECTION HTML ----->
 
-    <script src="../contactPage/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

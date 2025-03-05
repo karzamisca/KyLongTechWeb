@@ -18,8 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static("views/homePage"));
-app.use(express.static("views/contactPage"));
+app.use(express.static("views"));
 app.use(
   "/thumbnails",
   express.static(path.join(__dirname, "views/homePage/thumbnails"))

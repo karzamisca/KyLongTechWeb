@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeModal = document.querySelector(".close-modal");
 
   // Fetch news data from JSON file
-  fetch("news-data.json")
+  fetch("homePage/news-data.json")
     .then((response) => response.json())
     .then((newsData) => {
       // Clear any existing news items
