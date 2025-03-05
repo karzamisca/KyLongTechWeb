@@ -49,13 +49,11 @@ const pdfFilter = (req, file, cb) => {
 const thumbnailUpload = multer({
   storage: thumbnailStorage,
   fileFilter: thumbnailFilter,
-  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
 }).single("file");
 
 const pdfUpload = multer({
   storage: pdfStorage,
   fileFilter: pdfFilter,
-  limits: { fileSize: 20 * 1024 * 1024 }, // 20MB limit
 }).single("file");
 
 // Function to rename file based on position
@@ -156,7 +154,7 @@ router.post(
 
 // Main page route
 router.get("/main", authMiddleware, (req, res) => {
-  res.sendFile("main.html", { root: "./views" }); // Serve the main page
+  res.sendFile("index.html", { root: "./views/adminPage" }); // Serve the admin page
 });
 
 router.get("/thumbnails", fileController.getCurrentThumbnails);
