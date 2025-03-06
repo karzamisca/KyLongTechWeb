@@ -227,7 +227,6 @@ a:active {
   line-height: 1.5;
 }
 
-/* PDF Navigation Styles */
 /* PDF Content Styles */
 .pdf-content-container {
   width: 100%;
@@ -544,5 +543,42 @@ a:active {
     margin-left: 0;
     margin-top: 10px;
     width: 100%;
+  }
+
+  .pdf-content-container {
+    padding: 10px;
+    min-height: 400px;
+  }
+
+  .pdf-page-wrapper {
+    transform-origin: top center;
+    margin: 0 auto;
+  }
+
+  /* Improve text readability on mobile */
+  .pdf-text-layer > span {
+    font-size: 16px !important; /* Force a minimum font size */
+  }
+
+  /* Add mobile-specific controls */
+  .mobile-pdf-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  .zoom-button {
+    background-color: #006241;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
   }
 }

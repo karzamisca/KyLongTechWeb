@@ -52,9 +52,34 @@ function extractPDFContent(pdfUrl, contentContainer) {
         });
         navContainer.appendChild(downloadButton);
 
+        // Add mobile-specific zoom controls
+        if (window.innerWidth <= 768) {
+          const mobileControls = document.createElement("div");
+          mobileControls.className = "mobile-pdf-controls";
+
+          const zoomOutButton = document.createElement("button");
+          zoomOutButton.className = "zoom-button";
+          zoomOutButton.innerHTML = "-";
+
+          const zoomInButton = document.createElement("button");
+          zoomInButton.className = "zoom-button";
+          zoomInButton.innerHTML = "+";
+
+          mobileControls.appendChild(zoomOutButton);
+          mobileControls.appendChild(zoomInButton);
+          navContainer.appendChild(mobileControls);
+
+          // Add zoom functionality (defined later when page is rendered)
+          window.mobileZoomButtons = {
+            zoomIn: zoomInButton,
+            zoomOut: zoomOutButton,
+          };
+        }
+
         // Track current page
         let currentPage = 1;
         const pageContainers = [];
+        let currentScale = 1;
 
         // Function to render a page with combined approach
         async function renderPage(pageNum) {
@@ -71,8 +96,18 @@ function extractPDFContent(pdfUrl, contentContainer) {
               // Get viewport and scale
               const viewport = page.getViewport({ scale: 1 });
               const containerWidth = contentContainer.clientWidth - 40; // Account for padding
-              const scale = Math.min(containerWidth / viewport.width, 1.5); // Cap at 1.5x
-              const scaledViewport = page.getViewport({ scale });
+
+              // Check if we're on a mobile device and adjust scale accordingly
+              const isMobile = window.innerWidth <= 768;
+              if (isMobile) {
+                // Use a higher minimum scale for mobile to ensure readability
+                currentScale = Math.max(containerWidth / viewport.width, 1.2);
+              } else {
+                // For desktop, cap at 1.5x as before
+                currentScale = Math.min(containerWidth / viewport.width, 1.5);
+              }
+
+              const scaledViewport = page.getViewport({ scale: currentScale });
 
               // Create canvas for graphics/images/backgrounds
               const canvas = document.createElement("canvas");
@@ -122,6 +157,86 @@ function extractPDFContent(pdfUrl, contentContainer) {
                 viewport: scaledViewport,
                 textDivs: [],
               });
+
+              // Add pinch-to-zoom functionality for touch devices
+              if ("ontouchstart" in window) {
+                let startDist = 0;
+                let initialScale = currentScale;
+
+                pageWrapper.addEventListener("touchstart", function (e) {
+                  if (e.touches.length === 2) {
+                    e.preventDefault();
+                    startDist = Math.hypot(
+                      e.touches[0].pageX - e.touches[1].pageX,
+                      e.touches[0].pageY - e.touches[1].pageY
+                    );
+
+                    // Get current scale if transform is already applied
+                    const transform = getComputedStyle(pageWrapper).transform;
+                    if (transform !== "none") {
+                      const matrix = new DOMMatrix(transform);
+                      initialScale = matrix.a;
+                    } else {
+                      initialScale = currentScale;
+                    }
+                  }
+                });
+
+                pageWrapper.addEventListener("touchmove", function (e) {
+                  if (e.touches.length === 2) {
+                    e.preventDefault(); // Prevent default pinch behavior
+
+                    const dist = Math.hypot(
+                      e.touches[0].pageX - e.touches[1].pageX,
+                      e.touches[0].pageY - e.touches[1].pageY
+                    );
+
+                    const delta = dist - startDist;
+                    if (Math.abs(delta) > 5) {
+                      // Threshold to avoid jitter
+                      const newScale = initialScale * (dist / startDist);
+                      // Limit the scale between reasonable bounds
+                      if (newScale >= 1 && newScale <= 3) {
+                        pageWrapper.style.transform = `scale(${newScale})`;
+                        pageWrapper.style.transformOrigin = "top center";
+                        currentScale = newScale;
+                      }
+                    }
+                  }
+                });
+
+                pageWrapper.addEventListener("touchend", function (e) {
+                  // Reset initialScale for the next pinch
+                  initialScale = currentScale;
+                });
+              }
+
+              // Setup zoom buttons for mobile
+              if (window.mobileZoomButtons) {
+                window.mobileZoomButtons.zoomIn.addEventListener(
+                  "click",
+                  function () {
+                    const newScale = currentScale + 0.2;
+                    if (newScale <= 3) {
+                      currentScale = newScale;
+                      pageWrapper.style.transform = `scale(${newScale})`;
+                      pageWrapper.style.transformOrigin = "top center";
+                    }
+                  }
+                );
+
+                window.mobileZoomButtons.zoomOut.addEventListener(
+                  "click",
+                  function () {
+                    const newScale = currentScale - 0.2;
+                    if (newScale >= 1) {
+                      currentScale = newScale;
+                      pageWrapper.style.transform = `scale(${newScale})`;
+                      pageWrapper.style.transformOrigin = "top center";
+                    }
+                  }
+                );
+              }
             }
 
             return pageContainers[pageNum - 1];
@@ -299,6 +414,18 @@ function fetchNewsData() {
         `;
     });
 }
+
+// Handle window resize events for responsive behavior
+window.addEventListener("resize", function () {
+  // If there's a currently displayed PDF, reload it to adjust to new size
+  const activeItem = document.querySelector(".news-item.active");
+  if (activeItem) {
+    // Small delay to ensure the resize is complete
+    setTimeout(() => {
+      activeItem.click();
+    }, 300);
+  }
+});
 
 // Script for loading PDF.js library with text layer support
 function loadPDFLibrary() {
