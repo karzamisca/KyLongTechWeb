@@ -116,106 +116,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // NEWS BULLETIN SECTION JS
 document.addEventListener("DOMContentLoaded", () => {
-  const newsGrid = document.querySelector(".news-grid");
-  const pdfModal = document.getElementById("pdf-modal");
-  const pdfContainer = document.querySelector(".pdf-container");
-  const closeModal = document.querySelector(".close-modal");
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const newsItems = document.querySelectorAll(".news-item");
 
-  // Fetch news data from JSON file
-  fetch("homePage/news-data.json")
-    .then((response) => response.json())
-    .then((newsData) => {
-      // Clear any existing news items
-      newsGrid.innerHTML = "";
-
-      // Create news items dynamically
-      newsData.forEach((newsItem) => {
-        const newsItemElement = document.createElement("div");
-        newsItemElement.classList.add("news-item");
-        newsItemElement.setAttribute("data-pdf", newsItem.pdfUrl);
-        newsItemElement.innerHTML = `
-          <div class="news-thumbnail">
-            <img src="${newsItem.thumbnailUrl}" alt="${newsItem.title}" />
-            <div class="news-date">${newsItem.date}</div>
-          </div>
-          <h3 class="news-item-title">${newsItem.title}</h3>
-          <div class="news-read-more">Xem chi tiết</div>
-        `;
-
-        // Add click event to open PDF
-        newsItemElement.addEventListener("click", () => {
-          openPdfViewer(newsItem.pdfUrl, newsItem.title);
-        });
-
-        newsGrid.appendChild(newsItemElement);
-      });
-
-      // Modal close functionality
-      closeModal.addEventListener("click", () => {
-        pdfModal.style.display = "none";
-        pdfContainer.innerHTML = ""; // Clear the container
-      });
-
-      // Close modal when clicking outside the modal content
-      pdfModal.addEventListener("click", (event) => {
-        if (event.target === pdfModal) {
-          pdfModal.style.display = "none";
-          pdfContainer.innerHTML = ""; // Clear the container
-        }
-      });
-    })
-    .catch((error) => {
-      console.error("Error loading news data:", error);
-      newsGrid.innerHTML =
-        "<p>Unable to load news items. Please try again later.</p>";
+  // Add click event to navigate to article page for each news item
+  newsItems.forEach((newsItem) => {
+    newsItem.addEventListener("click", () => {
+      const articleUrl = newsItem.getAttribute("data-article-url");
+      if (articleUrl) {
+        window.location.href = articleUrl;
+      }
     });
-
-  // Function to handle PDF opening based on device
-  function openPdfViewer(pdfUrl, title) {
-    pdfModal.style.display = "block";
-
-    if (isMobile) {
-      // Mobile fallback option - provide direct link and embedded viewer option
-      pdfContainer.innerHTML = `
-        <div class="pdf-options">
-          <h3>${title}</h3>
-          <p>Choose how to view this PDF:</p>
-          <div class="pdf-buttons">
-            <a href="${pdfUrl}" class="pdf-button download-button" target="_blank">Open in New Tab</a>
-            <button class="pdf-button embed-button" onclick="embedPdf('${pdfUrl}')">View Embedded</button>
-          </div>
-          <div id="embedded-pdf-container"></div>
-        </div>
-      `;
-
-      // Add the embedPdf function to the global scope
-      window.embedPdf = function (url) {
-        const container = document.getElementById("embedded-pdf-container");
-        container.innerHTML = `
-          <iframe 
-            src="${url}" 
-            width="100%" 
-            height="500px" 
-            frameborder="0"
-            allow="fullscreen"
-          ></iframe>
-        `;
-      };
-    } else {
-      // For desktop, use direct iframe
-      pdfContainer.innerHTML = `
-        <iframe 
-          id="pdf-frame" 
-          src="${pdfUrl}" 
-          width="100%" 
-          height="100%" 
-          frameborder="0"
-          allow="fullscreen"
-          title="${title}"
-        ></iframe>
-      `;
-    }
-  }
+  });
 });
 // END OF NEWS BULLETIN SECTION JS
