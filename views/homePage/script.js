@@ -176,21 +176,32 @@ document.addEventListener("DOMContentLoaded", () => {
     pdfModal.style.display = "block";
 
     if (isMobile) {
-      // For mobile devices, use Google PDF Viewer
-      const googlePdfViewer = `https://docs.google.com/viewer?url=${encodeURIComponent(
-        pdfUrl
-      )}&embedded=true`;
+      // Mobile fallback option - provide direct link and embedded viewer option
       pdfContainer.innerHTML = `
-        <iframe 
-          id="pdf-frame" 
-          src="${googlePdfViewer}" 
-          width="100%" 
-          height="100%" 
-          frameborder="0"
-          allow="fullscreen"
-          title="${title}"
-        ></iframe>
+        <div class="pdf-options">
+          <h3>${title}</h3>
+          <p>Choose how to view this PDF:</p>
+          <div class="pdf-buttons">
+            <a href="${pdfUrl}" class="pdf-button download-button" target="_blank">Open in New Tab</a>
+            <button class="pdf-button embed-button" onclick="embedPdf('${pdfUrl}')">View Embedded</button>
+          </div>
+          <div id="embedded-pdf-container"></div>
+        </div>
       `;
+
+      // Add the embedPdf function to the global scope
+      window.embedPdf = function (url) {
+        const container = document.getElementById("embedded-pdf-container");
+        container.innerHTML = `
+          <iframe 
+            src="${url}" 
+            width="100%" 
+            height="500px" 
+            frameborder="0"
+            allow="fullscreen"
+          ></iframe>
+        `;
+      };
     } else {
       // For desktop, use direct iframe
       pdfContainer.innerHTML = `

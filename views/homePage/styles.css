@@ -601,6 +601,7 @@ a:active {
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   height: 80vh;
+  overflow: auto;
 }
 
 .close-modal {
@@ -630,6 +631,55 @@ a:active {
   height: 100%;
   padding: 20px;
   box-sizing: border-box;
+}
+
+/* Mobile PDF viewing options */
+.pdf-options {
+  padding: 20px;
+  text-align: center;
+}
+
+.pdf-options h3 {
+  color: #30875f;
+  margin-bottom: 15px;
+}
+
+.pdf-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.pdf-button {
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.download-button {
+  background-color: #30875f;
+  color: white;
+  border: none;
+}
+
+.embed-button {
+  background-color: #e84e0f;
+  color: white;
+  border: none;
+}
+
+.pdf-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#embedded-pdf-container {
+  margin-top: 20px;
+  width: 100%;
 }
 /* END OF NEWS BULLETIN SECTION CSS */
 
@@ -875,8 +925,13 @@ a:active {
     right: 15px;
   }
 
-  .pdf-container {
-    padding: 10px;
+  .pdf-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pdf-button {
+    width: 100%;
   }
 
   .partners-logo-container {
