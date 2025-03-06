@@ -118,8 +118,9 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", () => {
   const newsGrid = document.querySelector(".news-grid");
   const pdfModal = document.getElementById("pdf-modal");
-  const pdfFrame = document.getElementById("pdf-frame");
+  const pdfContainer = document.querySelector(".pdf-container");
   const closeModal = document.querySelector(".close-modal");
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   // Fetch news data from JSON file
   fetch("homePage/news-data.json")
@@ -133,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const newsItemElement = document.createElement("div");
         newsItemElement.classList.add("news-item");
         newsItemElement.setAttribute("data-pdf", newsItem.pdfUrl);
-
         newsItemElement.innerHTML = `
           <div class="news-thumbnail">
             <img src="${newsItem.thumbnailUrl}" alt="${newsItem.title}" />
@@ -145,8 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Add click event to open PDF
         newsItemElement.addEventListener("click", () => {
-          pdfFrame.src = newsItem.pdfUrl;
-          pdfModal.style.display = "block";
+          openPdfViewer(newsItem.pdfUrl, newsItem.title);
         });
 
         newsGrid.appendChild(newsItemElement);
@@ -155,14 +154,14 @@ document.addEventListener("DOMContentLoaded", () => {
       // Modal close functionality
       closeModal.addEventListener("click", () => {
         pdfModal.style.display = "none";
-        pdfFrame.src = ""; // Clear the iframe src
+        pdfContainer.innerHTML = ""; // Clear the container
       });
 
       // Close modal when clicking outside the modal content
       pdfModal.addEventListener("click", (event) => {
         if (event.target === pdfModal) {
           pdfModal.style.display = "none";
-          pdfFrame.src = ""; // Clear the iframe src
+          pdfContainer.innerHTML = ""; // Clear the container
         }
       });
     })
@@ -171,5 +170,41 @@ document.addEventListener("DOMContentLoaded", () => {
       newsGrid.innerHTML =
         "<p>Unable to load news items. Please try again later.</p>";
     });
+
+  // Function to handle PDF opening based on device
+  function openPdfViewer(pdfUrl, title) {
+    pdfModal.style.display = "block";
+
+    if (isMobile) {
+      // For mobile devices, use Google PDF Viewer
+      const googlePdfViewer = `https://docs.google.com/viewer?url=${encodeURIComponent(
+        pdfUrl
+      )}&embedded=true`;
+      pdfContainer.innerHTML = `
+        <iframe 
+          id="pdf-frame" 
+          src="${googlePdfViewer}" 
+          width="100%" 
+          height="100%" 
+          frameborder="0"
+          allow="fullscreen"
+          title="${title}"
+        ></iframe>
+      `;
+    } else {
+      // For desktop, use direct iframe
+      pdfContainer.innerHTML = `
+        <iframe 
+          id="pdf-frame" 
+          src="${pdfUrl}" 
+          width="100%" 
+          height="100%" 
+          frameborder="0"
+          allow="fullscreen"
+          title="${title}"
+        ></iframe>
+      `;
+    }
+  }
 });
 // END OF NEWS BULLETIN SECTION JS
