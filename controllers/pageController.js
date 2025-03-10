@@ -16,3 +16,9 @@ exports.renderContactPage = (req, res) => {
 exports.renderNewsPage = (req, res) => {
   res.sendFile(path.join(__dirname, "../views/newsPage/index.html"));
 };
+
+exports.renderNewsArticle1 = (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "../views/newsPage/newsArticle1/newsArticle1.html")
+  );
+};

@@ -5,7 +5,8 @@ const pageController = require("../controllers/pageController");
 
 router.get("/sitemap.xml", pageController.renderSiteMap);
 router.get("/", pageController.renderHomePage);
-router.get("/newsPage", pageController.renderNewsPage);
 router.get("/lien-he", pageController.renderContactPage);
+router.get("/newsPage", pageController.renderNewsPage);
+router.get("/newsArticle1", pageController.renderNewsArticle1);
 
 module.exports = router;
