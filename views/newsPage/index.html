@@ -38,7 +38,7 @@
           </div>
           <div class="address-text">
             <div>81-83 Nguyễn Hữu Cầu,</div>
-            <div>Phường Tân Định, Quận 1, TP. Hồ Chí Minh</div>
+            <div>Phường Tân Định, Quận 1, TP.HCM</div>
           </div>
         </div>
         <div class="phone">
@@ -47,7 +47,7 @@
           </div>
           <div class="phone-text">
             <div>Số điện thoại</div>
-            <div>+84-090-2-000-899</div>
+            <div>Chưa áp dụng</div>
           </div>
         </div>
       </div>
@@ -78,11 +78,7 @@
           title="Dịch vụ cung cấp khí đốt công nghiệp Kỳ Long"
           >DỊCH VỤ</a
         >
-        <a
-          href="/newsPage"
-          id="news"
-          title="Tin tức và cập nhật từ Kỳ Long"
-          class="active"
+        <a href="/newsPage" id="news" title="Tin tức và cập nhật từ Kỳ Long"
           >TIN TỨC</a
         >
         <a
@@ -95,39 +91,196 @@
     </nav>
     <!----- END OF HEADER SECTION HTML ----->
 
-    <!-- NEWS CONTENT SECTION - REDESIGNED AND SWAPPED -->
-    <main class="news-content">
-      <h1 class="news-title">TIN TỨC & CẬP NHẬT</h1>
-      <div class="news-container">
-        <!-- News Main Content - Detail view (now on left) -->
-        <div class="news-main" id="news-main">
-          <div class="no-selection" id="no-selection">
-            <div class="no-selection-icon">📰</div>
-            <div class="empty-message">Vui lòng chọn một tin tức</div>
-            <div class="empty-description">
-              Chọn một bài viết từ danh sách bên phải để xem chi tiết.
-            </div>
-          </div>
-          <div class="news-detail" id="news-detail" style="display: none">
-            <div class="news-detail-header">
-              <h2 class="news-detail-title" id="detail-title"></h2>
-              <div class="news-detail-date" id="detail-date"></div>
-            </div>
-            <!-- Replace iframe with a div to contain the canvas -->
-            <div id="news-detail-content" class="news-detail-content"></div>
-          </div>
-        </div>
+    <!-- NEWS CONTENT SECTION -->
+    <main class="news-container">
+      <h1 class="page-title">Tin Tức & Sự Kiện</h1>
 
-        <!-- News Sidebar - List of news items (now on right) -->
-        <div class="news-sidebar">
-          <div class="news-list" id="news-list">
-            <!-- News items will be dynamically inserted here -->
+      <div class="news-filter">
+        <button class="filter-btn active">Tất Cả</button>
+        <button class="filter-btn">Công Nghệ</button>
+        <button class="filter-btn">Thị Trường</button>
+        <button class="filter-btn">Doanh Nghiệp</button>
+        <button class="filter-btn">Hoạt Động</button>
+      </div>
+
+      <div class="news-grid">
+        <!-- News Item 1 -->
+        <a href="/news/giai-phap-khi-dot-cong-nghiep-2025" class="news-card">
+          <div class="news-thumbnail">
+            <img src="https://i.imgur.com/exD5v9p.png" alt="Tin tức Kỳ Long" />
           </div>
-        </div>
+          <div class="news-content">
+            <span class="news-category">Công Nghệ</span>
+            <h3 class="news-title">
+              TỔNG QUAN VỀ DIỄN BIẾN GIÁ KHÍ LNG TRONG 5 NĂM QUA
+            </h3>
+            <p class="news-excerpt">
+              Giá khí LNG đang trở thành một trong những vấn đề nóng hổi trong
+              ngành năng lượng hiện nay.
+            </p>
+            <div class="news-date"><i>🕒</i> 05/03/2025</div>
+          </div>
+        </a>
+
+        <!-- News Item 2 -->
+        <a href="/news/hop-tac-doanh-nghiep-quoc-te" class="news-card">
+          <div class="news-thumbnail">
+            <img src="https://i.imgur.com/exD5v9p.png" alt="Tin tức Kỳ Long" />
+          </div>
+          <div class="news-content">
+            <span class="news-category">Doanh Nghiệp</span>
+            <h3 class="news-title">
+              TỔNG QUAN VỀ DIỄN BIẾN GIÁ KHÍ LNG TRONG 5 NĂM QUA
+            </h3>
+            <p class="news-excerpt">
+              Giá khí LNG đang trở thành một trong những vấn đề nóng hổi trong
+              ngành năng lượng hiện nay.ng.
+            </p>
+            <div class="news-date"><i>🕒</i> 28/02/2025</div>
+          </div>
+        </a>
+
+        <!-- News Item 3 -->
+        <a href="/news/thi-truong-khi-dot-2025" class="news-card">
+          <div class="news-thumbnail">
+            <img src="https://i.imgur.com/exD5v9p.png" alt="Tin tức Kỳ Long" />
+          </div>
+          <div class="news-content">
+            <span class="news-category">Thị Trường</span>
+            <h3 class="news-title">
+              TỔNG QUAN VỀ DIỄN BIẾN GIÁ KHÍ LNG TRONG 5 NĂM QUA
+            </h3>
+            <p class="news-excerpt">
+              Giá khí LNG đang trở thành một trong những vấn đề nóng hổi trong
+              ngành năng lượng hiện nay.
+            </p>
+            <div class="news-date"><i>🕒</i> 20/02/2025</div>
+          </div>
+        </a>
+
+        <!-- News Item 4 -->
+        <a href="/news/dao-tao-ky-thuat-vien" class="news-card">
+          <div class="news-thumbnail">
+            <img src="https://i.imgur.com/exD5v9p.png" alt="Tin tức Kỳ Long" />
+          </div>
+          <div class="news-content">
+            <span class="news-category">Hoạt Động</span>
+            <h3 class="news-title">
+              TỔNG QUAN VỀ DIỄN BIẾN GIÁ KHÍ LNG TRONG 5 NĂM QUA
+            </h3>
+            <p class="news-excerpt">
+              Giá khí LNG đang trở thành một trong những vấn đề nóng hổi trong
+              ngành năng lượng hiện nay.
+            </p>
+            <div class="news-date"><i>🕒</i> 15/02/2025</div>
+          </div>
+        </a>
+
+        <!-- News Item 5 -->
+        <a href="/news/cong-nghe-khi-hoa-long" class="news-card">
+          <div class="news-thumbnail">
+            <img src="https://i.imgur.com/exD5v9p.png" alt="Tin tức Kỳ Long" />
+          </div>
+          <div class="news-content">
+            <span class="news-category">Công Nghệ</span>
+            <h3 class="news-title">
+              TỔNG QUAN VỀ DIỄN BIẾN GIÁ KHÍ LNG TRONG 5 NĂM QUA
+            </h3>
+            <p class="news-excerpt">
+              Giá khí LNG đang trở thành một trong những vấn đề nóng hổi trong
+              ngành năng lượng hiện nay.
+            </p>
+            <div class="news-date"><i>🕒</i> 08/02/2025</div>
+          </div>
+        </a>
+
+        <!-- News Item 6 -->
+        <a href="/news/trien-lam-cong-nghiep" class="news-card">
+          <div class="news-thumbnail">
+            <img src="https://i.imgur.com/exD5v9p.png" alt="Tin tức Kỳ Long" />
+          </div>
+          <div class="news-content">
+            <span class="news-category">Hoạt Động</span>
+            <h3 class="news-title">
+              TỔNG QUAN VỀ DIỄN BIẾN GIÁ KHÍ LNG TRONG 5 NĂM QUA
+            </h3>
+            <p class="news-excerpt">
+              Giá khí LNG đang trở thành một trong những vấn đề nóng hổi trong
+              ngành năng lượng hiện nay.
+            </p>
+            <div class="news-date"><i>🕒</i> 30/01/2025</div>
+          </div>
+        </a>
+
+        <!-- News Item 7 -->
+        <a href="/news/trien-lam-cong-nghiep" class="news-card">
+          <div class="news-thumbnail">
+            <img src="https://i.imgur.com/exD5v9p.png" alt="Tin tức Kỳ Long" />
+          </div>
+          <div class="news-content">
+            <span class="news-category">Hoạt Động</span>
+            <h3 class="news-title">
+              TỔNG QUAN VỀ DIỄN BIẾN GIÁ KHÍ LNG TRONG 5 NĂM QUA
+            </h3>
+            <p class="news-excerpt">
+              Giá khí LNG đang trở thành một trong những vấn đề nóng hổi trong
+              ngành năng lượng hiện nay.
+            </p>
+            <div class="news-date"><i>🕒</i> 30/01/2025</div>
+          </div>
+        </a>
+
+        <!-- News Item 8 -->
+        <a href="/news/trien-lam-cong-nghiep" class="news-card">
+          <div class="news-thumbnail">
+            <img src="https://i.imgur.com/exD5v9p.png" alt="Tin tức Kỳ Long" />
+          </div>
+          <div class="news-content">
+            <span class="news-category">Hoạt Động</span>
+            <h3 class="news-title">
+              TỔNG QUAN VỀ DIỄN BIẾN GIÁ KHÍ LNG TRONG 5 NĂM QUA
+            </h3>
+            <p class="news-excerpt">
+              Giá khí LNG đang trở thành một trong những vấn đề nóng hổi trong
+              ngành năng lượng hiện nay.
+            </p>
+            <div class="news-date"><i>🕒</i> 30/01/2025</div>
+          </div>
+        </a>
+
+        <!-- News Item 9 -->
+        <a href="/news/trien-lam-cong-nghiep" class="news-card">
+          <div class="news-thumbnail">
+            <img src="https://i.imgur.com/exD5v9p.png" alt="Tin tức Kỳ Long" />
+          </div>
+          <div class="news-content">
+            <span class="news-category">Hoạt Động</span>
+            <h3 class="news-title">
+              TỔNG QUAN VỀ DIỄN BIẾN GIÁ KHÍ LNG TRONG 5 NĂM QUA
+            </h3>
+            <p class="news-excerpt">
+              Giá khí LNG đang trở thành một trong những vấn đề nóng hổi trong
+              ngành năng lượng hiện nay.
+            </p>
+            <div class="news-date"><i>🕒</i> 30/01/2025</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="news-pagination">
+        <!-- Pagination buttons will be generated by JavaScript -->
+      </div>
+
+      <div
+        class="no-results"
+        style="display: none; text-align: center; padding: 2rem; width: 100%"
+      >
+        <p>Không có tin tức nào phù hợp với bộ lọc đã chọn.</p>
       </div>
     </main>
+    <!-- END OF NEWS CONTENT SECTION -->
 
-    <!----- FOOTER SECTION HTML ----->
+    <!-- FOOTER SECTION HTML -->
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-column">
@@ -248,8 +401,7 @@
         </div>
       </div>
     </footer>
-    <!----- END OF FOOTER SECTION HTML ----->
-
+    <!-- END OF FOOTER SECTION HTML -->
     <script src="script.js"></script>
   </body>
 </html>
