@@ -19,6 +19,6 @@ exports.renderNewsPage = (req, res) => {
 
 exports.renderNewsArticle1 = (req, res) => {
   res.sendFile(
-    path.join(__dirname, "../views/newsPage/newsArticle1/newsArticle1.html")
+    path.join(__dirname, "../views/newsArticleHTML/newsArticle1.html")
   );
 };

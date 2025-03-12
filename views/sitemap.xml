@@ -3,204 +3,174 @@
   <!-- Main Pages -->
   <url>
     <loc>https://kylongtech.com/</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://kylongtech.com/aboutPage</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kylongtech.com/productsPage</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kylongtech.com/servicePage</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kylongtech.com/newsPage</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kylongtech.com/lien-he</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- About Page Sections -->
-  <url>
-    <loc>https://kylongtech.com/aboutPage#ve-chung-toi</loc>
-    <lastmod>2025-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kylongtech.com/aboutPage#doi-ky-su</loc>
-    <lastmod>2025-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kylongtech.com/aboutPage#cong-nghe</loc>
-    <lastmod>2025-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kylongtech.com/aboutPage#co-so-vat-chat</loc>
-    <lastmod>2025-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Products Page Sections -->
+  <!-- Product Categories -->
   <url>
     <loc>https://kylongtech.com/productsPage#nhien-lieu</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kylongtech.com/productsPage#che-tao</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kylongtech.com/productsPage#thiet-bi</loc>
-    <lastmod>2025-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kylongtech.com/productsPage#khi-dot</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kylongtech.com/productsPage#phu-kien</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kylongtech.com/productsPage#khi-dot</loc>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <!-- Service Page Sections -->
-  <url>
-    <loc>https://kylongtech.com/servicePage#sang-tao</loc>
-    <lastmod>2025-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kylongtech.com/servicePage#an-toan</loc>
-    <lastmod>2025-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kylongtech.com/servicePage#toc-do</loc>
-    <lastmod>2025-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kylongtech.com/servicePage#de-dang</loc>
-    <lastmod>2025-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kylongtech.com/servicePage#linh-dong</loc>
-    <lastmod>2025-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kylongtech.com/servicePage#xu-huong</loc>
-    <lastmod>2025-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kylongtech.com/servicePage#van-tai</loc>
-    <lastmod>2025-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- Service Categories -->
   <url>
     <loc>https://kylongtech.com/servicePage#tu-van</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kylongtech.com/servicePage#lap-dat</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kylongtech.com/servicePage#bao-tri</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kylongtech.com/servicePage#van-tai</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kylongtech.com/servicePage#sang-tao</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kylongtech.com/servicePage#an-toan</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kylongtech.com/servicePage#toc-do</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kylongtech.com/servicePage#de-dang</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kylongtech.com/servicePage#linh-dong</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kylongtech.com/servicePage#xu-huong</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- About Page Sections -->
+  <url>
+    <loc>https://kylongtech.com/aboutPage#doi-ky-su</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kylongtech.com/aboutPage#cong-nghe</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <!-- News Articles -->
   <url>
-    <loc>https://kylongtech.com/newsPage/newsArticle1</loc>
+    <loc>https://kylongtech.com/newsArticle1</loc>
     <lastmod>2025-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://kylongtech.com/newsPage/newsArticle2</loc>
-    <lastmod>2025-02-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://kylongtech.com/newsPage/newsArticle3</loc>
-    <lastmod>2025-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://kylongtech.com/newsPage/newsArticle4</loc>
-    <lastmod>2025-02-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <changefreq>never</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <!-- Legal Pages -->
   <url>
-    <loc>https://kylongtech.com/licences</loc>
-    <lastmod>2025-03-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://kylongtech.com/privacy-policy</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://kylongtech.com/terms-of-service</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://kylongtech.com/licences</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
 </urlset>
