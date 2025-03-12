@@ -5,6 +5,10 @@ exports.renderSiteMap = (req, res) => {
   res.sendFile(path.join(__dirname, "../views/sitemap.xml"));
 };
 
+exports.renderRobotsTXT = (req, res) => {
+  res.sendFile(path.join(__dirname, "../views/robots.txt"));
+};
+
 exports.renderHomePage = (req, res) => {
   res.sendFile(path.join(__dirname, "../views/homePage/index.html"));
 };

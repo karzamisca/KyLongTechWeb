@@ -4,6 +4,7 @@ const router = express.Router();
 const pageController = require("../controllers/pageController");
 
 router.get("/sitemap.xml", pageController.renderSiteMap);
+router.get("/robots.txt", pageController.renderRobotsTXT);
 router.get("/", pageController.renderHomePage);
 router.get("/lien-he", pageController.renderContactPage);
 router.get("/newsPage", pageController.renderNewsPage);

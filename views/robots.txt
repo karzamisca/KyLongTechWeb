@@ -1,0 +1,42 @@
+User-agent: *
+Allow: /
+Allow: /homePage/
+Allow: /aboutPage/
+Allow: /productsPage/
+Allow: /servicePage/
+Allow: /newsPage/
+Allow: /lien-he/
+
+# Block access to admin areas
+Disallow: /admin/
+Disallow: /wp-admin/
+
+# Block development/staging areas if they exist
+Disallow: /dev/
+Disallow: /staging/
+Disallow: /test/
+
+# Block specific file types
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.sql$
+Disallow: /*.log$
+
+# Allow sitemap
+Allow: /sitemap.xml
+
+# Recommended crawl delay for most bots
+Crawl-delay: 10
+
+# Specific instructions for major search engines
+User-agent: Googlebot
+Crawl-delay: 5
+
+User-agent: Bingbot
+Crawl-delay: 10
+
+User-agent: Baiduspider
+Disallow: /
+
+# Sitemap location
+Sitemap: https://kylongtech.com/sitemap.xml
