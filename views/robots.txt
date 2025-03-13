@@ -7,20 +7,6 @@ Allow: /servicePage/
 Allow: /newsPage/
 Allow: /lien-he/
 
-# Block access to admin areas
-Disallow: /admin/
-Disallow: /wp-admin/
-
-# Block development/staging areas if they exist
-Disallow: /dev/
-Disallow: /staging/
-Disallow: /test/
-
-# Block specific file types
-Disallow: /*.json$
-Disallow: /*.sql$
-Disallow: /*.log$
-
 # Allow sitemap
 Allow: /sitemap.xml
 
