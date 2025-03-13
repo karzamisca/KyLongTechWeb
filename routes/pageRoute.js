@@ -7,6 +7,7 @@ router.get("/sitemap.xml", pageController.renderSiteMap);
 router.get("/robots.txt", pageController.renderRobotsTXT);
 router.get("/", pageController.renderHomePage);
 router.get("/lien-he", pageController.renderContactPage);
+router.get("/aboutPage", pageController.renderAboutPage);
 router.get("/newsPage", pageController.renderNewsPage);
 router.get("/newsArticle1", pageController.renderNewsArticle1);
 

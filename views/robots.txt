@@ -18,7 +18,6 @@ Disallow: /test/
 
 # Block specific file types
 Disallow: /*.json$
-Disallow: /*.xml$
 Disallow: /*.sql$
 Disallow: /*.log$
 
