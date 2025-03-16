@@ -134,13 +134,26 @@
   
   <!-- About Page Sections -->
   <url>
-    <loc>https://kylongtech.com/aboutPage#doi-ky-su</loc>
+    <loc>https://kylongtech.com/aboutPage#gioi-thieu</loc>
     <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kylongtech.com/aboutPage#cong-nghe</loc>
+    <loc>https://kylongtech.com/aboutPage#thi-phan</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+    <url>
+    <loc>https://kylongtech.com/aboutPage#tam-nhin</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+    </url>
+    <url>
+    <loc>https://kylongtech.com/aboutPage#loi-the</loc>
     <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
