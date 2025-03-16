@@ -145,14 +145,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-    <url>
+  <url>
     <loc>https://kylongtech.com/aboutPage#tam-nhin</loc>
     <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-    </url>
-    <url>
+  <url>
     <loc>https://kylongtech.com/aboutPage#loi-the</loc>
     <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
