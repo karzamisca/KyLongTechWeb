@@ -285,6 +285,90 @@ a:active {
   line-height: 1.6;
 }
 
+/* Business Culture Section Styles */
+.business-culture-section {
+  padding: 40px 5%;
+  background-color: #fff;
+  border: 1px solid #e84e0f;
+  margin: 40px 5%;
+  border-radius: 5px;
+}
+
+.culture-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.culture-container {
+  display: flex;
+  gap: 30px;
+}
+
+.culture-left,
+.culture-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.culture-item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.culture-title {
+  font-size: 26px;
+  color: white;
+  background-color: #e85c41;
+  padding: 12px 25px;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.culture-text {
+  padding: 0 10px;
+}
+
+.culture-text p {
+  font-size: 18px;
+  color: #006241;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.culture-image {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Make images smaller with max-height */
+  max-height: 180px;
+}
+
+.culture-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.culture-image img:hover {
+  transform: scale(1.05);
+}
+
 /* Footer Section */
 .footer {
   background-color: #1a1a1a;
@@ -446,6 +530,15 @@ a:active {
     top: -10px; /* Position the marker above the text in vertical layout */
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  .culture-container {
+    flex-direction: column;
+  }
+
+  .culture-title {
+    width: 100%;
+    text-align: center;
   }
 
   .footer-container {
