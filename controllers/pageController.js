@@ -18,7 +18,9 @@ exports.renderContactPage = (req, res) => {
 };
 
 exports.renderNewsPage = (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/newsPage/index.html"));
+  res.sendFile(
+    path.join(__dirname, "../views/newsPage/newsMain/newsMain.html")
+  );
 };
 
 exports.renderAboutPage = (req, res) => {
@@ -27,6 +29,12 @@ exports.renderAboutPage = (req, res) => {
 
 exports.renderNewsArticle1 = (req, res) => {
   res.sendFile(
-    path.join(__dirname, "../views/newsArticleHTML/newsArticle1.html")
+    path.join(__dirname, "../views/newsPage/newsArticle1/newsArticle1.html")
+  );
+};
+
+exports.renderNewsArticle2 = (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "../views/newsPage/newsArticle2/newsArticle2.html")
   );
 };
