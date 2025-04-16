@@ -17,14 +17,18 @@ exports.renderContactPage = (req, res) => {
   res.sendFile(path.join(__dirname, "../views/contactPage/index.html"));
 };
 
+exports.renderAboutPage = (req, res) => {
+  res.sendFile(path.join(__dirname, "../views/aboutPage/index.html"));
+};
+
+exports.renderProductPage = (req, res) => {
+  res.sendFile(path.join(__dirname, "../views/productPage/productMain.html"));
+};
+
 exports.renderNewsPage = (req, res) => {
   res.sendFile(
     path.join(__dirname, "../views/newsPage/newsMain/newsMain.html")
   );
-};
-
-exports.renderAboutPage = (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/aboutPage/index.html"));
 };
 
 exports.renderNewsArticle1 = (req, res) => {

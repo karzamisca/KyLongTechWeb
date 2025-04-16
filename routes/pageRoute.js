@@ -8,6 +8,7 @@ router.get("/robots.txt", pageController.renderRobotsTXT);
 router.get("/", pageController.renderHomePage);
 router.get("/lien-he", pageController.renderContactPage);
 router.get("/aboutPage", pageController.renderAboutPage);
+router.get("/productMain", pageController.renderProductPage);
 router.get("/newsMain", pageController.renderNewsPage);
 router.get("/newsArticle1", pageController.renderNewsArticle1);
 router.get("/newsArticle2", pageController.renderNewsArticle2);
