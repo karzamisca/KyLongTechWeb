@@ -1,5 +1,5 @@
+////views\components\header\header.js
 // Simple JavaScript for navigation highlighting
-// components/header/header.js - Better version
 document.addEventListener("DOMContentLoaded", function () {
   // Function to initialize the header nav after the header HTML has been loaded
   function initializeHeaderNav() {

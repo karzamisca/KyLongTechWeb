@@ -1,4 +1,4 @@
-////views\newsPages\newsArticle1\newsArticle2.js
+////views\newsPages\newsArticle2\newsArticle2.js
 // Load header
 fetch("components/header/header.html")
   .then((response) => response.text())
