@@ -1,5 +1,5 @@
 /* views\components\header\header.css */
-/* HEADER SECTION CSS */
+/* Core layout styles */
 .header {
   display: flex;
   justify-content: space-between;
@@ -7,6 +7,7 @@
   padding: 20px 10%;
 }
 
+/* Logo and company info */
 .logo-container {
   display: flex;
   align-items: center;
@@ -15,6 +16,7 @@
 .logo {
   width: 100px;
   height: auto;
+  will-change: transform; /* Helps with performance */
 }
 
 .company-info {
@@ -26,17 +28,16 @@
   font-size: 20px;
   font-weight: bold;
 }
-
 .company-slogan {
   color: #e84e0f;
   font-style: italic;
 }
-
 .company-year {
   color: #006241;
   margin-top: 5px;
 }
 
+/* Contact section */
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -62,16 +63,9 @@
   color: #e84e0f;
 }
 
-.address-text,
-.phone-text,
-.mail-text {
-  display: flex;
-  flex-direction: column;
-}
-
+/* Navigation */
 .nav-container {
   background-color: #30875f;
-  color: white;
 }
 
 .nav-menu {
@@ -81,27 +75,24 @@
   padding: 20px 10%;
 }
 
-/* Updated selector to target a elements directly */
 .nav-menu a {
   color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
-  transition: all 0.3s ease;
+  transition: color 0.3s;
 }
 
-/* Updated hover selector */
-.nav-menu a:hover {
-  color: #e84e0f;
-}
-
-/* Added active class styling */
+.nav-menu a:hover,
 .nav-menu a.active {
   color: #e84e0f;
+}
+
+.nav-menu a.active {
   text-decoration: underline;
 }
 
-/* Responsive styles */
+/* Media queries */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;

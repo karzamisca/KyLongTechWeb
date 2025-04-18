@@ -1,42 +1,35 @@
 ////views\components\header\header.js
-// Simple JavaScript for navigation highlighting
 document.addEventListener("DOMContentLoaded", function () {
-  // Function to initialize the header nav after the header HTML has been loaded
-  function initializeHeaderNav() {
-    const navItems = document.querySelectorAll(".nav-menu a");
+  // Use MutationObserver instead of polling intervals
+  const headerEl = document.getElementById("header");
 
-    if (navItems.length === 0) {
-      // If header items haven't loaded yet, try again after a short delay
-      setTimeout(initializeHeaderNav, 100);
-      return;
-    }
-
-    navItems.forEach((item) => {
-      item.addEventListener("click", function (e) {
-        // Only prevent default for same-site navigation if needed
-        if (this.getAttribute("href").startsWith("/") && false) {
-          // Disabling preventDefault to allow normal navigation
-          e.preventDefault();
-        }
-
-        // Remove active class from all items
-        navItems.forEach((link) => {
-          link.classList.remove("active");
-        });
-
-        // Add active class to clicked item
-        this.classList.add("active");
-      });
+  if (headerEl) {
+    const observer = new MutationObserver((mutations) => {
+      if (document.querySelector(".nav-menu")) {
+        observer.disconnect();
+        initializeHeaderNav();
+      }
     });
 
-    // Set active class based on current page URL
+    observer.observe(headerEl, { childList: true, subtree: true });
+  } else {
+    // Direct initialization if header is already in HTML
+    initializeHeaderNav();
+  }
+
+  function initializeHeaderNav() {
+    const navItems = document.querySelectorAll(".nav-menu a");
     const currentPath = window.location.pathname;
 
-    // Match the current path to the appropriate navigation item
     navItems.forEach((item) => {
-      const href = item.getAttribute("href");
+      // Add event listeners
+      item.addEventListener("click", function () {
+        navItems.forEach((link) => link.classList.remove("active"));
+        this.classList.add("active");
+      });
 
-      // Check if current path matches this nav item
+      // Set active class based on current path
+      const href = item.getAttribute("href");
       if (
         (href === "/" &&
           (currentPath === "/" ||
@@ -47,19 +40,5 @@ document.addEventListener("DOMContentLoaded", function () {
         item.classList.add("active");
       }
     });
-  }
-
-  // If we're in a page that loads the header via fetch
-  if (document.getElementById("header")) {
-    // Wait for the header to be fully loaded
-    const headerCheckInterval = setInterval(function () {
-      if (document.querySelector(".nav-menu")) {
-        clearInterval(headerCheckInterval);
-        initializeHeaderNav();
-      }
-    }, 100);
-  } else {
-    // If header is directly in the HTML
-    initializeHeaderNav();
   }
 });
