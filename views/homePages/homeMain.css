@@ -76,7 +76,8 @@ a:active {
 }
 
 .address,
-.phone {
+.phone,
+.mail {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -94,7 +95,8 @@ a:active {
 }
 
 .address-text,
-.phone-text {
+.phone-text,
+.mail-text {
   display: flex;
   flex-direction: column;
 }
