@@ -10,19 +10,19 @@ exports.renderRobotsTXT = (req, res) => {
 };
 
 exports.renderHomePage = (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/homePage/index.html"));
-};
-
-exports.renderContactPage = (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/contactPage/index.html"));
+  res.sendFile(path.join(__dirname, "../views/homePages/homeMain.html"));
 };
 
 exports.renderAboutPage = (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/aboutPage/index.html"));
+  res.sendFile(path.join(__dirname, "../views/aboutPages/aboutMain.html"));
+};
+
+exports.renderContactPage = (req, res) => {
+  res.sendFile(path.join(__dirname, "../views/contactPages/contactMain.html"));
 };
 
 exports.renderProductPage = (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/productPage/productMain.html"));
+  res.sendFile(path.join(__dirname, "../views/productPages/productMain.html"));
 };
 
 exports.renderServicePages = (req, res) => {
@@ -31,18 +31,18 @@ exports.renderServicePages = (req, res) => {
 
 exports.renderNewsPage = (req, res) => {
   res.sendFile(
-    path.join(__dirname, "../views/newsPage/newsMain/newsMain.html")
+    path.join(__dirname, "../views/newsPages/newsMain/newsMain.html")
   );
 };
 
 exports.renderNewsArticle1 = (req, res) => {
   res.sendFile(
-    path.join(__dirname, "../views/newsPage/newsArticle1/newsArticle1.html")
+    path.join(__dirname, "../views/newsPages/newsArticle1/newsArticle1.html")
   );
 };
 
 exports.renderNewsArticle2 = (req, res) => {
   res.sendFile(
-    path.join(__dirname, "../views/newsPage/newsArticle2/newsArticle2.html")
+    path.join(__dirname, "../views/newsPages/newsArticle2/newsArticle2.html")
   );
 };

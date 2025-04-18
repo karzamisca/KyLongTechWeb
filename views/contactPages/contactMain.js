@@ -1,4 +1,4 @@
-////views\contactPage\script.js
+////views\contactPage\contactMain.js
 document.addEventListener("DOMContentLoaded", function () {
   // Focus and blur effects for form elements
   const formGroups = document.querySelectorAll(".form-group");

@@ -1,4 +1,4 @@
-//// views\homePage\script.js
+//// views\homePage\homeMain.js
 /////HEADER SECTION JS
 // Simple JavaScript for navigation highlighting
 const navItems = document.querySelectorAll(".nav-menu li a");
