@@ -1,3 +1,4 @@
+//// views\productPage\productMain.js
 // Product page specific JavaScript
 document.addEventListener("DOMContentLoaded", function () {
   // Tab functionality for product categories

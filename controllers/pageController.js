@@ -25,6 +25,10 @@ exports.renderProductPage = (req, res) => {
   res.sendFile(path.join(__dirname, "../views/productPage/productMain.html"));
 };
 
+exports.renderServicePages = (req, res) => {
+  res.sendFile(path.join(__dirname, "../views/servicePages/serviceMain.html"));
+};
+
 exports.renderNewsPage = (req, res) => {
   res.sendFile(
     path.join(__dirname, "../views/newsPage/newsMain/newsMain.html")

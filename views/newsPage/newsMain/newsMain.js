@@ -1,3 +1,4 @@
+///// views\newsPage\newsMain\newsMain.js
 //// NEWS FILTER JS
 document.addEventListener("DOMContentLoaded", function () {
   // Get all filter buttons and news cards
