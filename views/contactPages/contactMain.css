@@ -1,4 +1,6 @@
 /* views\contactPage\contactMain.css */
+/* CONTACT PAGE SPECIFIC STYLES */
+/* General Styles */
 * {
   margin: 0;
   padding: 0;
@@ -31,113 +33,7 @@ a:active {
   color: inherit;
 }
 
-/* HEADER SECTION CSS */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  width: 100px;
-  height: auto;
-}
-
-.company-info {
-  margin-left: 20px;
-}
-
-.company-name {
-  color: #006241;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.company-slogan {
-  color: #e84e0f;
-  font-style: italic;
-}
-
-.company-year {
-  color: #006241;
-  margin-top: 5px;
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.address,
-.phone {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.icon {
-  background-color: #f0f0f0;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #e84e0f;
-}
-
-.address-text,
-.phone-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.nav-container {
-  background-color: #30875f;
-  color: white;
-}
-
-.nav-menu {
-  display: flex;
-  list-style: none;
-  justify-content: space-around;
-  padding: 20px 10%;
-}
-
-.nav-menu li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-  transition: all 0.3s ease;
-}
-
-.nav-menu li a:hover {
-  color: #e84e0f;
-}
-
-.hero {
-  width: 100%;
-  height: 450px;
-  overflow: hidden;
-  position: relative;
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-/* END OF HEADER SECTION CSS */
-
-/* CONTACT PAGE CSS */
+/* Contact Section */
 .contact-section {
   padding: 60px 5%;
   background-color: #f9f9f9;
@@ -565,120 +461,6 @@ a:active {
   border: 0;
 }
 
-/* FOOTER SECTION CSS */
-.footer {
-  background-color: #1a1a1a;
-  color: #f5f5f5;
-  padding: 3rem 0 1.5rem;
-  font-family: "Roboto", Arial, sans-serif;
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 2rem;
-}
-
-.footer-column {
-  flex: 1;
-  min-width: 250px;
-  margin-bottom: 2rem;
-}
-
-.footer-column h4 {
-  color: #ffffff;
-  font-size: 1.2rem;
-  margin-bottom: 1.2rem;
-  font-weight: 600;
-  position: relative;
-  padding-bottom: 0.5rem;
-}
-
-.footer-column h4::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 50px;
-  height: 2px;
-  background-color: #3498db;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-column ul li {
-  margin-bottom: 0.8rem;
-}
-
-.footer-column ul li a {
-  color: #cccccc;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-column ul li a:hover {
-  color: #3498db;
-  padding-left: 5px;
-}
-
-.footer-column p {
-  margin-bottom: 0.8rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #cccccc;
-}
-
-.footer-column a {
-  color: #3498db;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-column a:hover {
-  color: #ffffff;
-}
-
-.footer-bottom {
-  border-top: 1px solid #333333;
-  padding-top: 1.5rem;
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem 2rem 0;
-}
-
-.copyright {
-  font-size: 0.9rem;
-  color: #999999;
-  margin-bottom: 1rem;
-}
-
-.footer-links {
-  font-size: 0.9rem;
-}
-
-.footer-links a {
-  color: #cccccc;
-  text-decoration: none;
-  margin: 0 0.5rem;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #3498db;
-}
-/* END OF FOOTER SECTION CSS */
-
 /* Animation Keyframes */
 @keyframes fadeIn {
   from {
@@ -703,7 +485,7 @@ a:active {
   }
 }
 
-/* Responsive Design for different screen sizes */
+/* Responsive Design */
 @media (max-width: 1200px) {
   .contact-section {
     padding: 50px 4%;
@@ -732,28 +514,6 @@ a:active {
 }
 
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    padding: 20px 5%;
-  }
-
-  .company-info {
-    margin-left: 0;
-    margin-top: 15px;
-    text-align: center;
-  }
-
-  .contact-info {
-    margin-top: 20px;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 20px 5%;
-  }
-
   .contact-container {
     flex-direction: column;
   }
@@ -845,133 +605,5 @@ a:active {
   .contact-item {
     margin-bottom: 15px;
     padding-bottom: 12px;
-  }
-}
-
-/* High-density screens (Retina) */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .contact-form,
-  .contact-details {
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  }
-
-  .form-group input:focus,
-  .form-group textarea:focus {
-    box-shadow: 0 0 0 3px rgba(48, 135, 95, 0.08);
-  }
-}
-
-/* Dark mode support (if your site has a dark mode) */
-@media (prefers-color-scheme: dark) {
-  .contact-section {
-    background-color: #1f1f1f;
-  }
-
-  .page-intro {
-    color: #4caf9a;
-  }
-
-  .contact-form,
-  .contact-details {
-    background-color: #2d2d2d;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-  }
-
-  .contact-form h2,
-  .contact-details h2 {
-    color: #4caf9a;
-  }
-
-  .form-group label {
-    color: #e0e0e0;
-  }
-
-  .form-group input,
-  .form-group textarea {
-    background-color: #3a3a3a;
-    border-color: #444;
-    color: #e0e0e0;
-  }
-
-  .form-group input:hover,
-  .form-group textarea:hover {
-    background-color: #404040;
-    border-color: #555;
-  }
-
-  .form-group input:focus,
-  .form-group textarea:focus {
-    background-color: #3d3d3d;
-    border-color: #4caf9a;
-  }
-
-  .contact-item p {
-    color: #e0e0e0;
-  }
-
-  .contact-item {
-    border-bottom-color: #444;
-  }
-
-  .contact-item a {
-    color: #4caf9a;
-  }
-
-  .submit-button {
-    background: linear-gradient(to right, #4caf9a, #3a8c7a);
-  }
-
-  .submit-button:hover {
-    background: linear-gradient(to right, #e84e0f, #d24510);
-  }
-}
-
-/* Animation for newly submitted messages */
-@keyframes messageSent {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.message-sent {
-  padding: 15px;
-  background-color: rgba(48, 135, 95, 0.1);
-  border-left: 4px solid #30875f;
-  border-radius: 4px;
-  margin-bottom: 20px;
-  animation: messageSent 0.5s ease forwards;
-}
-
-/* Print styles for the contact page */
-@media print {
-  .contact-section {
-    padding: 20px;
-    background-color: white !important;
-  }
-
-  .contact-container {
-    display: block;
-  }
-
-  .contact-form,
-  .contact-details {
-    width: 100%;
-    margin-bottom: 20px;
-    box-shadow: none !important;
-    border: 1px solid #ddd;
-  }
-
-  .submit-button {
-    background: #30875f !important;
-    color: black !important;
-  }
-
-  .map-container {
-    display: none;
   }
 }

@@ -1,4 +1,18 @@
 //// views\servicePages\serviceMain.js
+// Load header
+fetch("components/header/header.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("header").innerHTML = data;
+  });
+
+// Load footer
+fetch("components/footer/footer.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("footer").innerHTML = data;
+  });
+
 // Navigation highlighting
 document.addEventListener("DOMContentLoaded", function () {
   // Set services as active

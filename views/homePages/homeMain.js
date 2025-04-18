@@ -1,24 +1,17 @@
 //// views\homePage\homeMain.js
-/////HEADER SECTION JS
-// Simple JavaScript for navigation highlighting
-const navItems = document.querySelectorAll(".nav-menu li a");
-
-navItems.forEach((item) => {
-  item.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    // Remove active class from all items
-    navItems.forEach((link) => {
-      link.classList.remove("active");
-    });
-
-    // Add active class to clicked item
-    this.classList.add("active");
+// Load header
+fetch("components/header/header.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("header").innerHTML = data;
   });
-});
 
-// Set home as active by default
-document.getElementById("home").classList.add("active");
+// Load footer
+fetch("components/footer/footer.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("footer").innerHTML = data;
+  });
 
 /////INTRO JS
 // Tab functionality

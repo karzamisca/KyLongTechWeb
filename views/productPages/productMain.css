@@ -1,4 +1,37 @@
 /* views\productPage\productMain.css */
+/* GENERAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Ensure visited links don't turn purple */
+a:visited {
+  color: inherit;
+}
+
+/* Optional: Keep hover state consistent */
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Optional: Keep active state consistent */
+a:active {
+  color: inherit;
+}
+
 /* PRODUCT PAGE SPECIFIC STYLES */
 .symbol-hero {
   position: relative;

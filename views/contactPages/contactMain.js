@@ -1,4 +1,20 @@
 ////views\contactPage\contactMain.js
+// Load header
+fetch("components/header/header.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("header").innerHTML = data;
+    // Set contact as active
+    document.getElementById("contact").classList.add("active");
+  });
+
+// Load footer
+fetch("components/footer/footer.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("footer").innerHTML = data;
+  });
+
 document.addEventListener("DOMContentLoaded", function () {
   // Focus and blur effects for form elements
   const formGroups = document.querySelectorAll(".form-group");
@@ -47,4 +63,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initial check for any pre-filled values
   updateProgress();
+
+  // Form validation
+  const contactForm = document.getElementById("contactForm");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let isValid = true;
+
+      // Validate each field
+      formGroups.forEach((group) => {
+        const input = group.querySelector("input, textarea");
+        const errorMessage = group.querySelector(".error-message");
+
+        if (input.required && input.value.trim() === "") {
+          group.classList.add("error");
+          isValid = false;
+        } else {
+          group.classList.remove("error");
+
+          // Additional validation for email
+          if (input.type === "email" && input.value.trim() !== "") {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(input.value.trim())) {
+              group.classList.add("error");
+              errorMessage.textContent = "Vui lòng nhập địa chỉ email hợp lệ";
+              isValid = false;
+            }
+          }
+        }
+      });
+
+      if (isValid) {
+        // Form is valid, you can submit it here
+        console.log("Form submitted successfully");
+        // You can add AJAX submission here if needed
+      }
+    });
+  }
 });

@@ -1,0 +1,126 @@
+/* HEADER SECTION CSS */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.company-info {
+  margin-left: 20px;
+}
+
+.company-name {
+  color: #006241;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.company-slogan {
+  color: #e84e0f;
+  font-style: italic;
+}
+
+.company-year {
+  color: #006241;
+  margin-top: 5px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.address,
+.phone,
+.mail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e84e0f;
+}
+
+.address-text,
+.phone-text,
+.mail-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-container {
+  background-color: #30875f;
+  color: white;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  padding: 20px 10%;
+}
+
+/* Updated selector to target a elements directly */
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+/* Updated hover selector */
+.nav-menu a:hover {
+  color: #e84e0f;
+}
+
+/* Added active class styling */
+.nav-menu a.active {
+  color: #e84e0f;
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 20px 5%;
+  }
+
+  .company-info {
+    margin-left: 0;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .contact-info {
+    margin-top: 20px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 5%;
+  }
+}

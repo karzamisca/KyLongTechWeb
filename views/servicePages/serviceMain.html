@@ -9,88 +9,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="homePages/homeMain.css" />
+    <link rel="stylesheet" href="components/header/header.css" />
+    <link rel="stylesheet" href="components/footer/footer.css" />
     <link rel="stylesheet" href="servicePages/serviceMain.css" />
   </head>
 
   <body>
-    <!-- HEADER SECTION HTML -->
-    <header class="header">
-      <div class="logo-container">
-        <img src="homePages/images/logo.png" alt="Ky Long Logo" class="logo" />
-        <div class="company-info">
-          <div class="company-name">
-            <a href="/" title="Công ty TNHH Đầu Tư Thương Mại Dịch Vụ Kỳ Long"
-              >CÔNG TY TNHH ĐẦU TƯ THƯƠNG MẠI DỊCH VỤ KỲ LONG</a
-            >
-          </div>
-          <div class="company-slogan">
-            Thắp sáng tương lai, vững bền thành quả
-          </div>
-          <div class="company-year">SINCE 2010</div>
-        </div>
-      </div>
-      <div class="contact-info">
-        <div class="address">
-          <div class="icon">
-            <i>📍</i>
-          </div>
-          <div class="address-text">
-            <div>81-83 Nguyễn Hữu Cầu,</div>
-            <div>Phường Tân Định, Quận 1, TP.HCM</div>
-          </div>
-        </div>
-        <div class="phone">
-          <div class="icon">
-            <i>📞</i>
-          </div>
-          <div class="phone-text">
-            <div>Số điện thoại</div>
-            <div>Chưa áp dụng</div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <nav class="nav-container">
-      <ul class="nav-menu">
-        <a
-          href="/"
-          id="home"
-          title="Trang Chủ Kỳ Long - Dịch vụ khí đốt công nghiệp"
-          >TRANG CHỦ</a
-        >
-        <a
-          href="/aboutMain"
-          id="about"
-          title="Giới thiệu về Công ty Kỳ Long - Chuyên gia khí đốt"
-          >GIỚI THIỆU</a
-        >
-        <a
-          href="/productMain"
-          id="products"
-          title="Sản phẩm khí đốt và thiết bị công nghiệp Kỳ Long"
-          >SẢN PHẨM</a
-        >
-        <a
-          href="/serviceMain"
-          id="services"
-          title="Dịch vụ cung cấp khí đốt công nghiệp Kỳ Long"
-          class="active"
-          >DỊCH VỤ</a
-        >
-        <a href="/newsMain" id="news" title="Tin tức và cập nhật từ Kỳ Long"
-          >TIN TỨC</a
-        >
-        <a
-          href="/lien-he"
-          id="contact"
-          title="Liên hệ với Kỳ Long - Đối tác khí đốt tin cậy"
-          >LIÊN HỆ</a
-        >
-      </ul>
-    </nav>
-    <!-- END OF HEADER SECTION HTML -->
+    <!-- Header Component -->
+    <div id="header"></div>
 
     <!-- SERVICE HERO SECTION -->
     <div class="service-hero">
@@ -325,127 +251,10 @@
     </section>
     <!-- END SERVICE PROCESS SECTION -->
 
-    <!-- FOOTER SECTION HTML -->
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-column">
-          <h4>Về Kỳ Long</h4>
-          <ul>
-            <li>
-              <a href="/aboutMain#gioi-thieu" title="Giới thiệu về Kỳ Long"
-                >Giới thiệu</a
-              >
-            </li>
-            <li>
-              <a href="/aboutMain#thi-phan" title="Thị phần của Kỳ Long"
-                >Thị phần</a
-              >
-            </li>
-            <li>
-              <a href="/aboutMain#tam-nhin" title="Tầm nhìn của Kỳ Long"
-                >Tầm nhìn</a
-              >
-            </li>
-            <li>
-              <a
-                href="/aboutMain#loi-the"
-                title="Lợi thế cạnh tranh của Kỳ Long"
-                >Lợi thế cạnh tranh</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>Sản phẩm</h4>
-          <ul>
-            <li>
-              <a
-                href="/productMain#nhien-lieu"
-                title="Nhiên liệu công nghiệp Kỳ Long"
-                >Nhiên liệu</a
-              >
-            </li>
-            <li>
-              <a
-                href="/productMain#thiet-bi"
-                title="Thiết bị công nghiệp Kỳ Long"
-                >Thiết bị</a
-              >
-            </li>
-            <li>
-              <a href="/productMain#che-tao" title="Sản phẩm chế tạo Kỳ Long"
-                >Chế tạo</a
-              >
-            </li>
-            <li>
-              <a
-                href="/productMain#phu-kien"
-                title="Phụ kiện công nghiệp Kỳ Long"
-                >Phụ kiện</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>Dịch vụ</h4>
-          <ul>
-            <li>
-              <a href="/serviceMain#sua-chua" title="Dịch vụ sửa chữa Kỳ Long"
-                >Sửa chữa</a
-              >
-            </li>
-            <li>
-              <a href="/serviceMain#xay-dung" title="Dịch vụ xây dựng Kỳ Long"
-                >Xây dựng</a
-              >
-            </li>
-            <li>
-              <a href="/serviceMain#van-tai" title="Dịch vụ vận tải Kỳ Long"
-                >Vận tải</a
-              >
-            </li>
-            <li>
-              <a href="/serviceMain#tu-van" title="Dịch vụ tư vấn Kỳ Long"
-                >Tư vấn</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>Liên hệ</h4>
-          <p>81-83 Nguyễn Hữu Cầu, Phường Tân Định, Quận 1, TP. Hồ Chí Minh</p>
-          <p>
-            Điện thoại:
-            <a href="tel:Chưa áp dụng" title="Gọi cho Kỳ Long">Chưa áp dụng</a>
-          </p>
-          <p>
-            Email:
-            <a href="mailto:Chưa áp dụng" title="Gửi email cho Kỳ Long"
-              >Chưa áp dụng</a
-            >
-          </p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="copyright">
-          © 2025 Công ty TNHH Đầu Tư Thương Mại Dịch Vụ Kỳ Long. All rights
-          reserved.
-        </div>
-        <div class="footer-links">
-          <a href="/privacy-policy" title="Chính sách bảo mật Kỳ Long"
-            >Chính sách bảo mật</a
-          >
-          |
-          <a href="/terms-of-service" title="Điều khoản sử dụng Kỳ Long"
-            >Điều khoản sử dụng</a
-          >
-          |
-          <a href="/sitemap.xml" title="Sitemap Kỳ Long">Sitemap</a>
-        </div>
-      </div>
-    </footer>
-    <!-- END OF FOOTER SECTION HTML -->
+    <!-- Footer Component -->
+    <div id="footer"></div>
 
+    <script src="components/header/header.js"></script>
     <script src="servicePages/serviceMain.js"></script>
   </body>
 </html>

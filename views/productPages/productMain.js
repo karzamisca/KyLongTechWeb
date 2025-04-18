@@ -1,4 +1,18 @@
 //// views\productPage\productMain.js
+// Load header
+fetch("components/header/header.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("header").innerHTML = data;
+  });
+
+// Load footer
+fetch("components/footer/footer.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("footer").innerHTML = data;
+  });
+
 // Product page specific JavaScript
 document.addEventListener("DOMContentLoaded", function () {
   // Tab functionality for product categories
