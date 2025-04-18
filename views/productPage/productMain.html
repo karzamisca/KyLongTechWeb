@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="productPage/productMain.css" />
   </head>
   <body>
-    <!----- HEADER SECTION HTML ----->
+    <!-- HEADER SECTION HTML -->
     <header class="header">
       <div class="logo-container">
         <img src="homePage/images/logo.png" alt="Ky Long Logo" class="logo" />
@@ -28,7 +28,6 @@
           <div class="company-year">SINCE 2010</div>
         </div>
       </div>
-
       <div class="contact-info">
         <div class="address">
           <div class="icon">
@@ -59,33 +58,27 @@
           title="Trang Chủ Kỳ Long - Dịch vụ khí đốt công nghiệp"
           >TRANG CHỦ</a
         >
-
         <a
           href="/aboutPage"
           id="about"
           title="Giới thiệu về Công ty Kỳ Long - Chuyên gia khí đốt"
           >GIỚI THIỆU</a
         >
-
         <a
           href="/productMain"
           id="products"
           title="Sản phẩm khí đốt và thiết bị công nghiệp Kỳ Long"
-          class="active"
           >SẢN PHẨM</a
         >
-
         <a
           href="/servicePage"
           id="services"
           title="Dịch vụ cung cấp khí đốt công nghiệp Kỳ Long"
           >DỊCH VỤ</a
         >
-
         <a href="/newsMain" id="news" title="Tin tức và cập nhật từ Kỳ Long"
           >TIN TỨC</a
         >
-
         <a
           href="/lien-he"
           id="contact"
@@ -94,356 +87,186 @@
         >
       </ul>
     </nav>
+    <!-- END OF HEADER SECTION HTML -->
 
-    <!----- END OF HEADER SECTION HTML ----->
-
-    <!----- PRODUCTS HERO SECTION ----->
-    <div class="products-hero">
-      <img
-        src="https://i.imgur.com/NztmNm7.png"
-        alt="Industrial Gas Facility"
-      />
-      <div class="hero-overlay">
-        <h1>SẢN PHẨM KHÍ ĐỐT CÔNG NGHIỆP</h1>
-        <p>Giải pháp năng lượng hiệu quả cho doanh nghiệp</p>
+    <!-- PRODUCT HERO SECTION -->
+    <div class="symbol-hero">
+      <div class="symbol-container">
+        <i class="fas fa-industry"></i>
+        <i class="fas fa-gas-pump"></i>
+        <i class="fas fa-fire"></i>
+        <i class="fas fa-truck"></i>
+        <i class="fas fa-boxes"></i>
+      </div>
+      <div class="hero-text">
+        <h1>SẢN PHẨM</h1>
+        <p>Các giải pháp năng lượng và thiết bị công nghiệp chất lượng cao</p>
       </div>
     </div>
-    <!----- END OF PRODUCTS HERO SECTION ----->
+    <!-- END PRODUCT HERO SECTION -->
 
-    <!----- PRODUCT CATEGORIES SECTION ----->
+    <!-- PRODUCT CATEGORIES SECTION -->
     <section class="product-categories">
       <div class="container">
-        <h2 class="section-title">DANH MỤC SẢN PHẨM</h2>
-
         <div class="category-tabs">
-          <button class="category-tab active" data-category="fuel">
-            NHIÊN LIỆU KHÍ
+          <button class="category-tab active" data-category="production">
+            <i class="fas fa-industry"></i> SẢN XUẤT
           </button>
-          <button class="category-tab" data-category="equipment">
-            THIẾT BỊ
+          <button class="category-tab" data-category="wholesale">
+            <i class="fas fa-boxes"></i> BÁN BUÔN
           </button>
-          <button class="category-tab" data-category="manufacturing">
-            CHẾ TẠO
-          </button>
-          <button class="category-tab" data-category="accessories">
-            PHỤ KIỆN
+          <button class="category-tab" data-category="retail">
+            <i class="fas fa-store"></i> BÁN LẺ
           </button>
         </div>
 
-        <div class="category-content active" id="fuel">
-          <div class="product-grid">
-            <div class="product-card">
-              <div class="product-image">
-                <img src="" alt="Khí LNG" />
-              </div>
-              <div class="product-info">
-                <h3>KHÍ LNG</h3>
-                <p>
-                  Khí thiên nhiên hóa lỏng (Liquefied Natural Gas) - Nhiên liệu
-                  sạch cho công nghiệp
-                </p>
-                <ul>
-                  <li>Nhiệt trị cao: 52,000 kJ/kg</li>
-                  <li>Áp suất làm việc: 8-10 bar</li>
-                  <li>Nhiệt độ bảo quản: -162°C</li>
-                </ul>
-                <a href="#lng-details" class="product-button">CHI TIẾT</a>
-              </div>
+        <div class="category-content active" id="production">
+          <div class="product-card">
+            <div class="product-icon">
+              <i class="fas fa-oil-can"></i>
             </div>
-
-            <div class="product-card">
-              <div class="product-image">
-                <img src="" alt="Khí CNG" />
-              </div>
-              <div class="product-info">
-                <h3>KHÍ CNG</h3>
-                <p>
-                  Khí thiên nhiên nén (Compressed Natural Gas) - Giải pháp tiết
-                  kiệm chi phí
-                </p>
-                <ul>
-                  <li>Nhiệt trị: 38,000 kJ/kg</li>
-                  <li>Áp suất làm việc: 200-250 bar</li>
-                  <li>Độ tinh khiết: 99% CH4</li>
-                </ul>
-                <a href="#cng-details" class="product-button">CHI TIẾT</a>
-              </div>
+            <div class="product-info">
+              <h3>Sản xuất sản phẩm dầu mỏ tinh chế</h3>
+              <p>
+                Sản xuất, sang chiết khí dầu mỏ hoá lỏng (LPG), phân phối khí
+                dầu mỏ hoá lỏng (LPG) bằng đường ống (không hoạt động tại Tp. Hồ
+                Chí Minh).
+              </p>
             </div>
+          </div>
 
-            <div class="product-card">
-              <div class="product-image">
-                <img src="" alt="Khí LPG" />
-              </div>
-              <div class="product-info">
-                <h3>KHÍ LPG</h3>
-                <p>
-                  Khí dầu mỏ hóa lỏng (Liquefied Petroleum Gas) - Ứng dụng đa
-                  dạng
-                </p>
-                <ul>
-                  <li>Thành phần chính: Propane, Butane</li>
-                  <li>Áp suất làm việc: 7-8 bar</li>
-                  <li>Nhiệt độ bốc hơi: -42°C</li>
-                </ul>
-                <a href="#lpg-details" class="product-button">CHI TIẾT</a>
-              </div>
+          <div class="product-card">
+            <div class="product-icon">
+              <i class="fas fa-fire"></i>
+            </div>
+            <div class="product-info">
+              <h3>Sản xuất khí đốt, phân phối nhiên liệu khí bằng đường ống</h3>
+              <p>(không hoạt động tại trụ sở)</p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-icon">
+              <i class="fas fa-water"></i>
+            </div>
+            <div class="product-info">
+              <h3>
+                Sản xuất, phân phối hơi nước, nước nóng, điều hoà không khí và
+                sản xuất nước đá
+              </h3>
+              <p>(không hoạt động tại trụ sở)</p>
             </div>
           </div>
         </div>
 
-        <div class="category-content" id="equipment">
-          <div class="product-grid">
-            <div class="product-card">
-              <div class="product-image">
-                <img src="" alt="Bồn chứa LNG" />
-              </div>
-              <div class="product-info">
-                <h3>BỒN CHỨA LNG</h3>
-                <p>Hệ thống bồn chứa tiêu chuẩn quốc tế, cách nhiệt hiệu quả</p>
-                <ul>
-                  <li>Dung tích: 5m³ - 100m³</li>
-                  <li>Vật liệu: Thép không gỉ 304/316</li>
-                  <li>Bảo hành: 5 năm</li>
-                </ul>
-                <a href="#tank-details" class="product-button">CHI TIẾT</a>
-              </div>
+        <div class="category-content" id="wholesale">
+          <div class="product-card">
+            <div class="product-icon">
+              <i class="fas fa-truck"></i>
             </div>
-
-            <div class="product-card">
-              <div class="product-image">
-                <img src="" alt="Trạm giảm áp" />
-              </div>
-              <div class="product-info">
-                <h3>TRẠM GIẢM ÁP PRU</h3>
-                <p>Hệ thống điều áp tự động cho khí công nghiệp</p>
-                <ul>
-                  <li>Áp suất đầu vào: 200 bar</li>
-                  <li>Áp suất đầu ra: 8-10 bar</li>
-                  <li>Lưu lượng: 50-5000 Nm³/h</li>
-                </ul>
-                <a href="#pru-details" class="product-button">CHI TIẾT</a>
-              </div>
+            <div class="product-info">
+              <h3>Bán buôn ô tô và xe có động cơ khác</h3>
             </div>
+          </div>
 
-            <div class="product-card">
-              <div class="product-image">
-                <img src="" alt="Hệ thống gas" />
-              </div>
-              <div class="product-info">
-                <h3>HỆ THỐNG GAS CÔNG NGHIỆP</h3>
-                <p>Giải pháp tổng thể cho nhà máy, xí nghiệp</p>
-                <ul>
-                  <li>Thiết kế tùy chỉnh theo nhu cầu</li>
-                  <li>Đáp ứng tiêu chuẩn ASME, API</li>
-                  <li>Hệ thống giám sát từ xa</li>
-                </ul>
-                <a href="#system-details" class="product-button">CHI TIẾT</a>
-              </div>
+          <div class="product-card">
+            <div class="product-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <div class="product-info">
+              <h3>Đại lý, môi giới, đấu giá</h3>
+              <p>Chi tiết: Đại lý bán hàng hóa; Môi giới mua bán hàng hóa</p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-icon">
+              <i class="fas fa-gas-pump"></i>
+            </div>
+            <div class="product-info">
+              <h3>
+                Bán buôn nhiên liệu rắn, lỏng, khí và các sản phẩm liên quan
+              </h3>
+              <p>
+                Chi tiết: Bán buôn xăng dầu và các sản phẩm liên quan; Bán buôn
+                khí đốt và các sản phẩm liên quan; Bán buôn xăng dầu đã tinh
+                chế: xăng, diesel, mazout, nhiên liệu máy bay, dầu đốt nóng, dầu
+                hoả; Bán buôn dầu nhờn, mỡ nhờn, sản phẩm dầu mỏ đã tinh chế
+                khác; Bán buôn khí dầu mỏ, khí butan , propan đã hoá lỏng (không
+                hoạt động tại trụ sở). Bán buôn than đá và nhiên liệu rắn khác:
+                bán buôn củi trấu (không hoạt động tại trụ sở)
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-icon">
+              <i class="fas fa-cubes"></i>
+            </div>
+            <div class="product-info">
+              <h3>Bán buôn kim loại và quặng kim loại</h3>
+              <p>
+                Chi tiết: Bán buôn sắt, thép. Bán buôn bạc. Bán buôn kim loại
+                khác (trừ mua bán vàng miếng)
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-icon">
+              <i class="fas fa-hammer"></i>
+            </div>
+            <div class="product-info">
+              <h3>Bán buôn vật liệu, thiết bị lắp đặt khác trong xây dựng</h3>
             </div>
           </div>
         </div>
 
-        <div class="category-content" id="manufacturing">
-          <div class="product-grid">
-            <div class="product-card">
-              <div class="product-image">
-                <img src="" alt="Chế tạo bồn" />
-              </div>
-              <div class="product-info">
-                <h3>CHẾ TẠO BỒN ÁP LỰC</h3>
-                <p>Gia công theo yêu cầu khách hàng</p>
-                <ul>
-                  <li>Vật liệu: Thép carbon, thép không gỉ</li>
-                  <li>Áp lực làm việc: 10-300 bar</li>
-                  <li>Kiểm định: Đạt tiêu chuẩn PED</li>
-                </ul>
-                <a href="#tank-manufacturing" class="product-button"
-                  >CHI TIẾT</a
-                >
-              </div>
+        <div class="category-content" id="retail">
+          <div class="product-card">
+            <div class="product-icon">
+              <i class="fas fa-gem"></i>
             </div>
-
-            <div class="product-card">
-              <div class="product-image">
-                <img src="" alt="Hệ thống đường ống" />
-              </div>
-              <div class="product-info">
-                <h3>HỆ THỐNG ĐƯỜNG ỐNG</h3>
-                <p>Thiết kế, chế tạo hệ thống đường ống công nghiệp</p>
-                <ul>
-                  <li>Vật liệu: Thép, Inox, HDPE</li>
-                  <li>Đường kính: DN15 - DN500</li>
-                  <li>Tiêu chuẩn: ASME B31.3</li>
-                </ul>
-                <a href="#piping-system" class="product-button">CHI TIẾT</a>
-              </div>
+            <div class="product-info">
+              <h3>Bán lẻ hàng hóa khác mới trong các cửa hàng chuyên doanh</h3>
+              <p>
+                Chi tiết: Mua bán vàng trang sức, mỹ nghệ; Bán lẻ bạc (trừ mua
+                bán vàng miếng)
+              </p>
             </div>
           </div>
-        </div>
 
-        <div class="category-content" id="accessories">
-          <div class="product-grid">
-            <div class="product-card">
-              <div class="product-image">
-                <img src="" alt="Van công nghiệp" />
-              </div>
-              <div class="product-info">
-                <h3>VAN CÔNG NGHIỆP</h3>
-                <p>Các loại van điều khiển, van an toàn</p>
-                <ul>
-                  <li>Van cổng, van bi, van bướm</li>
-                  <li>Áp lực làm việc: PN16 - PN100</li>
-                  <li>Xuất xứ: Hàn Quốc, Nhật Bản, EU</li>
-                </ul>
-                <a href="#valves" class="product-button">CHI TIẾT</a>
-              </div>
+          <div class="product-card">
+            <div class="product-icon">
+              <i class="fas fa-gas-pump"></i>
             </div>
-
-            <div class="product-card">
-              <div class="product-image">
-                <img src="" alt="Đồng hồ đo lưu lượng" />
-              </div>
-              <div class="product-info">
-                <h3>ĐỒNG HỒ ĐO LƯU LƯỢNG</h3>
-                <p>Thiết bị đo chính xác lưu lượng khí</p>
-                <ul>
-                  <li>Loại: Turbine, Ultrasonic</li>
-                  <li>Độ chính xác: ±0.5%</li>
-                  <li>Kết nối: Flange, Thread</li>
-                </ul>
-                <a href="#flow-meters" class="product-button">CHI TIẾT</a>
-              </div>
-            </div>
-
-            <div class="product-card">
-              <div class="product-image">
-                <img src="" alt="Phụ kiện đường ống" />
-              </div>
-              <div class="product-info">
-                <h3>PHỤ KIỆN ĐƯỜNG ỐNG</h3>
-                <p>Các loại co, tê, cút, mặt bích</p>
-                <ul>
-                  <li>Vật liệu: Thép, Inox</li>
-                  <li>Tiêu chuẩn: JIS, ANSI, DIN</li>
-                  <li>Áp lực: PN10 - PN40</li>
-                </ul>
-                <a href="#pipe-fittings" class="product-button">CHI TIẾT</a>
-              </div>
+            <div class="product-info">
+              <h3>Bán lẻ hàng hóa khác lưu động hoặc tại chợ</h3>
+              <p>
+                Chi tiết: Bán lẻ dầu hỏa, khí dầu mỏ hóa lỏng (LPG) (không hoạt
+                động tại trụ sở).
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!----- END OF PRODUCT CATEGORIES SECTION ----->
+    <!-- END PRODUCT CATEGORIES SECTION -->
 
-    <!----- PRODUCT DETAILS SECTION ----->
-    <section class="product-details" id="lng-details">
+    <!-- CONTACT CTA SECTION -->
+    <section class="contact-cta">
       <div class="container">
-        <h2 class="section-title">CHI TIẾT SẢN PHẨM KHÍ LNG</h2>
-
-        <div class="detail-content">
-          <div class="detail-image">
-            <img src="" alt="Khí LNG chi tiết" />
-          </div>
-
-          <div class="detail-info">
-            <h3>KHÍ THIÊN NHIÊN HÓA LỎNG (LNG)</h3>
-            <p>
-              Khí thiên nhiên hóa lỏng (Liquefied Natural Gas) là nhiên liệu
-              sạch được sử dụng rộng rãi trong công nghiệp nhờ hiệu suất cao và
-              thân thiện với môi trường.
-            </p>
-
-            <div class="specs">
-              <h4>THÔNG SỐ KỸ THUẬT</h4>
-              <table>
-                <tr>
-                  <td>Thành phần chính</td>
-                  <td>Methane (CH4) 85-95%, Ethane, Propane</td>
-                </tr>
-                <tr>
-                  <td>Nhiệt trị</td>
-                  <td>52,000 kJ/kg</td>
-                </tr>
-                <tr>
-                  <td>Nhiệt độ bảo quản</td>
-                  <td>-162°C</td>
-                </tr>
-                <tr>
-                  <td>Áp suất làm việc</td>
-                  <td>8-10 bar</td>
-                </tr>
-                <tr>
-                  <td>Tỷ trọng</td>
-                  <td>0.45 kg/lít (ở trạng thái lỏng)</td>
-                </tr>
-              </table>
-            </div>
-
-            <div class="applications">
-              <h4>ỨNG DỤNG</h4>
-              <ul>
-                <li>Nhiên liệu cho lò hơi công nghiệp</li>
-                <li>Nguyên liệu sản xuất điện</li>
-                <li>Nhiên liệu cho phương tiện vận tải</li>
-                <li>Nguyên liệu cho ngành hóa chất</li>
-              </ul>
-            </div>
-
-            <div class="advantages">
-              <h4>LỢI ÍCH</h4>
-              <ul>
-                <li>Giảm 20-30% chi phí nhiên liệu so với dầu DO</li>
-                <li>Giảm 25% phát thải CO2 so với nhiên liệu truyền thống</li>
-                <li>Không chứa lưu huỳnh, giảm ô nhiễm môi trường</li>
-                <li>An toàn hơn do tỷ trọng nhẹ, dễ bay hơi</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!----- END OF PRODUCT DETAILS SECTION ----->
-
-    <!----- PRODUCT ENQUIRY SECTION ----->
-    <section class="enquiry-section">
-      <div class="container">
-        <h2>YÊU CẦU BÁO GIÁ SẢN PHẨM</h2>
+        <h2>QUÝ KHÁCH CẦN TƯ VẤN VỀ SẢN PHẨM?</h2>
         <p>
-          Vui lòng điền thông tin để nhận báo giá chi tiết và tư vấn từ chuyên
-          gia của chúng tôi
+          Đội ngũ chuyên gia của chúng tôi sẵn sàng hỗ trợ bạn lựa chọn giải
+          pháp phù hợp nhất
         </p>
-
-        <form class="enquiry-form">
-          <div class="form-group">
-            <input type="text" placeholder="Họ và tên" required />
-          </div>
-          <div class="form-group">
-            <input type="email" placeholder="Email" required />
-          </div>
-          <div class="form-group">
-            <input type="tel" placeholder="Số điện thoại" required />
-          </div>
-          <div class="form-group">
-            <select required>
-              <option value="">Chọn sản phẩm quan tâm</option>
-              <option value="LNG">Khí LNG</option>
-              <option value="CNG">Khí CNG</option>
-              <option value="LPG">Khí LPG</option>
-              <option value="equipment">Thiết bị</option>
-              <option value="other">Khác</option>
-            </select>
-          </div>
-          <div class="form-group full-width">
-            <textarea placeholder="Nội dung yêu cầu" rows="4"></textarea>
-          </div>
-          <button type="submit" class="submit-button">GỬI YÊU CẦU</button>
-        </form>
+        <a href="/lien-he" class="cta-button">LIÊN HỆ NGAY</a>
       </div>
     </section>
-    <!----- END OF PRODUCT ENQUIRY SECTION ----->
+    <!-- END CONTACT CTA SECTION -->
 
-    <!----- FOOTER SECTION HTML ----->
+    <!-- FOOTER SECTION HTML -->
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-column">
@@ -473,7 +296,6 @@
             </li>
           </ul>
         </div>
-
         <div class="footer-column">
           <h4>Sản phẩm</h4>
           <ul>
@@ -505,7 +327,6 @@
             </li>
           </ul>
         </div>
-
         <div class="footer-column">
           <h4>Dịch vụ</h4>
           <ul>
@@ -537,7 +358,6 @@
             </li>
           </ul>
         </div>
-
         <div class="footer-column">
           <h4>Liên hệ</h4>
           <p>81-83 Nguyễn Hữu Cầu, Phường Tân Định, Quận 1, TP. Hồ Chí Minh</p>
@@ -553,7 +373,6 @@
           </p>
         </div>
       </div>
-
       <div class="footer-bottom">
         <div class="copyright">
           © 2025 Công ty TNHH Đầu Tư Thương Mại Dịch Vụ Kỳ Long. All rights
@@ -572,8 +391,10 @@
         </div>
       </div>
     </footer>
-    <!----- END OF FOOTER SECTION HTML ----->
+    <!-- END OF FOOTER SECTION HTML -->
 
+    <script src="homePage/script.js"></script>
     <script src="productPage/productMain.js"></script>
+    <script></script>
   </body>
 </html>
