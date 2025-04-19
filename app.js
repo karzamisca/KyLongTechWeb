@@ -1,6 +1,7 @@
 // app.js
 const express = require("express");
 const pageRoute = require("./routes/pageRoute");
+const contactRoute = require("./routes/contactRoute");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const path = require("path");
@@ -17,6 +18,7 @@ app.use(express.json());
 
 // Routes
 app.use("/", pageRoute);
+app.use("/", contactRoute);
 
 // Start the server
 app.listen(PORT, () => {
