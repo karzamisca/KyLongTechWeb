@@ -247,115 +247,116 @@ a:active {
 
 /* PRODUCTS & SERVICES SECTION */
 .products-services-section {
-  padding: 60px 0;
+  padding: 80px 0;
   background-color: #f9f9f9;
 }
 
 .ps-container {
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .ps-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .ps-title {
   color: #e84e0f;
   font-size: 32px;
   font-weight: bold;
+  text-transform: uppercase;
   margin-bottom: 10px;
 }
 
 .ps-subtitle {
   color: #30875f;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .ps-content {
+  width: 100%;
+}
+
+.ps-row {
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.ps-row-centered {
+  justify-content: center;
   gap: 30px;
 }
 
-.ps-left-column {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.ps-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(33.333% - 20px);
 }
 
-.ps-category-item {
+.ps-row-centered .ps-card {
+  width: calc(33.333% - 15px);
+}
+
+.ps-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.ps-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #f8f9fa;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  background-color: white;
-  border-radius: 30px;
-  padding: 15px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: background-color 0.3s ease;
 }
 
-.category-icon {
-  background-color: #30875f;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 15px;
-  flex-shrink: 0;
+.ps-icon i {
+  font-size: 36px;
+  color: #e84e0f;
+  transition: color 0.3s ease;
 }
 
-.category-text {
+.ps-card:hover .ps-icon {
+  background-color: #e84e0f;
+}
+
+.ps-card:hover .ps-icon i {
+  color: white;
+}
+
+.ps-card-title {
+  font-size: 20px;
   font-weight: bold;
-  font-size: 18px;
-  text-align: center;
+  margin-bottom: 15px;
 }
 
-.ps-right-column {
-  width: 60%;
-}
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.service-card {
-  background-color: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-}
-
-.service-image {
-  height: 180px;
-  overflow: hidden;
-}
-
-.service-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover .service-image img {
-  transform: scale(1.05);
-}
-
-.service-name {
-  text-align: center;
-  padding: 15px;
-  font-weight: bold;
+.ps-card-title a {
   color: #30875f;
-  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.ps-card-title a:hover {
+  color: #e84e0f;
+}
+
+.ps-card-description {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 /* NEWS BULLETIN SECTION */
@@ -525,6 +526,30 @@ a:active {
   .news-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .ps-card {
+    width: calc(33.333% - 15px);
+    padding: 25px;
+  }
+
+  .ps-row-centered .ps-card {
+    width: calc(33.333% - 15px);
+  }
+}
+
+@media (max-width: 992px) {
+  .ps-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+
+  .ps-title {
+    font-size: 28px;
+  }
+
+  .ps-subtitle {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -555,17 +580,28 @@ a:active {
     margin-bottom: 20px;
   }
 
-  .ps-content {
+  .products-services-section {
+    padding: 60px 0;
+  }
+
+  .ps-header {
+    margin-bottom: 40px;
+  }
+
+  .ps-row {
     flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
-  .ps-left-column,
-  .ps-right-column {
+  .ps-card,
+  .ps-row-centered .ps-card {
     width: 100%;
+    max-width: 400px;
   }
 
-  .service-grid {
-    grid-template-columns: 1fr;
+  .ps-row-centered {
+    margin-bottom: 0;
   }
 
   .news-grid {
@@ -586,6 +622,35 @@ a:active {
 }
 
 @media (max-width: 480px) {
+  .ps-title {
+    font-size: 24px;
+  }
+
+  .ps-subtitle {
+    font-size: 18px;
+  }
+
+  .ps-card {
+    padding: 20px;
+  }
+
+  .ps-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .ps-icon i {
+    font-size: 24px;
+  }
+
+  .ps-card-title {
+    font-size: 16px;
+  }
+
+  .ps-card-description {
+    font-size: 13px;
+  }
+
   .news-grid {
     grid-template-columns: 1fr;
   }
