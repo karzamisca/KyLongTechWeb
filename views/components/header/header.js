@@ -1,44 +1,40 @@
 ////views\components\header\header.js
-document.addEventListener("DOMContentLoaded", function () {
-  // Use MutationObserver instead of polling intervals
-  const headerEl = document.getElementById("header");
+// This script automatically highlights the active navigation link
+fetch("components/header/header.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("header").innerHTML = data;
 
-  if (headerEl) {
-    const observer = new MutationObserver((mutations) => {
-      if (document.querySelector(".nav-menu")) {
-        observer.disconnect();
-        initializeHeaderNav();
-      }
-    });
+    // After header is loaded, run the navigation highlighting code
+    highlightActiveNavLink();
+  });
 
-    observer.observe(headerEl, { childList: true, subtree: true });
-  } else {
-    // Direct initialization if header is already in HTML
-    initializeHeaderNav();
-  }
+// Navigation highlighting function
+function highlightActiveNavLink() {
+  // Get current page path
+  const currentPath = window.location.pathname;
 
-  function initializeHeaderNav() {
-    const navItems = document.querySelectorAll(".nav-menu a");
-    const currentPath = window.location.pathname;
+  // Get all navigation links
+  const navLinks = document.querySelectorAll(".nav-menu a");
 
-    navItems.forEach((item) => {
-      // Add event listeners
-      item.addEventListener("click", function () {
-        navItems.forEach((link) => link.classList.remove("active"));
-        this.classList.add("active");
-      });
+  // Loop through each link
+  navLinks.forEach((link) => {
+    // Get the href attribute
+    const linkPath = link.getAttribute("href");
 
-      // Set active class based on current path
-      const href = item.getAttribute("href");
-      if (
-        (href === "/" &&
-          (currentPath === "/" ||
-            currentPath === "/index.html" ||
-            currentPath === "")) ||
-        (href !== "/" && currentPath.includes(href))
-      ) {
-        item.classList.add("active");
-      }
-    });
-  }
-});
+    // Check if current path matches the link's href
+    // We also need to handle the home page case specifically
+    if (
+      currentPath === linkPath ||
+      (currentPath === "/" && linkPath === "/") ||
+      (currentPath.endsWith(linkPath) && linkPath !== "/") ||
+      (currentPath.includes(linkPath) && linkPath !== "/")
+    ) {
+      // Add active class to highlight the link
+      link.classList.add("active");
+    } else {
+      // Remove active class if it exists
+      link.classList.remove("active");
+    }
+  });
+}
