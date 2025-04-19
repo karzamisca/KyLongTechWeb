@@ -5,6 +5,8 @@ const pageController = require("../controllers/pageController");
 
 router.get("/sitemap.xml", pageController.renderSiteMap);
 router.get("/robots.txt", pageController.renderRobotsTXT);
+router.get("/privacy-policy", pageController.renderPrivacyPolicy);
+router.get("/terms-of-service", pageController.renderTermsOfService);
 router.get("/", pageController.renderHomePage);
 router.get("/lien-he", pageController.renderContactPage);
 router.get("/aboutMain", pageController.renderAboutPage);

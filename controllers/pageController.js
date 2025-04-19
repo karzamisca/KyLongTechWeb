@@ -1,5 +1,7 @@
 // controllers/pageController.js
 const path = require("path");
+const fs = require("fs");
+const marked = require("marked"); // Popular Markdown parser
 
 exports.renderSiteMap = (req, res) => {
   res.sendFile(path.join(__dirname, "../views/sitemap.xml"));
@@ -7,6 +9,32 @@ exports.renderSiteMap = (req, res) => {
 
 exports.renderRobotsTXT = (req, res) => {
   res.sendFile(path.join(__dirname, "../views/robots.txt"));
+};
+
+exports.renderPrivacyPolicy = (req, res) => {
+  const filePath = path.join(__dirname, "../views/privacyPolicy.md");
+
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      return res.status(500).send("Error loading privacy policy");
+    }
+
+    const htmlContent = marked.parse(data);
+    res.send(htmlContent); // Or render with a template
+  });
+};
+
+exports.renderTermsOfService = (req, res) => {
+  const filePath = path.join(__dirname, "../views/termsOfService.md");
+
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      return res.status(500).send("Error loading terms of service");
+    }
+
+    const htmlContent = marked.parse(data);
+    res.send(htmlContent); // Or render with a template
+  });
 };
 
 exports.renderHomePage = (req, res) => {
