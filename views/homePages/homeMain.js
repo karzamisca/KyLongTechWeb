@@ -11,67 +11,101 @@ fetch("components/footer/footer.html")
 document.addEventListener("DOMContentLoaded", function () {
   const tabButtons = document.querySelectorAll(".tab-button");
   const tabPanes = document.querySelectorAll(".tab-pane");
+  const indicators = document.querySelectorAll(".indicator");
+  const prevButton = document.querySelector(".prev-button");
+  const nextButton = document.querySelector(".next-button");
+  let currentTabIndex = 0;
 
-  // Set initial active tab
-  document
-    .querySelector('.tab-button[data-tab="about-tab"]')
-    .classList.add("active");
-  document.getElementById("about-tab").classList.add("active");
-
-  tabButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      // Remove active class from all buttons and panes
-      tabButtons.forEach((btn) => {
-        btn.classList.remove("active");
-      });
-
-      tabPanes.forEach((pane) => {
-        pane.classList.remove("active");
-      });
-
-      // Add active class to clicked button
-      this.classList.add("active");
-
-      // Show corresponding tab content
-      const tabId = this.getAttribute("data-tab");
-      document.getElementById(tabId).classList.add("active");
+  // Function to activate a specific tab
+  function activateTab(tabId) {
+    // Hide all tabs and remove active class
+    tabPanes.forEach((pane) => {
+      pane.classList.remove("active");
     });
-  });
 
-  // Function to navigate to the next or previous tab
-  function navigateTab(direction) {
-    const activeButton = document.querySelector(".tab-button.active");
-    const allButtons = Array.from(tabButtons);
-    const currentIndex = allButtons.indexOf(activeButton);
+    tabButtons.forEach((button) => {
+      button.classList.remove("active");
+    });
 
-    let nextIndex;
-    if (direction === "next") {
-      nextIndex = (currentIndex + 1) % allButtons.length;
-    } else {
-      nextIndex = (currentIndex - 1 + allButtons.length) % allButtons.length;
+    indicators.forEach((indicator) => {
+      indicator.classList.remove("active");
+    });
+
+    // Show the selected tab and add active class
+    const selectedTab = document.getElementById(tabId);
+    const selectedButton = document.querySelector(`[data-tab="${tabId}"]`);
+    const selectedIndicator = document.querySelector(
+      `.indicator[data-tab="${tabId}"]`
+    );
+
+    if (selectedTab) {
+      selectedTab.classList.add("active");
     }
 
-    // Simulate click on the next/previous button
-    allButtons[nextIndex].click();
+    if (selectedButton) {
+      selectedButton.classList.add("active");
+
+      // Update current tab index
+      tabButtons.forEach((button, index) => {
+        if (button === selectedButton) {
+          currentTabIndex = index;
+        }
+      });
+    }
+
+    if (selectedIndicator) {
+      selectedIndicator.classList.add("active");
+    }
   }
 
-  // Add event listeners to next buttons
-  const nextButtons = document.querySelectorAll(".next-button");
-  nextButtons.forEach((button) => {
+  // Add click event listeners to tab buttons
+  tabButtons.forEach((button) => {
     button.addEventListener("click", function () {
-      navigateTab("next");
+      const tabId = this.getAttribute("data-tab");
+      activateTab(tabId);
     });
   });
 
-  // Add event listeners to prev buttons
-  const prevButtons = document.querySelectorAll(".prev-button");
-  prevButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      navigateTab("prev");
+  // Add click event listeners to indicators
+  indicators.forEach((indicator) => {
+    indicator.addEventListener("click", function () {
+      const tabId = this.getAttribute("data-tab");
+      activateTab(tabId);
     });
   });
+
+  // Previous button functionality
+  prevButton.addEventListener("click", function () {
+    const tabIds = Array.from(tabButtons).map((button) =>
+      button.getAttribute("data-tab")
+    );
+    let newIndex = currentTabIndex - 1;
+
+    if (newIndex < 0) {
+      newIndex = tabIds.length - 1;
+    }
+
+    activateTab(tabIds[newIndex]);
+  });
+
+  // Next button functionality
+  nextButton.addEventListener("click", function () {
+    const tabIds = Array.from(tabButtons).map((button) =>
+      button.getAttribute("data-tab")
+    );
+    let newIndex = currentTabIndex + 1;
+
+    if (newIndex >= tabIds.length) {
+      newIndex = 0;
+    }
+
+    activateTab(tabIds[newIndex]);
+  });
+
+  // Initialize the first tab as active
+  activateTab("about-tab");
 });
-/////END OF HEADER SECTION JS
+/////END OF INTRO JS
 
 /////ADVANTAGE SECTION JS
 // Animation for advantage cards on scroll
