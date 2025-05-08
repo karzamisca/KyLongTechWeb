@@ -1,0 +1,322 @@
+<!-- views/productPage/productMain.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SẢN PHẨM - CÔNG TY TNHH ĐẦU TƯ THƯƠNG MẠI DỊCH VỤ KỲ LONG</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="preload"
+      href="components/header/header.html"
+      as="fetch"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="components/header/header.css" />
+    <link rel="stylesheet" href="components/footer/footer.css" />
+    <link rel="stylesheet" href="productPages/productMain/productMain.css" />
+  </head>
+  <body>
+    <!-- Header Component -->
+    <div id="header"></div>
+
+    <!-- PRODUCT HERO SECTION -->
+    <div class="symbol-hero">
+      <div class="symbol-container">
+        <i class="fas fa-industry"></i>
+        <i class="fas fa-gas-pump"></i>
+        <i class="fas fa-fire"></i>
+        <i class="fas fa-truck"></i>
+        <i class="fas fa-boxes"></i>
+      </div>
+      <div class="hero-text">
+        <h1>SẢN PHẨM</h1>
+        <p>Các giải pháp năng lượng và thiết bị công nghiệp chất lượng cao</p>
+      </div>
+    </div>
+    <!-- END PRODUCT HERO SECTION -->
+
+    <!-- PRODUCT CATEGORIES SECTION -->
+    <section class="product-categories">
+      <div class="container">
+        <div class="category-tabs">
+          <button class="category-tab active" data-category="production">
+            <i class="fas fa-industry"></i> SẢN XUẤT
+          </button>
+          <button class="category-tab" data-category="commerce">
+            <i class="fas fa-store"></i> THƯƠNG MẠI
+          </button>
+        </div>
+
+        <div class="category-content active" id="production">
+          <h2 class="shop-title">Thiết bị công nghiệp</h2>
+          <div class="shop-container">
+            <!-- PRU Product Card -->
+            <div class="shop-product-card">
+              <div class="product-image">
+                <div class="product-image-placeholder">
+                  <i class="fas fa-gauge"></i>
+                </div>
+                <div class="product-badge">Chất lượng cao</div>
+              </div>
+              <div class="shop-product-info">
+                <h3>Trạm giảm áp (PRU)</h3>
+                <p class="product-description">
+                  Trạm giảm áp chất lượng cao, đáp ứng các tiêu chuẩn an toàn
+                  khắt khe nhất của ngành công nghiệp
+                </p>
+                <div class="product-features">
+                  <span
+                    ><i class="fas fa-check-circle"></i> Độ tin cậy cao</span
+                  >
+                  <span
+                    ><i class="fas fa-check-circle"></i> Dễ dàng vận hành</span
+                  >
+                  <span
+                    ><i class="fas fa-check-circle"></i> Tính năng an toàn vượt
+                    trội</span
+                  >
+                </div>
+                <a href="/productSeparateProductionPRU" class="product-link"
+                  >XEM CHI TIẾT</a
+                >
+              </div>
+            </div>
+
+            <!-- Đồng hồ đo Product Card -->
+            <div class="shop-product-card">
+              <div class="product-image">
+                <div class="product-image-placeholder">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <div class="product-badge">Chính xác</div>
+              </div>
+              <div class="shop-product-info">
+                <h3>Đồng hồ đo khí</h3>
+                <p class="product-description">
+                  Thiết bị đo lường chính xác cao, giúp kiểm soát và theo dõi
+                  lượng khí tiêu thụ một cách hiệu quả
+                </p>
+                <div class="product-features">
+                  <span
+                    ><i class="fas fa-check-circle"></i> Độ chính xác cao</span
+                  >
+                  <span
+                    ><i class="fas fa-check-circle"></i> Độ bền vượt trội</span
+                  >
+                  <span
+                    ><i class="fas fa-check-circle"></i> Dễ dàng tích hợp</span
+                  >
+                </div>
+                <a href="/productSeparateProductionMeter" class="product-link"
+                  >XEM CHI TIẾT</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="shop-container">
+            <!-- Dàn hóa hơi Product Card -->
+            <div class="shop-product-card">
+              <div class="product-image">
+                <div class="product-image-placeholder">
+                  <i class="fas fa-wind"></i>
+                </div>
+                <div class="product-badge">Tiết kiệm</div>
+              </div>
+              <div class="shop-product-info">
+                <h3>Dàn hóa hơi</h3>
+                <p class="product-description">
+                  Thiết bị chuyển đổi khí từ dạng lỏng sang dạng hơi một cách
+                  hiệu quả, tiết kiệm năng lượng
+                </p>
+                <div class="product-features">
+                  <span><i class="fas fa-check-circle"></i> Hiệu suất cao</span>
+                  <span
+                    ><i class="fas fa-check-circle"></i> Tiết kiệm năng
+                    lượng</span
+                  >
+                  <span
+                    ><i class="fas fa-check-circle"></i> Vận hành ổn định</span
+                  >
+                </div>
+                <a
+                  href="/productSeparateProductionVaporizer"
+                  class="product-link"
+                  >XEM CHI TIẾT</a
+                >
+              </div>
+            </div>
+
+            <!-- Van điều áp Product Card -->
+            <div class="shop-product-card">
+              <div class="product-image">
+                <div class="product-image-placeholder">
+                  <i class="fas fa-compress-alt"></i>
+                </div>
+                <div class="product-badge">An toàn</div>
+              </div>
+              <div class="shop-product-info">
+                <h3>Van điều áp</h3>
+                <p class="product-description">
+                  Van điều áp chất lượng cao, đảm bảo an toàn và hiệu quả trong
+                  việc kiểm soát áp suất khí
+                </p>
+                <div class="product-features">
+                  <span><i class="fas fa-check-circle"></i> Độ bền cao</span>
+                  <span
+                    ><i class="fas fa-check-circle"></i> Phản ứng nhanh</span
+                  >
+                  <span
+                    ><i class="fas fa-check-circle"></i> Dễ dàng bảo trì</span
+                  >
+                </div>
+                <a
+                  href="/productSeparateProductionPressureValve"
+                  class="product-link"
+                  >XEM CHI TIẾT</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="other-products">
+            <h3>Dịch vụ sản xuất khác</h3>
+            <div class="service-list">
+              <div class="service-item">
+                <i class="fas fa-oil-can"></i>
+                <p>Sản xuất sản phẩm dầu mỏ tinh chế</p>
+              </div>
+              <div class="service-item">
+                <i class="fas fa-fire"></i>
+                <p>Sản xuất, phân phối khí đốt bằng đường ống</p>
+              </div>
+              <div class="service-item">
+                <i class="fas fa-water"></i>
+                <p>Sản xuất, phân phối hơi nước và nước nóng</p>
+              </div>
+              <div class="service-item">
+                <i class="fas fa-tools"></i>
+                <p>Bảo trì, sửa chữa thiết bị công nghiệp</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-content" id="commerce">
+          <h2 class="shop-title">Sản phẩm nổi bật</h2>
+          <div class="shop-container">
+            <!-- LNG Product Card -->
+            <div class="shop-product-card">
+              <div class="product-image">
+                <div class="product-image-placeholder">
+                  <i class="fas fa-tint"></i>
+                </div>
+                <div class="product-badge">Phổ biến</div>
+              </div>
+              <div class="shop-product-info">
+                <h3>Khí tự nhiên hóa lỏng (LNG)</h3>
+                <p class="product-description">
+                  Giải pháp năng lượng sạch, hiệu quả cao và tiết kiệm chi phí
+                  cho doanh nghiệp
+                </p>
+                <div class="product-features">
+                  <span><i class="fas fa-check-circle"></i> Hiệu suất cao</span>
+                  <span
+                    ><i class="fas fa-check-circle"></i> Thân thiện môi
+                    trường</span
+                  >
+                  <span
+                    ><i class="fas fa-check-circle"></i> Vận chuyển linh
+                    hoạt</span
+                  >
+                </div>
+                <a href="/productSeparateCommerceLNG" class="product-link"
+                  >XEM CHI TIẾT</a
+                >
+              </div>
+            </div>
+
+            <!-- PNG Product Card -->
+            <div class="shop-product-card">
+              <div class="product-image">
+                <div class="product-image-placeholder">
+                  <i class="fas fa-fire"></i>
+                </div>
+                <div class="product-badge">Tiết kiệm</div>
+              </div>
+              <div class="shop-product-info">
+                <h3>Khí tự nhiên nén (PNG)</h3>
+                <p class="product-description">
+                  Giải pháp cung cấp năng lượng liên tục qua đường ống cho nhà
+                  máy và khu công nghiệp
+                </p>
+                <div class="product-features">
+                  <span
+                    ><i class="fas fa-check-circle"></i> Cung cấp liên tục</span
+                  >
+                  <span
+                    ><i class="fas fa-check-circle"></i> Không cần bồn
+                    chứa</span
+                  >
+                  <span
+                    ><i class="fas fa-check-circle"></i> Chi phí vận hành
+                    thấp</span
+                  >
+                </div>
+                <a href="/productSeparateCommercePNG" class="product-link"
+                  >XEM CHI TIẾT</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="other-products">
+            <h3>Dịch vụ thương mại khác</h3>
+            <div class="service-list">
+              <div class="service-item">
+                <i class="fas fa-truck"></i>
+                <p>Bán buôn ô tô và xe có động cơ khác</p>
+              </div>
+              <div class="service-item">
+                <i class="fas fa-handshake"></i>
+                <p>Đại lý bán hàng hóa; Môi giới mua bán hàng hóa</p>
+              </div>
+              <div class="service-item">
+                <i class="fas fa-cubes"></i>
+                <p>Bán buôn sắt, thép, bạc và kim loại khác</p>
+              </div>
+              <div class="service-item">
+                <i class="fas fa-hammer"></i>
+                <p>Bán buôn vật liệu, thiết bị lắp đặt khác trong xây dựng</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END PRODUCT CATEGORIES SECTION -->
+
+    <!-- CONTACT CTA SECTION -->
+    <section class="contact-cta">
+      <div class="container">
+        <h2>QUÝ KHÁCH CẦN TƯ VẤN VỀ SẢN PHẨM?</h2>
+        <p>
+          Đội ngũ chuyên gia của chúng tôi sẵn sàng hỗ trợ bạn lựa chọn giải
+          pháp phù hợp nhất
+        </p>
+        <a href="/lien-he" class="cta-button">LIÊN HỆ NGAY</a>
+      </div>
+    </section>
+    <!-- END CONTACT CTA SECTION -->
+
+    <!-- Footer Component -->
+    <div id="footer"></div>
+
+    <script src="components/header/header.js"></script>
+    <script src="productPages/productMain/productMain.js"></script>
+  </body>
+</html>

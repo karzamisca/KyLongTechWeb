@@ -50,7 +50,25 @@ exports.renderContactPage = (req, res) => {
 };
 
 exports.renderProductPage = (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/productPages/productMain.html"));
+  res.sendFile(
+    path.join(__dirname, "../views/productPages/productMain/productMain.html")
+  );
+};
+exports.renderProductSeparateCommerceLNG = (req, res) => {
+  res.sendFile(
+    path.join(
+      __dirname,
+      "../views/productPages/productSeparateCommerceLNG/productSeparateCommerceLNG.html"
+    )
+  );
+};
+exports.renderProductSeparateCommercePNG = (req, res) => {
+  res.sendFile(
+    path.join(
+      __dirname,
+      "../views/productPages/productSeparateCommercePNG/productSeparateCommercePNG.html"
+    )
+  );
 };
 
 exports.renderServicePages = (req, res) => {
@@ -62,13 +80,11 @@ exports.renderNewsPage = (req, res) => {
     path.join(__dirname, "../views/newsPages/newsMain/newsMain.html")
   );
 };
-
 exports.renderNewsArticle1 = (req, res) => {
   res.sendFile(
     path.join(__dirname, "../views/newsPages/newsArticle1/newsArticle1.html")
   );
 };
-
 exports.renderNewsArticle2 = (req, res) => {
   res.sendFile(
     path.join(__dirname, "../views/newsPages/newsArticle2/newsArticle2.html")

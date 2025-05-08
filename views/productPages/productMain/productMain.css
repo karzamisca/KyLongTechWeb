@@ -1,4 +1,4 @@
-/* views\productPage\productMain.css */
+/* views/productPages/productMain/productMain.css */
 /* GENERAL STYLES */
 * {
   margin: 0;
@@ -33,6 +33,24 @@ a:active {
 }
 
 /* PRODUCT PAGE SPECIFIC STYLES */
+/* Additional styles for symbol placeholders */
+.product-image-placeholder {
+  width: 100%;
+  height: 200px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  color: #30875f;
+}
+
+.shop-product-card .product-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
 .symbol-hero {
   position: relative;
   width: 100%;
@@ -240,6 +258,161 @@ a:active {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* NEW SHOP STYLES */
+.shop-title {
+  font-size: 28px;
+  color: #30875f;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.shop-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.shop-product-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.shop-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.shop-product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #e84e0f;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.shop-product-info {
+  padding: 25px;
+}
+
+.shop-product-info h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #30875f;
+}
+
+.product-description {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.product-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.product-features span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+}
+
+.product-features i {
+  color: #30875f;
+}
+
+.product-link {
+  display: inline-block;
+  background-color: #30875f;
+  color: white !important;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.product-link:hover {
+  background-color: #e84e0f;
+  transform: translateY(-2px);
+}
+
+.other-products {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.other-products h3 {
+  color: #30875f;
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-item i {
+  font-size: 24px;
+  color: #e84e0f;
+}
+
+.service-item p {
+  font-size: 14px;
+  color: #555;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .symbol-hero {
@@ -282,5 +455,21 @@ a:active {
   .product-icon {
     width: 100%;
     height: 80px;
+  }
+
+  .shop-container {
+    grid-template-columns: 1fr;
+  }
+
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+
+  .product-image {
+    height: 200px;
+  }
+
+  .shop-product-info h3 {
+    font-size: 20px;
   }
 }

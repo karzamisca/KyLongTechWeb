@@ -1,3 +1,4 @@
+////views/productPages/productMain/productMain.js
 // Load footer
 fetch("components/footer/footer.html")
   .then((response) => response.text())
@@ -56,5 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("hashchange", activateTabByHash);
 
   // Set products nav item as active
-  document.getElementById("products").classList.add("active");
+  if (document.getElementById("products")) {
+    document.getElementById("products").classList.add("active");
+  }
 });
