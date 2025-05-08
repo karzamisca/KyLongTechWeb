@@ -54,6 +54,38 @@ exports.renderProductPage = (req, res) => {
     path.join(__dirname, "../views/productPages/productMain/productMain.html")
   );
 };
+exports.renderProductSeparateProductionGasMeter = (req, res) => {
+  res.sendFile(
+    path.join(
+      __dirname,
+      "../views/productPages/productSeparateProductionGasMeter/productSeparateProductionGasMeter.html"
+    )
+  );
+};
+exports.renderProductSeparateProductionPressureRegulatorValve = (req, res) => {
+  res.sendFile(
+    path.join(
+      __dirname,
+      "../views/productPages/productSeparateProductionPressureRegulatorValve/productSeparateProductionPressureRegulatorValve.html"
+    )
+  );
+};
+exports.renderProductSeparateProductionPRU = (req, res) => {
+  res.sendFile(
+    path.join(
+      __dirname,
+      "../views/productPages/productSeparateProductionPRU/productSeparateProductionPRU.html"
+    )
+  );
+};
+exports.renderProductSeparateProductionVaporizer = (req, res) => {
+  res.sendFile(
+    path.join(
+      __dirname,
+      "../views/productPages/productSeparateProductionVaporizer/productSeparateProductionVaporizer.html"
+    )
+  );
+};
 exports.renderProductSeparateCommerceLNG = (req, res) => {
   res.sendFile(
     path.join(

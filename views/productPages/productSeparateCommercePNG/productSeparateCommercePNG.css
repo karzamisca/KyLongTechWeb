@@ -1,7 +1,7 @@
 /* views/productPages/productSeparateCommercePNG/productSeparateCommercePNG.css */
 /* Additional styles for PNG page */
 .png-hero {
-  background-color: #2874a6;
+  background-color: #30875f;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -38,7 +38,7 @@
   align-items: center;
   justify-content: center;
   font-size: 150px;
-  color: #2874a6;
+  color: #30875f;
 }
 
 .png-info {
@@ -46,7 +46,7 @@
 }
 
 .png-info h2 {
-  color: #2874a6;
+  color: #30875f;
   margin-bottom: 20px;
   font-size: 28px;
 }
@@ -76,7 +76,7 @@
 }
 
 .png-specs h3 {
-  color: #2874a6;
+  color: #30875f;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -97,25 +97,6 @@
 .spec-item h4 {
   color: #e84e0f;
   margin-bottom: 10px;
-}
-
-.pipeline-diagram {
-  margin-top: 40px;
-  text-align: center;
-  background-color: #f5f5f5;
-  padding: 40px;
-  border-radius: 8px;
-}
-
-.pipeline-icon {
-  font-size: 120px;
-  color: #2874a6;
-  margin-bottom: 20px;
-}
-
-.diagram-caption {
-  margin-top: 20px;
-  color: #555;
 }
 
 @media (max-width: 768px) {

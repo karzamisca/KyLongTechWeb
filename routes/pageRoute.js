@@ -19,6 +19,22 @@ router.get("/aboutMain", pageController.renderAboutPage);
 
 router.get("/productMain", pageController.renderProductPage);
 router.get(
+  "/productSeparateProductionGasMeter",
+  pageController.renderProductSeparateProductionGasMeter
+);
+router.get(
+  "/productSeparateProductionPressureRegulatorValve",
+  pageController.renderProductSeparateProductionPressureRegulatorValve
+);
+router.get(
+  "/productSeparateProductionPRU",
+  pageController.renderProductSeparateProductionPRU
+);
+router.get(
+  "/productSeparateProductionVaporizer",
+  pageController.renderProductSeparateProductionVaporizer
+);
+router.get(
   "/productSeparateCommerceLNG",
   pageController.renderProductSeparateCommerceLNG
 );

@@ -1,34 +1,34 @@
-/* views/productPages/productSeparateCommerceLNG/productSeparateCommerceLNG.css */
-/* Additional styles for LNG page */
-.lng-hero {
+/* views/productPages/productSeparateProductionPRU/productSeparateProductionPRU.css */
+/* Additional styles for PRU page */
+.pru-hero {
   background-color: #30875f;
   color: white;
   padding: 80px 20px;
   text-align: center;
 }
 
-.lng-hero h1 {
+.pru-hero h1 {
   font-size: 42px;
   margin-bottom: 20px;
 }
 
-.lng-hero p {
+.pru-hero p {
   font-size: 20px;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.lng-content {
+.pru-content {
   padding: 60px 0;
 }
 
-.lng-details {
+.pru-details {
   display: flex;
   gap: 40px;
   margin-bottom: 40px;
 }
 
-.lng-image {
+.pru-image {
   flex: 1;
   min-height: 400px;
   background-color: #f5f5f5;
@@ -41,41 +41,41 @@
   color: #30875f;
 }
 
-.lng-info {
+.pru-info {
   flex: 1;
 }
 
-.lng-info h2 {
+.pru-info h2 {
   color: #30875f;
   margin-bottom: 20px;
   font-size: 28px;
 }
 
-.lng-features {
+.pru-features {
   margin-top: 30px;
 }
 
-.lng-feature {
+.pru-feature {
   display: flex;
   align-items: flex-start;
   gap: 15px;
   margin-bottom: 15px;
 }
 
-.lng-feature i {
+.pru-feature i {
   color: #e84e0f;
   font-size: 20px;
   margin-top: 3px;
 }
 
-.lng-specs {
+.pru-specs {
   background-color: #f9f9f9;
   padding: 40px;
   border-radius: 8px;
   margin-top: 40px;
 }
 
-.lng-specs h3 {
+.pru-specs h3 {
   color: #30875f;
   margin-bottom: 20px;
   text-align: center;
@@ -100,12 +100,16 @@
 }
 
 @media (max-width: 768px) {
-  .lng-details {
+  .pru-details {
     flex-direction: column;
   }
 
-  .lng-image {
+  .pru-image {
     min-height: 250px;
     font-size: 100px;
+  }
+
+  .pipeline-icon {
+    font-size: 80px;
   }
 }
