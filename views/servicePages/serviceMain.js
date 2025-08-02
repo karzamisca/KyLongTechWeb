@@ -8,9 +8,6 @@ fetch("components/footer/footer.html")
 
 // Navigation highlighting
 document.addEventListener("DOMContentLoaded", function () {
-  // Set services as active
-  document.getElementById("services").classList.add("active");
-
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {

@@ -1,118 +1,114 @@
 /* views\components\header\header.css */
-/* Core layout styles */
+/* Custom colors and styling */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
-}
-
-/* Logo and company info */
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  width: 100px;
-  height: auto;
-  will-change: transform; /* Helps with performance */
-}
-
-.company-info {
-  margin-left: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #e9ecef;
 }
 
 .company-name {
   color: #006241;
-  font-size: 20px;
+  font-size: 1.4rem;
   font-weight: bold;
+  text-decoration: none;
 }
+
+.company-name:hover {
+  color: #006241;
+}
+
 .company-slogan {
   color: #e84e0f;
   font-style: italic;
+  font-size: 1.1rem;
 }
+
 .company-year {
   color: #006241;
-  margin-top: 5px;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-/* Contact section */
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.address,
-.phone,
-.mail {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.icon {
-  background-color: #f0f0f0;
+.contact-icon2 {
+  background-color: #f8f9fa;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 50px;
+  height: 50px;
+  color: #e84e0f;
+  font-size: 1.3rem;
+  border: 2px solid #e9ecef;
+}
+
+.contact-icon {
+  background-color: red;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: white;
+  font-size: 1.3rem;
+  border: 2px solid #e9ecef;
+}
+
+.contact-text {
+  font-size: 1rem;
+}
+
+.contact-text a {
+  color: #006241;
+  text-decoration: none;
+}
+
+.contact-text a:hover {
   color: #e84e0f;
 }
 
-/* Navigation */
 .nav-container {
   background-color: #30875f;
 }
 
-.nav-menu {
-  display: flex;
-  list-style: none;
-  justify-content: space-around;
-  padding: 20px 10%;
-}
-
-.nav-menu a {
-  color: #000000; /* Explicitly setting the text color to black */
-  text-decoration: none;
+.navbar-nav .nav-link {
+  color: #ffffff !important;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.2rem;
   transition: color 0.3s;
+  text-decoration: none;
 }
 
-.nav-menu a:hover,
-.nav-menu a.active {
-  color: #e84e0f; /* Color changes to orange on hover or when active */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #e84e0f !important;
 }
 
-.nav-menu a.active {
+.navbar-nav .nav-link.active {
   text-decoration: underline;
 }
 
-/* Media queries */
+.logo {
+  width: 80px;
+  height: auto;
+}
+
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    padding: 20px 5%;
+  .company-name {
+    font-size: 1.2rem;
   }
 
-  .company-info {
-    margin-left: 0;
-    margin-top: 15px;
-    text-align: center;
+  .company-slogan {
+    font-size: 1rem;
   }
 
-  .contact-info {
-    margin-top: 20px;
+  .contact-text {
+    font-size: 0.9rem;
   }
 
-  .nav-menu {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 20px 5%;
+  .navbar-nav .nav-link {
+    font-size: 1.1rem;
+  }
+
+  .contact-section {
+    margin-top: 1rem;
+  }
+
+  .logo {
+    width: 60px;
   }
 }
