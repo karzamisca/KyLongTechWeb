@@ -120,18 +120,58 @@ a:hover {
   color: var(--text-light);
 }
 
-/* HERO SECTION */
-.hero {
+/* BANNER SECTION */
+.banner {
   width: 100%;
   height: 450px;
   overflow: hidden;
   position: relative;
 }
 
-.hero img {
-  width: 100%;
+.banner-container {
+  display: flex;
+  width: 600%; /* 6 images × 100% = 600% */
   height: 100%;
+  animation: slideLeftToRight 18s infinite; /* 3s per image × 6 images = 18s total */
+}
+
+.banner img {
+  width: 16.666%; /* 100% ÷ 6 images = 16.666% */
+  height: 450px; /* Fixed height instead of 100% */
   object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+  display: block;
+  max-height: 450px; /* Enforce maximum height */
+}
+
+@keyframes slideLeftToRight {
+  0% {
+    transform: translateX(0);
+  }
+  16.666% {
+    transform: translateX(-16.666%);
+  }
+  33.333% {
+    transform: translateX(-33.333%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  66.666% {
+    transform: translateX(-66.666%);
+  }
+  83.333% {
+    transform: translateX(-83.333%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Optional: Pause animation on hover */
+.banner:hover .banner-container {
+  animation-play-state: paused;
 }
 
 /* INTRO SECTION */
@@ -765,7 +805,7 @@ a:hover {
     --section-padding: 60px 0;
   }
 
-  .hero {
+  .banner {
     height: 300px;
   }
 
