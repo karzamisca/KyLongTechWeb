@@ -16,6 +16,13 @@ app.use(express.static(path.join(__dirname, "views")));
 app.use(cookieParser()); // Use cookie-parser to parse cookies
 app.use(express.json());
 
+app.use((req, res, next) => {
+  if (req.accepts("html")) {
+    res.set("Cache-Control", "no-store, must-revalidate");
+  }
+  next();
+});
+
 // Routes
 app.use("/", pageRoute);
 app.use("/", contactRoute);
