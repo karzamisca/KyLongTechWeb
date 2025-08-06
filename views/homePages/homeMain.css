@@ -136,7 +136,7 @@ a:hover {
 }
 
 .banner img {
-  width: 16.666%; /* 100% ÷ 6 images = 16.666% */
+  width: 20%; /* 100% ÷ 5 images = 20% */
   height: 450px; /* Fixed height instead of 100% */
   object-fit: cover;
   object-position: center;
@@ -149,20 +149,17 @@ a:hover {
   0% {
     transform: translateX(0);
   }
-  16.666% {
-    transform: translateX(-16.666%);
+  20% {
+    transform: translateX(-20%);
   }
-  33.333% {
-    transform: translateX(-33.333%);
+  40% {
+    transform: translateX(-40%);
   }
-  50% {
-    transform: translateX(-50%);
+  60% {
+    transform: translateX(-60%);
   }
-  66.666% {
-    transform: translateX(-66.666%);
-  }
-  83.333% {
-    transform: translateX(-83.333%);
+  80% {
+    transform: translateX(-80%);
   }
   100% {
     transform: translateX(0);
