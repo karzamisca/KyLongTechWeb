@@ -32,7 +32,8 @@
 /* Custom colors and styling */
 .header {
   background-color: #fff;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid #ffffff;
+  margin: 0 40px; /* Add margins to shorten the nav */
 }
 
 .company-name {
@@ -93,23 +94,58 @@
 
 .nav-container {
   background-color: #30875f;
+  margin: 0 40px; /* Add margins to shorten the nav */
+  border-radius: 25px; /* Add rounded corners */
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); /* Add subtle shadow */
 }
 
-.navbar-nav .nav-link {
-  color: #ffffff !important;
-  font-weight: bold;
-  font-size: 1.2rem;
-  transition: color 0.3s;
+.nav-container .container-fluid {
+  padding: 0 30px; /* Adjust internal padding */
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 15px 30px !important; /* Increased horizontal padding for better centering */
+  transition: all var(--transition-speed);
   text-decoration: none;
+  position: relative;
+  text-align: center; /* Center the text within the link */
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
+.nav-link:hover {
   color: #e84e0f !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
 }
 
-.navbar-nav .nav-link.active {
-  text-decoration: underline;
+.nav-link.active {
+  color: #e84e0f !important;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+}
+
+/* Separators - positioned to create equal spacing */
+.navbar-nav .separator {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  margin: 0 15px; /* space around separator */
+
+  /* stacked dots */
+  box-shadow: 0 6px 0 rgba(255, 255, 255, 0.6),
+    0 -6px 0 rgba(255, 255, 255, 0.6);
 }
 
 .logo {
