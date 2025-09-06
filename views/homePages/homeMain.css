@@ -121,11 +121,18 @@ a:hover {
   color: var(--text-light);
 }
 
+/* Navigation overlay styling - ONLY for home page */
+.nav-container {
+  position: relative;
+  z-index: 1000; /* Ensure nav stays above banner */
+  margin-bottom: -25px; /* Pull the banner up to overlap */
+}
+
 /* BANNER SECTION */
 .banner {
-  width: 100%;
-  overflow: hidden;
   position: relative;
+  z-index: 999; /* Banner stays below nav but above other content */
+  margin-top: 0; /* Remove any existing top margin */
 }
 
 .banner-container {
@@ -143,6 +150,11 @@ a:hover {
   object-position: center;
   flex-shrink: 0;
   display: block;
+}
+
+.banner + section,
+.banner + .products-section {
+  margin-top: 25px; /* Compensate for the overlap */
 }
 
 @keyframes slideLeftToRight {
