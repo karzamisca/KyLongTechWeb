@@ -133,6 +133,7 @@ a:hover {
   position: relative;
   z-index: 999; /* Banner stays below nav but above other content */
   margin-top: 0; /* Remove any existing top margin */
+  overflow: hidden;
 }
 
 .banner-container {
@@ -689,7 +690,8 @@ a:hover {
   transform: scale(1.05);
 }
 
-/* RESPONSIVE DESIGN */
+/* ========== ENHANCED RESPONSIVE DESIGN ========== */
+/* Tablet and Medium Screens */
 @media (max-width: 1024px) {
   .news-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -699,8 +701,25 @@ a:hover {
     width: calc(33.333% - 15px);
     padding: 25px;
   }
+
+  /* Banner adjustments */
+  .banner img {
+    min-height: 300px;
+    max-height: 600px;
+  }
+
+  /* Product section adjustments */
+  .product-image {
+    height: 220px;
+  }
+
+  /* About section adjustments */
+  .about-title {
+    white-space: normal;
+  }
 }
 
+/* Small Tablets */
 @media (max-width: 992px) {
   .tab-content {
     flex-direction: column;
@@ -723,19 +742,68 @@ a:hover {
   .ps-row-centered .ps-card {
     width: calc(50% - 15px);
   }
+
+  /* News grid adjustments */
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Partners section adjustments */
+  .partners-logo-container {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  /* Banner adjustments */
+  .banner img {
+    min-height: 250px;
+    max-height: 500px;
+  }
+
+  /* Section title adjustments */
+  .section-title::before,
+  .section-title::after {
+    width: 40px;
+  }
+
+  .section-title::before {
+    left: -50px;
+  }
+
+  .section-title::after {
+    right: -50px;
+  }
+
+  .flower-icon {
+    font-size: 1.5rem;
+    margin: 0 15px;
+  }
 }
 
+/* Large Mobile Devices */
 @media (max-width: 768px) {
   :root {
     --section-padding: 60px 0;
+    --card-padding: 20px;
   }
 
   .banner {
-    height: 300px;
+    height: auto;
+  }
+
+  .banner img {
+    min-height: 200px;
+    max-height: 400px;
   }
 
   .section-title {
     font-size: 28px;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+    padding: 0 15px;
   }
 
   .tab-button {
@@ -777,18 +845,80 @@ a:hover {
     margin-bottom: 20px;
   }
 
-  .news-grid {
-    grid-template-columns: repeat(2, 1fr);
+  /* Product section adjustments */
+  .product-image {
+    height: 200px;
   }
 
+  .product-content {
+    padding: 20px;
+  }
+
+  .product-title {
+    font-size: 1.2rem;
+  }
+
+  /* About section adjustments */
+  .about-title-underline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-description,
+  .about-feature-text {
+    text-align: left;
+  }
+
+  /* News section adjustments */
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .news-thumbnail {
+    height: 160px;
+  }
+
+  .news-item-title {
+    min-height: auto;
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  /* Partners section adjustments */
   .partners-logo-container {
     gap: 20px;
   }
+
+  .partner-logo {
+    padding: 15px;
+    flex: 0 0 calc(50% - 20px);
+  }
+
+  .partner-logo img {
+    max-width: 120px;
+  }
+
+  /* Section title decorations */
+  .section-title::before,
+  .section-title::after {
+    display: none;
+  }
+
+  .flower-icon {
+    margin: 0 10px;
+  }
 }
 
+/* Small Mobile Devices */
 @media (max-width: 576px) {
   .section-title {
     font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .section-header {
+    margin-bottom: 30px;
   }
 
   .tab-button {
@@ -805,42 +935,301 @@ a:hover {
     font-size: 20px;
   }
 
-  .news-grid {
-    grid-template-columns: 1fr;
+  /* Banner adjustments */
+  .banner img {
+    min-height: 180px;
+    max-height: 300px;
   }
 
-  .feature-image {
-    height: 150px;
+  /* Product section adjustments */
+  .products-section {
+    padding: 50px 0;
   }
-}
 
-@media (max-width: 480px) {
-  .ps-card {
-    padding: 20px;
+  .product-card {
+    margin-bottom: 20px;
+  }
+
+  .product-image {
+    height: 180px;
+  }
+
+  .product-content {
+    padding: 15px;
+  }
+
+  .product-title {
+    font-size: 1.1rem;
+  }
+
+  .product-description {
+    font-size: 0.9rem;
+  }
+
+  /* About section adjustments */
+  .about-section {
+    padding: 50px 0;
+  }
+
+  .about-title {
+    white-space: normal;
+    text-align: center;
+  }
+
+  .about-title-underline {
+    width: 100px;
+  }
+
+  .about-features-title {
+    font-size: 1.1rem;
+  }
+
+  .about-cta-button {
+    font-size: 1rem;
+  }
+
+  /* Products & Services adjustments */
+  .ps-header {
+    margin-bottom: 30px;
+  }
+
+  .ps-title {
+    font-size: 24px;
+  }
+
+  .ps-subtitle {
+    font-size: 16px;
   }
 
   .ps-icon {
     width: 60px;
     height: 60px;
+    margin-bottom: 15px;
   }
 
   .ps-icon i {
     font-size: 24px;
   }
 
+  .ps-card-title {
+    font-size: 16px;
+  }
+
+  .ps-card-description {
+    font-size: 13px;
+  }
+
+  /* News section adjustments */
+  .news-header {
+    margin-bottom: 30px;
+  }
+
+  .news-title {
+    font-size: 24px;
+  }
+
+  .news-subtitle {
+    font-size: 16px;
+  }
+
   .news-thumbnail {
-    height: 150px;
+    height: 140px;
+  }
+
+  .news-date {
+    font-size: 11px;
+    padding: 4px 8px;
   }
 
   .news-item-title {
-    min-height: auto;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .news-read-more {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .view-all-button {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+
+  /* Partners section adjustments */
+  .partners-section {
+    padding: 50px 0;
+  }
+
+  .partner-logo {
+    flex: 0 0 100%;
+    padding: 10px;
   }
 
   .partner-logo img {
     max-width: 100px;
   }
+}
 
-  .feature-image {
-    height: 130px;
+/* Extra Small Mobile Devices */
+@media (max-width: 480px) {
+  .section-container,
+  .ps-container,
+  .news-container,
+  .partners-container {
+    padding: 0 15px;
+  }
+
+  .ps-card {
+    padding: 20px;
+  }
+
+  .ps-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .ps-icon i {
+    font-size: 20px;
+  }
+
+  .news-thumbnail {
+    height: 120px;
+  }
+
+  /* Banner adjustments */
+  .banner img {
+    min-height: 150px;
+    max-height: 250px;
+  }
+
+  /* Product section adjustments */
+  .product-image {
+    height: 160px;
+  }
+
+  /* About section adjustments */
+  .about-container {
+    padding: 0 15px;
+  }
+
+  .about-title {
+    font-size: 1.3rem;
+  }
+
+  .about-feature-number {
+    font-size: 1rem;
+  }
+
+  /* News section adjustments */
+  .news-grid {
+    gap: 12px;
+  }
+
+  /* Utility classes for small screens */
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  .text-center-mobile {
+    text-align: center;
+  }
+
+  .full-width-mobile {
+    width: 100%;
+  }
+}
+
+/* Very Small Devices (e.g., iPhone 5/SE) */
+@media (max-width: 320px) {
+  .section-title {
+    font-size: 22px;
+  }
+
+  .banner img {
+    min-height: 120px;
+    max-height: 200px;
+  }
+
+  .product-image {
+    height: 140px;
+  }
+
+  .view-all-button {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+
+  .partner-logo img {
+    max-width: 80px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .card:hover,
+  .ps-card:hover,
+  .news-item:hover,
+  .partner-logo:hover {
+    transform: none;
+  }
+
+  .card:hover {
+    box-shadow: var(--card-shadow);
+  }
+
+  .ps-card:hover {
+    box-shadow: var(--card-shadow);
+  }
+
+  .ps-card:hover .ps-icon {
+    background-color: rgba(232, 78, 15, 0.1);
+  }
+
+  .ps-card:hover .ps-icon i {
+    color: var(--secondary-color);
+  }
+
+  .news-item:hover {
+    box-shadow: var(--card-shadow);
+  }
+
+  .news-item:hover .news-thumbnail img {
+    transform: none;
+  }
+
+  .news-item:hover .news-read-more {
+    background-color: transparent;
+    color: var(--primary-color);
+  }
+
+  /* Add touch-friendly tap targets */
+  .tab-button,
+  .view-all-button,
+  .about-cta-button {
+    min-height: 44px; /* Minimum touch target size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* High-resolution displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Optional: Add higher resolution assets if available */
+}
+
+/* Print styles */
+@media print {
+  .banner,
+  .nav-container {
+    display: none;
+  }
+
+  .card,
+  .product-card,
+  .ps-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
   }
 }
